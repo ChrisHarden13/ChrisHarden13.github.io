@@ -131,6 +131,10 @@ content:
                     label: Main page
                     type: select
                     options: {values: [profile, education, research, publication, honor, life]}
+                  - name: layout
+                    label: Text layout
+                    type: select
+                    options: {values: [full, image-right]}
                   - {component: moduleHeader, name: header, label: Editable module name and title}
                   - name: bodyEn
                     label: Content (English)
