@@ -74,9 +74,9 @@
       "items": [
         {
           "type": "university",
-          "schoolEn": "The Hong Kong Polytechnic University",
+          "schoolEn": "The Hong Kong Polytechnic University (PolyU)",
           "schoolZh": "香港理工大学",
-          "departmentEn": "Department of Physics and Materials",
+          "departmentEn": "Department of Physics and Materials (PM)",
           "departmentZh": "物理与材料系",
           "degreeEn": "PhD student",
           "degreeZh": "博士生",
@@ -86,9 +86,9 @@
         },
         {
           "type": "university",
-          "schoolEn": "Southern University of Science and Technology",
+          "schoolEn": "Southern University of Science and Technology (SUSTech)",
           "schoolZh": "南方科技大学",
-          "departmentEn": "Electrical and Electronic Engineering",
+          "departmentEn": "Electrical and Electronic Engineering (EEE)",
           "departmentZh": "电子与电气工程系",
           "degreeEn": "Bachelor of Engineering",
           "degreeZh": "工学学士",
