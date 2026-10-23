@@ -550,3 +550,33 @@ p, li, blockquote { text-align: justify; text-justify: inter-word; }
   .school-icon { width: min(76px, var(--avatar-size)); height: min(76px, var(--avatar-size)); }
   .school-field { grid-template-columns: 6px minmax(0, 1fr); gap: 9px; font-size: 14px; }
 }
+
+
+/* Center each education entry as a group and give school logos more room. */
+.education-row {
+  grid-template-columns: clamp(180px, 18vw, 220px) minmax(0, min(650px, 58vw));
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+  gap: clamp(28px, 4vw, 52px);
+}
+.school-icon {
+  width: clamp(180px, 18vw, 220px);
+  height: clamp(180px, 18vw, 220px);
+}
+@media (max-width: 760px) {
+  .education-row {
+    grid-template-columns: min(150px, 24vw) minmax(0, 1fr);
+    width: min(100%, 680px);
+    gap: 24px;
+  }
+  .school-icon { width: min(150px, 24vw); height: min(150px, 24vw); }
+}
+@media (max-width: 560px) {
+  .education-row {
+    grid-template-columns: min(104px, 27vw) minmax(0, 1fr);
+    width: 100%;
+    gap: 16px;
+  }
+  .school-icon { width: min(104px, 27vw); height: min(104px, 27vw); }
+}
