@@ -554,29 +554,29 @@ p, li, blockquote { text-align: justify; text-justify: inter-word; }
 
 /* Center each education entry as a group and give school logos more room. */
 .education-row {
-  grid-template-columns: clamp(180px, 18vw, 220px) minmax(0, min(650px, 58vw));
+  grid-template-columns: clamp(220px, 21vw, 270px) minmax(0, min(600px, 58vw));
   width: fit-content;
   max-width: 100%;
   margin-inline: auto;
-  gap: clamp(28px, 4vw, 52px);
+  gap: clamp(28px, 4vw, 48px);
 }
 .school-icon {
-  width: clamp(180px, 18vw, 220px);
-  height: clamp(180px, 18vw, 220px);
+  width: clamp(220px, 21vw, 270px);
+  height: clamp(220px, 21vw, 270px);
 }
 @media (max-width: 760px) {
   .education-row {
-    grid-template-columns: min(150px, 24vw) minmax(0, 1fr);
+    grid-template-columns: min(170px, 27vw) minmax(0, 1fr);
     width: min(100%, 680px);
-    gap: 24px;
+    gap: 22px;
   }
-  .school-icon { width: min(150px, 24vw); height: min(150px, 24vw); }
+  .school-icon { width: min(170px, 27vw); height: min(170px, 27vw); }
 }
 @media (max-width: 560px) {
   .education-row {
-    grid-template-columns: min(104px, 27vw) minmax(0, 1fr);
+    grid-template-columns: min(116px, 30vw) minmax(0, 1fr);
     width: 100%;
-    gap: 16px;
+    gap: 15px;
   }
-  .school-icon { width: min(104px, 27vw); height: min(104px, 27vw); }
+  .school-icon { width: min(116px, 30vw); height: min(116px, 30vw); }
 }
