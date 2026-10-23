@@ -290,14 +290,15 @@ function makeSection(section, index) {
       const main = document.createElement('div');
       main.className = 'project-main';
       const h = document.createElement('h3');
+      const titleText = (language === 'zh' && item.titleZh) ? item.titleZh : (item.title ?? '');
       if (item.url && safePublicUrl(item.url)) {
         const a = document.createElement('a');
         a.href = safePublicUrl(item.url);
         a.target = '_blank';
         a.rel = 'noopener noreferrer';
-        a.textContent = (language === 'zh' && item.titleZh) ? item.titleZh : (item.title ?? '');
+        appendInlineMarkdown(a, titleText);
         h.append(a);
-      } else h.textContent = (language === 'zh' && item.titleZh) ? item.titleZh : (item.title ?? '');
+      } else appendInlineMarkdown(h, titleText);
       main.append(h);
       if (item.authors) addRich(main, 'project-authors', item.authors);
       const venueName = (language === 'zh' && item.venueZh) ? item.venueZh : item.venue;
