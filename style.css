@@ -668,3 +668,10 @@ p, li, blockquote { text-align: justify; text-justify: inter-word; }
   font-size: 22px;
   line-height: 1.8;
 }
+
+
+/* Set publication authors and venues to 18px, including rich-text paragraphs. */
+.publication-entry .project-authors,
+.publication-entry .project-venue,
+.publication-entry .project-authors p,
+.publication-entry .project-venue p { font-size: 18px; }
