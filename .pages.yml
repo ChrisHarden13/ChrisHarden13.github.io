@@ -11,70 +11,22 @@ components:
   moduleHeader:
     type: object
     fields:
-      - name: visible
-        label: Show on page
-        type: boolean
-      - name: showInNavigation
-        label: Show link in top navigation
-        type: boolean
-      - name: sectionLabelEn
-        label: Module name / navigation label (English)
-        type: string
-      - name: sectionLabelZh
-        label: Module name / navigation label (Chinese)
-        type: string
-      - name: titleEn
-        label: Heading (English)
-        type: string
-      - name: titleZh
-        label: Heading (Chinese)
-        type: string
+      - {name: visible, label: Show this module, type: boolean}
+      - {name: sectionLabelEn, label: Module label (English), type: string}
+      - {name: sectionLabelZh, label: Module label (Chinese), type: string}
+      - {name: titleEn, label: Module title (English), type: string}
+      - {name: titleZh, label: Module title (Chinese), type: string}
   sectionIntro:
     type: object
     fields:
       - name: introEn
-        label: Intro (English)
+        label: Introduction (English)
         type: rich-text
-        options: {format: markdown, media: site_images, path: content}
+        options: {format: markdown, switcher: false, media: site_images, path: content}
       - name: introZh
-        label: Intro (Chinese)
+        label: Introduction (Chinese)
         type: rich-text
-        options: {format: markdown, media: site_images, path: content}
-  cardFields:
-    type: object
-    fields:
-      - name: titleEn
-        label: Card title (English)
-        type: string
-      - name: titleZh
-        label: Card title (Chinese)
-        type: string
-      - name: subtitleEn
-        label: Subtitle / date (English)
-        type: string
-      - name: subtitleZh
-        label: Subtitle / date (Chinese)
-        type: string
-      - name: bodyEn
-        label: Content (English)
-        type: rich-text
-        options: {format: markdown, media: site_images, path: content}
-      - name: bodyZh
-        label: Content (Chinese)
-        type: rich-text
-        options: {format: markdown, media: site_images, path: content}
-      - name: url
-        label: Link / DOI URL
-        type: string
-      - {name: linkLabelEn, label: Link button text (English), type: string}
-      - {name: linkLabelZh, label: Link button text (Chinese), type: string}
-      - name: image
-        label: Image (optional upload)
-        type: image
-        options: {media: site_images, path: modules, extensions: [jpg, jpeg, png, webp, gif, svg]}
-      - name: imageAlt
-        label: Image description
-        type: string
+        options: {format: markdown, switcher: false, media: site_images, path: content}
 
 content:
   - name: website
@@ -92,133 +44,223 @@ content:
           - {name: pageTitle, label: Browser tab title, type: string}
           - {name: pageDescription, label: Search description, type: text}
           - name: avatar
-            label: Left circular photo (upload here)
+            label: Portrait image
             type: image
             options: {media: site_images, path: profiles, extensions: [jpg, jpeg, png, webp]}
-          - {name: avatarAlt, label: Photo description, type: string}
-          - {name: monogram, label: Initials shown without photo, type: string}
-          - {name: email, label: Email (optional), type: string}
-          - {name: phone, label: Phone (optional; displayed below the portrait), type: string}
-          - {name: heroKickerEn, label: Small label above your name (English), type: string}
-          - {name: heroKickerZh, label: Small label above your name (Chinese), type: string}
-          - {name: backTopEn, label: Back-to-top link (English), type: string}
-          - {name: backTopZh, label: Back-to-top link (Chinese), type: string}
+          - {name: avatarAlt, label: Portrait description, type: string}
+          - {name: monogram, label: Initials shown without a portrait, type: string}
+          - {name: email, label: Email address, type: string}
+          - {name: phone, label: Phone number, type: string}
+          - {name: heroKickerEn, label: Short profile label (English), type: string}
+          - {name: heroKickerZh, label: Short profile label (Chinese), type: string}
+          - name: navigation
+            label: Main page names and order
+            type: object
+            list:
+              collapsible: {collapsed: true, summary: "{fields.labelEn} / {fields.labelZh}"}
+            fields:
+              - name: key
+                label: Page
+                type: select
+                options:
+                  values:
+                    - {name: profile, label: Profile}
+                    - {name: education, label: Education}
+                    - {name: research, label: Research}
+                    - {name: publication, label: Publication}
+                    - {name: honor, label: Honor}
+                    - {name: life, label: Life}
+              - {name: labelEn, label: Navigation name (English), type: string}
+              - {name: labelZh, label: Navigation name (Chinese), type: string}
           - {name: languageSwitchEn, label: Language switch text (English page), type: string}
           - {name: languageSwitchZh, label: Language switch text (Chinese page), type: string}
-          - {name: showHeader, label: Show top navigation, type: boolean}
-          - {name: showHero, label: Show name and photo area, type: boolean}
+          - {name: showHeader, label: Show navigation bar, type: boolean}
+          - {name: showHero, label: Show profile image and contacts, type: boolean}
           - {name: showFooter, label: Show footer, type: boolean}
           - name: footerTextEn
-            label: Footer text in English
+            label: Footer text (English)
             type: rich-text
-            options: {format: markdown, media: site_images, path: content}
+            options: {format: markdown, switcher: false, media: site_images, path: content}
           - name: footerTextZh
-            label: Footer text in Chinese
+            label: Footer text (Chinese)
             type: rich-text
-            options: {format: markdown, media: site_images, path: content}
+            options: {format: markdown, switcher: false, media: site_images, path: content}
       - name: appearance
         label: Global appearance
         type: file
         path: data/style.json
         format: json
         fields:
-          - {name: fontBody, label: Body font CSS family, type: string}
-          - {name: fontHeading, label: Heading font CSS family, type: string}
-          - {name: colorText, label: Main text color (hex), type: string, pattern: "^#[0-9a-fA-F]{6}$"}
-          - {name: colorMuted, label: Secondary text color (hex), type: string, pattern: "^#[0-9a-fA-F]{6}$"}
-          - {name: colorAccent, label: Accent and link color (hex), type: string, pattern: "^#[0-9a-fA-F]{6}$"}
-          - {name: colorBorder, label: Border color (hex), type: string, pattern: "^#[0-9a-fA-F]{6}$"}
-          - {name: colorBackground, label: Page background color (hex), type: string, pattern: "^#[0-9a-fA-F]{6}$"}
-          - {name: colorSoft, label: Soft panel color (hex), type: string, pattern: "^#[0-9a-fA-F]{6}$"}
-          - {name: bodyFontSize, label: Base font size (px), type: number}
+          - {name: fontBody, label: Body font family, type: string}
+          - {name: fontHeading, label: Heading font family, type: string}
+          - {name: colorText, label: Main text color, type: string}
+          - {name: colorMuted, label: Secondary text color, type: string}
+          - {name: colorAccent, label: Accent color, type: string}
+          - {name: colorBorder, label: Border color, type: string}
+          - {name: colorBackground, label: Page background color, type: string}
+          - {name: colorSoft, label: Soft panel color, type: string}
+          - {name: bodyFontSize, label: Body font size (px), type: number}
           - {name: bodyLineHeight, label: Body line spacing, type: number}
           - {name: headingScale, label: Heading size scale, type: number}
-          - {name: contentWidth, label: Maximum page width (px), type: number}
-          - {name: pageGutter, label: Side padding (px), type: number}
-          - {name: sectionSpacing, label: Space between modules (px), type: number}
+          - {name: contentWidth, label: Content width (px), type: number}
+          - {name: pageGutter, label: Page side padding (px), type: number}
+          - {name: sectionSpacing, label: Module spacing (px), type: number}
           - {name: cardRadius, label: Card corner radius (px), type: number}
           - {name: columnGap, label: Column spacing (px), type: number}
-          - {name: avatarSize, label: Circular portrait size (px), type: number}
+          - {name: avatarSize, label: Portrait size (px), type: number}
           - {name: avatarRadius, label: Portrait roundness (percent), type: number}
           - {name: projectColumns, label: Publication columns, type: number}
-          - {name: profileColumns, label: Link / card columns, type: number}
+          - {name: profileColumns, label: Card columns, type: number}
           - {name: textLineLimit, label: Visible text line limit, type: number}
       - name: modules
-        label: Page modules (add / delete / reorder)
+        label: Page modules and submodules
         type: file
         path: data/modules.json
         format: json
         fields:
           - name: sections
-            label: Page modules — select a category for each module
+            label: Add, remove, reorder, and rename modules
             type: block
+            blockKey: type
             list:
               collapsible: {collapsed: true, summary: "{fields.header.titleEn} / {fields.header.titleZh}"}
-            blockKey: type
             blocks:
               - name: text
-                label: Text / biography / affiliation / research
+                label: Text / About / Research interests
                 fields:
-                  - {component: moduleHeader, name: header, label: Module settings}
+                  - name: page
+                    label: Main page
+                    type: select
+                    options: {values: [profile, education, research, publication, honor, life]}
+                  - {component: moduleHeader, name: header, label: Editable module name and title}
                   - name: bodyEn
                     label: Content (English)
                     type: rich-text
-                    options: {format: markdown, media: site_images, path: content}
+                    options: {format: markdown, switcher: false, media: site_images, path: content}
                   - name: bodyZh
                     label: Content (Chinese)
                     type: rich-text
-                    options: {format: markdown, media: site_images, path: content}
+                    options: {format: markdown, switcher: false, media: site_images, path: content}
                   - name: image
-                    label: Image (optional upload)
+                    label: Optional image
                     type: image
                     options: {media: site_images, path: modules, extensions: [jpg, jpeg, png, webp, gif, svg]}
                   - {name: imageAlt, label: Image description, type: string}
+              - name: cards
+                label: Cards / news / projects / honors / life
+                fields:
+                  - name: page
+                    label: Main page
+                    type: select
+                    options: {values: [profile, education, research, publication, honor, life]}
+                  - {component: moduleHeader, name: header, label: Editable module name and title}
+                  - {component: sectionIntro, name: intro, label: Module introduction}
+                  - name: items
+                    label: Submodules or entries (add / remove / reorder)
+                    type: object
+                    list:
+                      collapsible: {collapsed: true, summary: "{fields.titleEn} / {fields.titleZh}"}
+                    fields:
+                      - name: type
+                        label: Submodule type
+                        type: select
+                        options:
+                          values: [news, project, scholarship, honor, life, custom]
+                      - {name: titleEn, label: Item name (English), type: string}
+                      - {name: titleZh, label: Item name (Chinese), type: string}
+                      - {name: subtitleEn, label: Short detail (English), type: string}
+                      - {name: subtitleZh, label: Short detail (Chinese), type: string}
+                      - name: bodyEn
+                        label: Description (English)
+                        type: rich-text
+                        options: {format: markdown, switcher: false, media: site_images, path: content}
+                      - name: bodyZh
+                        label: Description (Chinese)
+                        type: rich-text
+                        options: {format: markdown, switcher: false, media: site_images, path: content}
+                      - {name: url, label: Link URL, type: string}
+                      - name: image
+                        label: Image
+                        type: image
+                        options: {media: site_images, path: modules, extensions: [jpg, jpeg, png, webp, gif, svg]}
+                      - {name: imageAlt, label: Image description, type: string}
               - name: publication
                 label: Publications
                 fields:
-                  - {component: moduleHeader, name: header, label: Module settings}
+                  - name: page
+                    label: Main page
+                    type: select
+                    options: {values: [profile, education, research, publication, honor, life]}
+                  - {component: moduleHeader, name: header, label: Editable module name and title}
                   - {component: sectionIntro, name: intro, label: Module introduction}
                   - name: items
-                    label: Publication entries (add / delete / reorder)
+                    label: Publication entries (add / remove / reorder)
                     type: object
-                    list: {collapsible: {collapsed: true, summary: "{title}"}}
+                    list: {collapsible: {collapsed: true, summary: "{fields.title}"}}
                     fields:
                       - {name: title, label: Publication title, type: string}
-                      - {name: titleZh, label: Publication title (Chinese, optional), type: string}
-                      - {name: authors, label: Authors, type: string}
-                      - {name: venue, label: Journal / venue, type: string}
-                      - {name: venueZh, label: Journal / venue (Chinese, optional), type: string}
+                      - {name: titleZh, label: Publication title (Chinese), type: string}
+                      - {name: authors, label: Authors, type: text}
+                      - {name: venue, label: Journal or venue, type: string}
+                      - {name: venueZh, label: Journal or venue (Chinese), type: string}
                       - {name: year, label: Year / issue, type: string}
-                      - {name: bodyEn, label: Details (English), type: rich-text, options: {format: markdown, media: site_images, path: content}}
-                      - {name: bodyZh, label: Details (Chinese), type: rich-text, options: {format: markdown, media: site_images, path: content}}
-                      - {name: url, label: Link / DOI URL, type: string}
-                      - {name: image, label: Image (optional upload), type: image, options: {media: site_images, path: publications, extensions: [jpg, jpeg, png, webp, gif, svg]}}
+                      - {name: bodyEn, label: Details (English), type: rich-text, options: {format: markdown, switcher: false, media: site_images, path: content}}
+                      - {name: bodyZh, label: Details (Chinese), type: rich-text, options: {format: markdown, switcher: false, media: site_images, path: content}}
+                      - {name: url, label: DOI or publication URL, type: string}
+                      - {name: image, label: Optional image, type: image, options: {media: site_images, path: publications, extensions: [jpg, jpeg, png, webp, gif, svg]}}
                       - {name: imageAlt, label: Image description, type: string}
-              - name: links
-                label: Public links / social profiles
+              - name: education
+                label: Education (school icon and description)
                 fields:
-                  - {component: moduleHeader, name: header, label: Module settings}
+                  - name: page
+                    label: Main page
+                    type: select
+                    options: {values: [profile, education, research, publication, honor, life]}
+                  - {component: moduleHeader, name: header, label: Editable module name and title}
+                  - name: items
+                    label: Schools (add / remove / reorder)
+                    type: object
+                    list: {collapsible: {collapsed: true, summary: "{fields.schoolEn} / {fields.schoolZh}"}}
+                    fields:
+                      - name: type
+                        label: Education entry type
+                        type: select
+                        options:
+                          values: [university, degree, course, other]
+                      - {name: schoolEn, label: School (English), type: string}
+                      - {name: schoolZh, label: School (Chinese), type: string}
+                      - {name: departmentEn, label: Department (English), type: string}
+                      - {name: departmentZh, label: Department (Chinese), type: string}
+                      - {name: degreeEn, label: Degree or role (English), type: string}
+                      - {name: degreeZh, label: Degree or role (Chinese), type: string}
+                      - {name: dates, label: Dates, type: string}
+                      - {name: bodyEn, label: Description (English), type: rich-text, options: {format: markdown, switcher: false, media: site_images, path: content}}
+                      - {name: bodyZh, label: Description (Chinese), type: rich-text, options: {format: markdown, switcher: false, media: site_images, path: content}}
+                      - {name: url, label: School website URL, type: string}
+                      - {name: logo, label: School icon or logo, type: image, options: {media: site_images, path: education, extensions: [jpg, jpeg, png, webp, svg]}}
+              - name: links
+                label: Personal homepages / social links
+                fields:
+                  - name: page
+                    label: Main page
+                    type: select
+                    options: {values: [profile, education, research, publication, honor, life]}
+                  - {component: moduleHeader, name: header, label: Editable module name and title}
                   - {component: sectionIntro, name: intro, label: Module introduction}
                   - name: items
-                    label: Link entries (add / delete / reorder)
+                    label: Homepage links (add / remove / reorder)
                     type: object
-                    list: {collapsible: {collapsed: true, summary: "{labelEn} / {labelZh}"}}
+                    list: {collapsible: {collapsed: true, summary: "{fields.labelEn} / {fields.labelZh}"}}
                     fields:
                       - {name: labelEn, label: Link name (English), type: string}
                       - {name: labelZh, label: Link name (Chinese), type: string}
-                      - {name: bodyEn, label: Description (English), type: rich-text, options: {format: markdown, media: site_images, path: content}}
-                      - {name: bodyZh, label: Description (Chinese), type: rich-text, options: {format: markdown, media: site_images, path: content}}
                       - {name: url, label: Link URL, type: string}
-                      - {name: image, label: Image (optional upload), type: image, options: {media: site_images, path: links, extensions: [jpg, jpeg, png, webp, gif, svg]}}
+                      - name: icon
+                        label: Icon
+                        type: select
+                        options:
+                          values: [scholar, orcid, linkedin, github, website]
+                      - {name: bodyEn, label: Description (English), type: rich-text, options: {format: markdown, switcher: false, media: site_images, path: content}}
+                      - {name: bodyZh, label: Description (Chinese), type: rich-text, options: {format: markdown, switcher: false, media: site_images, path: content}}
+                      - {name: image, label: Optional image, type: image, options: {media: site_images, path: links, extensions: [jpg, jpeg, png, webp, gif, svg]}}
                       - {name: imageAlt, label: Image description, type: string}
-              - name: cards
-                label: Custom cards / experience / news
-                fields:
-                  - {component: moduleHeader, name: header, label: Module settings}
-                  - {component: sectionIntro, name: intro, label: Module introduction}
-                  - name: items
-                    label: Cards (add / delete / reorder)
-                    type: object
-                    list: {collapsible: {collapsed: true, summary: "{fields.card.titleEn} / {fields.card.titleZh}"}}
-                    fields:
-                      - {component: cardFields, name: card, label: Card details}
