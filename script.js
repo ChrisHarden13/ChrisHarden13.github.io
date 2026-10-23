@@ -301,16 +301,26 @@ function makeSection(section, index) {
     root.append(list);
   } else if (section.type === 'cards') {
     const list = document.createElement('div');
-    list.className = 'custom-card-grid';
+    const newsHeading = `${header.titleEn ?? ''} ${header.titleZh ?? ''} ${header.sectionLabelEn ?? ''} ${header.sectionLabelZh ?? ''}`;
+    const isNewsSection = /latest\s*news|最新动态/i.test(newsHeading)
+      || (section.items?.length > 0 && section.items.every((item) => (item.card ?? item).type === 'news'));
+    list.className = isNewsSection ? 'latest-news-list' : 'custom-card-grid';
     (section.items ?? []).forEach((item) => {
       const data = item.card ?? item;
       const card = document.createElement('article');
-      card.className = `custom-card${data.type ? ` custom-card-${data.type}` : ''}`;
-      addImage(card, data.image, data.imageAlt, 'project-image');
+      card.className = isNewsSection ? 'latest-news-item' : `custom-card${data.type ? ` custom-card-${data.type}` : ''}`;
+      if (!isNewsSection) addImage(card, data.image, data.imageAlt, 'project-image');
+      if (isNewsSection && data.date) {
+        const date = document.createElement('time');
+        date.className = 'latest-news-date';
+        date.textContent = data.date;
+        if (/^\d{4}-\d{2}-\d{2}$/.test(data.date)) date.dateTime = data.date;
+        card.append(date);
+      }
       const h = document.createElement('h3');
       h.textContent = localized(data, 'title') || data.title || '';
-      card.append(h);
-      if (data.date) {
+      if (!isNewsSection || h.textContent) card.append(h);
+      if (!isNewsSection && data.date) {
         const date = document.createElement('time');
         date.className = 'custom-card-date';
         date.textContent = data.date;
@@ -318,8 +328,9 @@ function makeSection(section, index) {
         card.append(date);
       }
       const subtitle = localized(data, 'subtitle') || data.subtitle || '';
-      if (subtitle) addRich(card, 'custom-card-subtitle', subtitle);
-      addRich(card, 'module-body rich-description', localized(data, 'body'));
+      if (subtitle) addRich(card, isNewsSection ? 'latest-news-subtitle' : 'custom-card-subtitle', subtitle);
+      addRich(card, isNewsSection ? 'latest-news-content rich-description' : 'module-body rich-description', localized(data, 'body'));
+      if (isNewsSection) addImage(card, data.image, data.imageAlt, 'latest-news-image');
       if (data.url && safePublicUrl(data.url)) {
         const link = document.createElement('a');
         link.href = safePublicUrl(data.url);
