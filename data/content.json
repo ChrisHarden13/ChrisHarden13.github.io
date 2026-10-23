@@ -79,24 +79,6 @@
       "zh": "我曾在南方科技大学电气与电子工程系学习光电信息科学与工程。我的学术兴趣涵盖光子结构、光电器件，以及器件制备与测试实践。"
     },
     {
-      "key": "copy-014",
-      "label": "cumulative-gpa-cv",
-      "en": "CUMULATIVE GPA · CV",
-      "zh": "累计 GPA · 简历数据"
-    },
-    {
-      "key": "copy-015",
-      "label": "major-rank-cv",
-      "en": "MAJOR RANK · CV",
-      "zh": "专业排名 · 简历数据"
-    },
-    {
-      "key": "copy-016",
-      "label": "ielts-cv",
-      "en": "IELTS · CV",
-      "zh": "雅思 · 简历数据"
-    },
-    {
       "key": "copy-017",
       "label": "academic-figures-are-reproduced-from-the-s",
       "en": "Academic figures are reproduced from the supplied CV and may need updating.",
@@ -121,54 +103,6 @@
       "zh": "节选自我的学术项目经历。"
     },
     {
-      "key": "copy-021",
-      "label": "valley-topological-photonic-crystal",
-      "en": "Valley topological photonic crystal",
-      "zh": "谷拓扑光子晶体"
-    },
-    {
-      "key": "copy-022",
-      "label": "supervised-by-prof-zhen-gao",
-      "en": "Supervised by Prof. Zhen Gao",
-      "zh": "指导教师：高振教授"
-    },
-    {
-      "key": "copy-023",
-      "label": "comsol-simulation-and-experimental-assista",
-      "en": "COMSOL simulation and experimental assistance. Built a foundation in solid-state physics and topological photonics, with hands-on simulation experience.",
-      "zh": "参与 COMSOL 仿真与实验辅助工作。学习固体物理与拓扑光子学基础，并积累光子晶体仿真实践经验。"
-    },
-    {
-      "key": "copy-024",
-      "label": "qled-and-pressure-sensor-integration",
-      "en": "QLED and pressure-sensor integration",
-      "zh": "QLED 与压力传感器集成"
-    },
-    {
-      "key": "copy-025",
-      "label": "supervised-by-prof-shuming-chen",
-      "en": "Supervised by Prof. Shuming Chen",
-      "zh": "指导教师：陈树明教授"
-    },
-    {
-      "key": "copy-026",
-      "label": "device-fabrication-and-characterization-le",
-      "en": "Device fabrication and characterization. Learned QLED device structures and common optoelectronic fabrication and measurement methods.",
-      "zh": "参与器件制备与表征，学习 QLED 发光器件结构及常用光电器件制备、测试方法。"
-    },
-    {
-      "key": "copy-027",
-      "label": "optics-photovoltaics-optical-networks",
-      "en": "Optics, photovoltaics & optical networks",
-      "zh": "光学设计、光伏与光网络"
-    },
-    {
-      "key": "copy-028",
-      "label": "led-light-distribution-simulation-with-mat",
-      "en": "LED light-distribution simulation with MATLAB and TracePro; a review of aluminum-oxide passivation for crystalline silicon; and OptiSystem simulation of a bidirectional WDM-PON.",
-      "zh": "使用 MATLAB 与 TracePro 仿真 LED 光分布；综述氧化铝钝化单晶硅；使用 OptiSystem 仿真双向 WDM-PON。"
-    },
-    {
       "key": "copy-029",
       "label": "education-toolkit",
       "en": "EDUCATION & TOOLKIT",
@@ -181,18 +115,6 @@
       "zh": "教育经历 · 简历所载"
     },
     {
-      "key": "copy-031",
-      "label": "shenzhen-china-2020-cv-lists-as-present",
-      "en": "Shenzhen, China · 2020 — CV lists as present",
-      "zh": "中国深圳 · 2020 年入学 · 简历记载为在读"
-    },
-    {
-      "key": "copy-032",
-      "label": "department-of-electrical-and-electronic-en",
-      "en": "Department of Electrical and Electronic Engineering<br>Undergraduate studies in Optoelectronics",
-      "zh": "电气与电子工程系<br>光电信息科学与工程本科"
-    },
-    {
       "key": "copy-033",
       "label": "tools-methods",
       "en": "TOOLS & METHODS",
@@ -203,30 +125,6 @@
       "label": "a-practical-toolkit",
       "en": "A practical toolkit",
       "zh": "实践工具箱"
-    },
-    {
-      "key": "copy-035",
-      "label": "computing-simulation",
-      "en": "COMPUTING & SIMULATION",
-      "zh": "编程与仿真"
-    },
-    {
-      "key": "copy-036",
-      "label": "device-fabrication",
-      "en": "DEVICE FABRICATION",
-      "zh": "器件制备"
-    },
-    {
-      "key": "copy-037",
-      "label": "spin-coating-thermal-evaporation-br-magnet",
-      "en": "Spin coating · Thermal evaporation<br>Magnetron sputtering",
-      "zh": "旋涂 · 热蒸发<br>磁控溅射"
-    },
-    {
-      "key": "copy-038",
-      "label": "also",
-      "en": "ALSO",
-      "zh": "其他"
     },
     {
       "key": "copy-039",
@@ -245,48 +143,6 @@
       "label": "awards-and-service-listed-in-the-supplied-",
       "en": "Awards and service listed in the supplied CV.",
       "zh": "奖项与服务经历摘自所提供的简历。"
-    },
-    {
-      "key": "copy-042",
-      "label": "honorable-mention",
-      "en": "Honorable Mention",
-      "zh": "荣誉提名奖"
-    },
-    {
-      "key": "copy-043",
-      "label": "mathematical-contest-in-modeling-comap",
-      "en": "Mathematical Contest in Modeling · COMAP",
-      "zh": "美国大学生数学建模竞赛 · COMAP"
-    },
-    {
-      "key": "copy-044",
-      "label": "first-prize-merit-student-scholarship",
-      "en": "First Prize, Merit Student Scholarship",
-      "zh": "优秀学生一等奖学金"
-    },
-    {
-      "key": "copy-045",
-      "label": "first-prize-merit-student-scholarship",
-      "en": "First Prize, Merit Student Scholarship",
-      "zh": "优秀学生一等奖学金"
-    },
-    {
-      "key": "copy-046",
-      "label": "special-prize-freshman-scholarship",
-      "en": "Special Prize, Freshman Scholarship",
-      "zh": "新生奖学金特别奖"
-    },
-    {
-      "key": "copy-047",
-      "label": "volunteer-student-leadership",
-      "en": "Volunteer & student leadership",
-      "zh": "志愿服务与学生工作"
-    },
-    {
-      "key": "copy-048",
-      "label": "76-volunteer-service-hours-deputy-director",
-      "en": "76 volunteer service hours; Deputy Director, Innovation and Entrepreneurship Department, Shude College (2021–2022).",
-      "zh": "累计志愿服务 76 小时；曾任树德书院创新创业部副部长（2021–2022）。"
     },
     {
       "key": "copy-049",
@@ -311,6 +167,203 @@
       "label": "back-to-top",
       "en": "BACK TO TOP ↑",
       "zh": "返回顶部 ↑"
+    },
+    {
+      "key": "copy-053",
+      "label": "site-location",
+      "en": "SHENZHEN, CHINA",
+      "zh": "中国深圳"
+    },
+    {
+      "key": "copy-054",
+      "label": "art-field-label",
+      "en": "FIELD / 01<br>λ · MATERIAL · DEVICE",
+      "zh": "领域 / 01<br>波长 · 材料 · 器件"
+    },
+    {
+      "key": "copy-055",
+      "label": "art-coordinate",
+      "en": "22°35′N<br>114°01′E",
+      "zh": "22°35′N<br>114°01′E"
+    },
+    {
+      "key": "copy-056",
+      "label": "art-photonics-in-motion",
+      "en": "PHOTONICS<br>IN MOTION",
+      "zh": "光子学<br>动态之美"
+    },
+    {
+      "key": "copy-057",
+      "label": "contact-orb",
+      "en": "LET’S<br>CONNECT",
+      "zh": "欢迎<br>交流"
+    },
+    {
+      "key": "copy-058",
+      "label": "contact-eyebrow",
+      "en": "ONE GOOD CONVERSATION CAN OPEN A NEW DOOR.",
+      "zh": "一次交流，开启新的可能。"
+    }
+  ],
+  "site": {
+    "firstName": "Kexin",
+    "lastName": "Xiang",
+    "email": "chrisxiang13@gmail.com",
+    "pageTitle": "Kexin Xiang — Optoelectronics",
+    "pageDescription": "Kexin Xiang — optoelectronics, photonic devices, and experimental research.",
+    "schoolShort": "SUSTech",
+    "heroArtLabel": "Abstract photonic wave illustration"
+  },
+  "stats": [
+    {
+      "value": "3.90",
+      "suffix": "/4.00",
+      "labelEn": "CUMULATIVE GPA · CV",
+      "labelZh": "累计 GPA · 简历数据"
+    },
+    {
+      "value": "#1",
+      "suffix": "/37",
+      "labelEn": "MAJOR RANK · CV",
+      "labelZh": "专业排名 · 简历数据"
+    },
+    {
+      "value": "7.0",
+      "suffix": "",
+      "labelEn": "IELTS · CV",
+      "labelZh": "雅思 · 简历数据"
+    }
+  ],
+  "projects": [
+    {
+      "number": "01",
+      "titleEn": "Valley topological photonic crystal",
+      "titleZh": "谷拓扑光子晶体",
+      "supervisorEn": "Supervised by Prof. Zhen Gao",
+      "supervisorZh": "指导教师：高振教授",
+      "descriptionEn": "COMSOL simulation and experimental assistance. Built a foundation in solid-state physics and topological photonics, with hands-on simulation experience.",
+      "descriptionZh": "参与 COMSOL 仿真与实验辅助工作。学习固体物理与拓扑光子学基础，并积累光子晶体仿真实践经验。",
+      "tags": [
+        "COMSOL",
+        "PHOTONICS",
+        "SIMULATION"
+      ],
+      "glyph": "crystal",
+      "categoryEn": "PHOTONIC STRUCTURES",
+      "categoryZh": "光子结构"
+    },
+    {
+      "number": "02",
+      "titleEn": "QLED and pressure-sensor integration",
+      "titleZh": "QLED 与压力传感器集成",
+      "supervisorEn": "Supervised by Prof. Shuming Chen",
+      "supervisorZh": "指导教师：陈树明教授",
+      "descriptionEn": "Device fabrication and characterization. Learned QLED device structures and common optoelectronic fabrication and measurement methods.",
+      "descriptionZh": "参与器件制备与表征，学习 QLED 发光器件结构及常用光电器件制备、测试方法。",
+      "tags": [
+        "QLED",
+        "FABRICATION",
+        "CHARACTERIZATION"
+      ],
+      "glyph": "device",
+      "categoryEn": "OPTOELECTRONIC DEVICES",
+      "categoryZh": "光电器件"
+    },
+    {
+      "number": "03",
+      "titleEn": "Optics, photovoltaics & optical networks",
+      "titleZh": "光学设计、光伏与光网络",
+      "supervisorEn": "",
+      "supervisorZh": "",
+      "descriptionEn": "LED light-distribution simulation with MATLAB and TracePro; a review of aluminum-oxide passivation for crystalline silicon; and OptiSystem simulation of a bidirectional WDM-PON.",
+      "descriptionZh": "使用 MATLAB 与 TracePro 仿真 LED 光分布；综述氧化铝钝化单晶硅；使用 OptiSystem 仿真双向 WDM-PON。",
+      "tags": [
+        "MATLAB",
+        "TRACEPRO",
+        "OPTISYSTEM"
+      ],
+      "glyph": "lens",
+      "categoryEn": "COURSE PROJECTS",
+      "categoryZh": "课程项目"
+    }
+  ],
+  "education": {
+    "institution": "Southern University of Science and Technology",
+    "locationEn": "Shenzhen, China · 2020 — CV lists as present",
+    "locationZh": "中国深圳 · 2020 年入学 · 简历记载为在读",
+    "departmentEn": "Department of Electrical and Electronic Engineering",
+    "departmentZh": "电气与电子工程系",
+    "programEn": "Undergraduate studies in Optoelectronics",
+    "programZh": "光电信息科学与工程本科",
+    "sealEn": "SUSTech",
+    "sealZh": "南方科技大学"
+  },
+  "skills": [
+    {
+      "titleEn": "COMPUTING & SIMULATION",
+      "titleZh": "编程与仿真",
+      "lines": [
+        "MATLAB · Mathematica · Java",
+        "COMSOL · TracePro · OptiSystem",
+        "Silvaco · Dialux · Multisim"
+      ]
+    },
+    {
+      "titleEn": "DEVICE FABRICATION",
+      "titleZh": "器件制备",
+      "linesEn": [
+        "Spin coating · Thermal evaporation",
+        "Magnetron sputtering"
+      ],
+      "linesZh": [
+        "旋涂 · 热蒸发",
+        "磁控溅射"
+      ]
+    },
+    {
+      "titleEn": "ALSO",
+      "titleZh": "其他",
+      "lines": [
+        "Android Studio · English IELTS 7.0"
+      ]
+    }
+  ],
+  "honors": [
+    {
+      "year": "2023",
+      "titleEn": "Honorable Mention",
+      "titleZh": "荣誉提名奖",
+      "detailEn": "Mathematical Contest in Modeling · COMAP",
+      "detailZh": "美国大学生数学建模竞赛 · COMAP"
+    },
+    {
+      "year": "2022",
+      "titleEn": "First Prize, Merit Student Scholarship",
+      "titleZh": "优秀学生一等奖学金",
+      "detailEn": "SUSTech",
+      "detailZh": "南方科技大学"
+    },
+    {
+      "year": "2021",
+      "titleEn": "First Prize, Merit Student Scholarship",
+      "titleZh": "优秀学生一等奖学金",
+      "detailEn": "SUSTech",
+      "detailZh": "南方科技大学"
+    },
+    {
+      "year": "2020",
+      "titleEn": "Special Prize, Freshman Scholarship",
+      "titleZh": "新生奖学金特别奖",
+      "detailEn": "SUSTech",
+      "detailZh": "南方科技大学"
+    },
+    {
+      "year": "2020—",
+      "titleEn": "Volunteer & student leadership",
+      "titleZh": "志愿服务与学生工作",
+      "detailEn": "76 volunteer service hours; Deputy Director, Innovation and Entrepreneurship Department, Shude College (2021–2022).",
+      "detailZh": "累计志愿服务 76 小时；曾任树德书院创新创业部副部长（2021–2022）。",
+      "wide": true
     }
   ]
 }

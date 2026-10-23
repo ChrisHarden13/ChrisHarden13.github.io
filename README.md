@@ -1,6 +1,6 @@
 # Kexin Xiang — personal website
 
-A responsive, bilingual (English / Chinese) static portfolio built from the supplied CV. No build step or framework is required. Website text lives in `data/content.json`, separate from the page design.
+A responsive, bilingual (English / Chinese) static portfolio built from the supplied CV. No build step or framework is required. Website content lives in `data/content.json`, separate from the page design.
 
 ## Preview
 
@@ -18,9 +18,9 @@ GitHub Pages publishes static HTML, CSS, and JavaScript from a repository. See t
 
 1. Sign in to [Pages CMS](https://app.pagescms.org/) with the GitHub account that owns the repository.
 2. Install its GitHub App for this repository, then open the repository in Pages CMS.
-3. Choose **Website copy** to edit English and Chinese text. Save the changes; they are committed to GitHub and GitHub Pages republishes the site.
+3. Choose **Website content** to edit the profile, contact email, academic figures, projects, education, skills, honors, and bilingual page text. Project, skill, and honor lists can be added, removed, or reordered. Save the changes; they are committed to GitHub and GitHub Pages republishes the site.
 
-The editor configuration is in `.pages.yml`. Each text entry has an internal key connecting it to the page; leave that key unchanged. Follow the [Pages CMS quick start](https://pagescms.org/docs/quick-start/) to connect the repository.
+The editor configuration is in `.pages.yml`. In **Other page text and labels**, each item has an internal key connecting it to the page; leave that key unchanged. Visual design, layout, colors, and typography remain in `style.css` and `index.html`. Follow the [Pages CMS quick start](https://pagescms.org/docs/quick-start/) to connect the repository.
 
 ## Before publishing
 

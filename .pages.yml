@@ -1,12 +1,188 @@
 content:
-  - name: translations
-    label: Website copy
+  - name: website
+    label: Website content
     type: file
     path: data/content.json
     format: json
     fields:
+      - name: site
+        label: Profile and site settings
+        type: object
+        fields:
+          - name: firstName
+            label: First name
+            type: string
+          - name: lastName
+            label: Last name
+            type: string
+          - name: email
+            label: Contact email
+            type: string
+          - name: pageTitle
+            label: Browser tab title
+            type: string
+          - name: pageDescription
+            label: Search description
+            type: text
+          - name: schoolShort
+            label: Short university name
+            type: string
+          - name: locationEn
+            label: Location in English
+            type: string
+          - name: locationZh
+            label: Location in Chinese
+            type: string
+          - name: heroArtLabel
+            label: Illustration description for accessibility
+            type: string
+      - name: stats
+        label: Academic figures
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{labelEn}"
+        fields:
+          - name: value
+            label: Value
+            type: string
+          - name: suffix
+            label: After-value text
+            type: string
+          - name: labelEn
+            label: Label in English
+            type: string
+          - name: labelZh
+            label: Label in Chinese
+            type: string
+      - name: projects
+        label: Projects
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{titleEn}"
+        fields:
+          - name: number
+            label: Number
+            type: string
+          - name: categoryEn
+            label: Category in English
+            type: string
+          - name: categoryZh
+            label: Category in Chinese
+            type: string
+          - name: titleEn
+            label: Title in English
+            type: string
+          - name: titleZh
+            label: Title in Chinese
+            type: string
+          - name: supervisorEn
+            label: Supervisor in English
+            type: string
+          - name: supervisorZh
+            label: Supervisor in Chinese
+            type: string
+          - name: descriptionEn
+            label: Description in English
+            type: text
+          - name: descriptionZh
+            label: Description in Chinese
+            type: text
+          - name: tags
+            label: Tags
+            type: string
+            list: true
+          - name: glyph
+            label: Illustration style (crystal, device, or lens)
+            type: string
+      - name: education
+        label: Education
+        type: object
+        fields:
+          - name: institution
+            label: Institution name
+            type: string
+          - name: locationEn
+            label: Location and dates in English
+            type: string
+          - name: locationZh
+            label: Location and dates in Chinese
+            type: string
+          - name: departmentEn
+            label: Department in English
+            type: string
+          - name: departmentZh
+            label: Department in Chinese
+            type: string
+          - name: programEn
+            label: Program in English
+            type: string
+          - name: programZh
+            label: Program in Chinese
+            type: string
+          - name: sealEn
+            label: Short name in English
+            type: string
+          - name: sealZh
+            label: Short name in Chinese
+            type: string
+      - name: skills
+        label: Skills and tools
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{titleEn}"
+        fields:
+          - name: titleEn
+            label: Group title in English
+            type: string
+          - name: titleZh
+            label: Group title in Chinese
+            type: string
+          - name: lines
+            label: Items (same in both languages)
+            type: string
+            list: true
+          - name: linesEn
+            label: Items in English
+            type: string
+            list: true
+          - name: linesZh
+            label: Items in Chinese
+            type: string
+            list: true
+      - name: honors
+        label: Honors and activities
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{year} · {titleEn}"
+        fields:
+          - name: year
+            label: Year
+            type: string
+          - name: titleEn
+            label: Title in English
+            type: string
+          - name: titleZh
+            label: Title in Chinese
+            type: string
+          - name: detailEn
+            label: Description in English
+            type: text
+          - name: detailZh
+            label: Description in Chinese
+            type: text
+          - name: wide
+            label: Use full-width card
+            type: boolean
       - name: translations
-        label: Text in English and Chinese
+        label: Other page text and labels
         type: object
         list:
           collapsible:
