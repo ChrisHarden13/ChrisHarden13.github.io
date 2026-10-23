@@ -537,6 +537,8 @@ p, li, blockquote { text-align: justify; text-justify: inter-word; }
 }
 .school-field-content { min-width: 0; }
 .school-field-content > strong { margin-right: 5px; color: var(--ink); font-weight: 650; }
+.school-field-supervisor .school-supervisor { display: inline; }
+.school-field-supervisor .school-supervisor p { display: inline; margin: 0; }
 .school-description { display: block; margin: 0; color: var(--muted); }
 .school-description p { margin: 0; }
 @media (max-width: 760px) {
