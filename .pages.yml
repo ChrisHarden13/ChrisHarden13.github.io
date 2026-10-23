@@ -227,16 +227,16 @@ content:
                     list: {collapsible: {collapsed: true, summary: "{fields.schoolEn} / {fields.schoolZh}"}}
                     fields:
                       - name: type
-                        label: Education entry type
+                        label: School type (high school / university)
                         type: select
                         options:
-                          values: [university, degree, course, other]
+                          values: [high-school, university]
+                      - {name: degreeEn, label: Degree (English), type: string}
+                      - {name: degreeZh, label: Degree (Chinese), type: string}
                       - {name: schoolEn, label: School (English), type: string}
                       - {name: schoolZh, label: School (Chinese), type: string}
                       - {name: departmentEn, label: Department (English), type: string}
                       - {name: departmentZh, label: Department (Chinese), type: string}
-                      - {name: degreeEn, label: Degree or role (English), type: string}
-                      - {name: degreeZh, label: Degree or role (Chinese), type: string}
                       - {name: dates, label: Dates, type: string}
                       - {name: bodyEn, label: Description (English), type: rich-text, options: {format: markdown, switcher: false, media: site_images, path: content}}
                       - {name: bodyZh, label: Description (Chinese), type: rich-text, options: {format: markdown, switcher: false, media: site_images, path: content}}
