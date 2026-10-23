@@ -160,15 +160,6 @@ function makeSection(section, index) {
   const root = document.createElement('section');
   root.className = `section dynamic-section dynamic-${section.type}`;
   root.id = slug(header.sectionLabelEn || header.sectionLabelZh, index);
-  const kicker = document.createElement('div');
-  kicker.className = 'section-kicker';
-  const number = document.createElement('span');
-  number.textContent = String(index + 1).padStart(2, '0');
-  const label = document.createElement('span');
-  label.textContent = localized(header, 'sectionLabel');
-  kicker.append(number, label);
-  root.append(kicker);
-
   if (section.type === 'text') {
     const layout = document.createElement('div');
     layout.className = 'module-text-layout';
@@ -197,7 +188,7 @@ function makeSection(section, index) {
       row.className = `education-row${item.type ? ` education-row-${item.type}` : ''}`;
       const icon = document.createElement('div');
       icon.className = 'school-icon';
-      if (item.logo) addImage(icon, item.logo, item.schoolEn ?? '', 'school-logo');
+      if (item.logoUrl || item.logo) addImage(icon, item.logoUrl || item.logo, item.schoolEn ?? '', 'school-logo');
       else icon.append(svgIcon('school'));
       const details = document.createElement('div');
       details.className = 'school-details';
@@ -371,7 +362,7 @@ function render() {
   document.querySelector('#last-name').textContent = site.lastName ?? '';
   document.querySelector('#site-mark').textContent = (site.monogram || site.firstName || 'K').slice(0, 1).toUpperCase();
   document.querySelector('.topbar').hidden = site.showHeader === false;
-  document.querySelector('.hero').hidden = site.showHero === false;
+  document.querySelector('.hero').hidden = site.showHero === false || activePage !== 'profile';
   document.querySelector('footer').hidden = site.showFooter === false;
   document.querySelector('#hero-kicker').textContent = language === 'en' ? (site.heroKickerEn ?? '') : (site.heroKickerZh ?? '');
   document.querySelector('#back-top').textContent = language === 'en' ? (site.backTopEn ?? '') : (site.backTopZh ?? '');
