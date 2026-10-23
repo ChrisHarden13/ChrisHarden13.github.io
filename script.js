@@ -161,14 +161,22 @@ function makeSection(section, index) {
   root.className = `section dynamic-section dynamic-${section.type}`;
   root.id = slug(header.sectionLabelEn || header.sectionLabelZh, index);
   if (section.type === 'text') {
+    const sectionTitle = `${header.titleEn ?? ''} ${header.titleZh ?? ''} ${header.sectionLabelEn ?? ''} ${header.sectionLabelZh ?? ''}`.toLowerCase();
+    const isAboutMe = (section.page || 'profile') === 'profile'
+      && (section.layout === 'full' || /about\s*me|关于我/.test(sectionTitle));
+    if (isAboutMe) root.classList.add('dynamic-about-me');
     const layout = document.createElement('div');
     layout.className = 'module-text-layout';
     const main = document.createElement('div');
     main.className = 'module-text-main';
     addHeading(header, main);
     addRich(main, 'module-body rich-description', localized(section, 'body'));
-    layout.append(main);
-    const image = addImage(layout, section.image, section.imageAlt, 'module-image');
+    const imageSource = isAboutMe ? (section.image || site.avatar) : section.image;
+    const image = addImage(layout, imageSource, section.imageAlt || (isAboutMe ? site.avatarAlt : ''), 'module-image');
+    if (isAboutMe && image) {
+      layout.prepend(image);
+      layout.append(main);
+    } else layout.prepend(main);
     if (section.layout === 'full' || !image) layout.classList.add('module-text-layout-full');
     root.append(layout);
     return root;
