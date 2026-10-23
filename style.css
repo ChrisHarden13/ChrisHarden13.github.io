@@ -612,3 +612,42 @@ p, li, blockquote { text-align: justify; text-justify: inter-word; }
 @media (max-width: 560px) {
   .publication-entry { grid-template-columns: 28px minmax(0, 1fr); gap: 12px; }
 }
+
+
+/* Enlarge school logos and education text while keeping each entry centered. */
+.education-row {
+  grid-template-columns: clamp(250px, 24vw, 300px) minmax(0, min(580px, 58vw));
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+  gap: clamp(28px, 3vw, 40px);
+}
+.school-icon {
+  width: clamp(250px, 24vw, 300px);
+  height: clamp(250px, 24vw, 300px);
+}
+.school-details h3 { font-size: 28px; }
+.school-field { font-size: 18px; }
+.school-description { font-size: 18px; }
+@media (max-width: 760px) {
+  .education-row {
+    grid-template-columns: min(190px, 30vw) minmax(0, 1fr);
+    width: min(100%, 680px);
+    gap: 22px;
+  }
+  .school-icon { width: min(190px, 30vw); height: min(190px, 30vw); }
+  .school-details h3 { font-size: 25px; }
+  .school-field { font-size: 17px; }
+  .school-description { font-size: 17px; }
+}
+@media (max-width: 560px) {
+  .education-row {
+    grid-template-columns: min(132px, 34vw) minmax(0, 1fr);
+    width: 100%;
+    gap: 15px;
+  }
+  .school-icon { width: min(132px, 34vw); height: min(132px, 34vw); }
+  .school-details h3 { font-size: 22px; }
+  .school-field { font-size: 16px; }
+  .school-description { font-size: 16px; }
+}
