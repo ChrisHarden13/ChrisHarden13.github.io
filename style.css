@@ -581,3 +581,7 @@ p, li, blockquote { text-align: justify; text-justify: inter-word; }
   }
   .school-icon { width: min(116px, 30vw); height: min(116px, 30vw); }
 }
+
+
+/* Keep profile email and contact details at the requested size on every screen. */
+.profile-contact { font-size: 17px; }
