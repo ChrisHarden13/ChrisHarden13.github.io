@@ -680,3 +680,8 @@ p, li, blockquote { text-align: justify; text-justify: inter-word; }
 /* Slightly enlarge the email icon and center it against the text. */
 #profile-email { align-items: center; }
 #profile-email svg { flex-basis: 18px; width: 18px; height: 18px; }
+
+
+/* About Me body text and its rich-text paragraphs use 18px. */
+.dynamic-about-me .module-body,
+.dynamic-about-me .module-body p { font-size: 18px; }
