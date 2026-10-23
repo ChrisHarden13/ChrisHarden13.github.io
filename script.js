@@ -3,6 +3,7 @@ let language = 'en';
 let site = {};
 let theme = {};
 let sections = [];
+let navigation = [];
 let activePage = 'profile';
 
 function safePublicUrl(value) {
@@ -306,7 +307,7 @@ function makeSection(section, index) {
 function renderNavigation() {
   const nav = document.querySelector('#module-nav');
   nav.replaceChildren();
-  (site.navigation ?? []).forEach((item) => {
+  navigation.forEach((item) => {
     const label = language === 'zh' ? (item.labelZh || item.labelEn) : item.labelEn;
     if (!item.key || !label) return;
     const link = document.createElement('a');
@@ -407,14 +408,16 @@ function render() {
 Promise.all([
   fetch('data/site.json', {cache: 'no-cache'}).then((response) => { if (!response.ok) throw new Error('Could not load profile'); return response.json(); }),
   fetch('data/style.json', {cache: 'no-cache'}).then((response) => { if (!response.ok) throw new Error('Could not load appearance settings'); return response.json(); }),
-  fetch('data/modules.json', {cache: 'no-cache'}).then((response) => { if (!response.ok) throw new Error('Could not load modules'); return response.json(); })
-]).then(([profile, appearance, page]) => {
+  fetch('data/modules.json', {cache: 'no-cache'}).then((response) => { if (!response.ok) throw new Error('Could not load modules'); return response.json(); }),
+  fetch('data/navigation.json', {cache: 'no-cache'}).then((response) => { if (!response.ok) throw new Error('Could not load navigation'); return response.json(); })
+]).then(([profile, appearance, page, nav]) => {
   site = profile;
   theme = appearance;
   sections = Array.isArray(page.sections) ? page.sections : [];
+  navigation = Array.isArray(nav.items) ? nav.items : [];
   const requested = new URLSearchParams(window.location.search).get('page');
-  const allowed = new Set((site.navigation ?? []).map((item) => item.key));
-  activePage = allowed.has(requested) ? requested : (site.navigation?.[0]?.key || 'profile');
+  const allowed = new Set(navigation.map((item) => item.key));
+  activePage = allowed.has(requested) ? requested : (navigation[0]?.key || 'profile');
   render();
 }).catch((error) => console.error(error));
 
