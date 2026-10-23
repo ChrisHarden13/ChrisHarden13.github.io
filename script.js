@@ -42,7 +42,8 @@ function renderSite() {
   document.querySelector('[data-site="schoolShort"]').textContent = site.schoolShort;
   document.querySelector('#profile-monogram').textContent = `${site.firstName.slice(0, 1)}${site.lastName.slice(0, 1)}`.toUpperCase();
   document.querySelectorAll('[data-site-mail]').forEach((element) => {
-    element.href = `mailto:${site.email}`;
+    if (site.email) element.href = `mailto:${site.email}`;
+    else element.hidden = true;
   });
   document.querySelector('[data-site="email"]').textContent = site.email;
   renderProfiles();
@@ -106,7 +107,15 @@ function renderProjects() {
     number.append(document.createTextNode(` ${language === 'en' ? project.categoryEn : project.categoryZh}`));
     const main = document.createElement('div');
     main.className = 'project-main';
-    addText(main, 'h3', '', language === 'en' ? project.titleEn : project.titleZh);
+    const title = addText(main, 'h3', '', language === 'en' ? project.titleEn : project.titleZh);
+    if (project.url) {
+      const link = document.createElement('a');
+      link.href = project.url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.textContent = title.textContent;
+      title.replaceChildren(link);
+    }
     const supervisor = language === 'en' ? project.supervisorEn : project.supervisorZh;
     if (supervisor) addText(main, 'p', 'supervisor', supervisor);
     addText(main, 'p', '', language === 'en' ? project.descriptionEn : project.descriptionZh);
@@ -152,7 +161,15 @@ function renderHonors() {
     if (honor.wide) article.classList.add('honor-wide');
     addText(article, 'span', 'honor-year', honor.year);
     const description = document.createElement('div');
-    addText(description, 'h3', '', language === 'en' ? honor.titleEn : honor.titleZh);
+    const title = addText(description, 'h3', '', language === 'en' ? honor.titleEn : honor.titleZh);
+    if (honor.url) {
+      const link = document.createElement('a');
+      link.href = honor.url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.textContent = title.textContent;
+      title.replaceChildren(link);
+    }
     addText(description, 'p', '', language === 'en' ? honor.detailEn : honor.detailZh);
     article.append(description);
     addText(article, 'span', 'honor-arrow', '↗');
