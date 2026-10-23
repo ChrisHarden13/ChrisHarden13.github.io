@@ -167,6 +167,7 @@ content:
                           values: [news, project, scholarship, honor, life, custom]
                       - {name: titleEn, label: Item name (English), type: string}
                       - {name: titleZh, label: Item name (Chinese), type: string}
+                      - {name: date, label: Date, type: string}
                       - {name: subtitleEn, label: Short detail (English), type: string}
                       - {name: subtitleZh, label: Short detail (Chinese), type: string}
                       - name: bodyEn
