@@ -168,7 +168,8 @@ function makeSection(section, index) {
     addHeading(header, main);
     addRich(main, 'module-body rich-description', localized(section, 'body'));
     layout.append(main);
-    addImage(layout, section.image, section.imageAlt, 'module-image');
+    const image = addImage(layout, section.image, section.imageAlt, 'module-image');
+    if (!image) layout.classList.add('module-text-layout-full');
     root.append(layout);
     return root;
   }
@@ -277,6 +278,13 @@ function makeSection(section, index) {
       const h = document.createElement('h3');
       h.textContent = localized(data, 'title') || data.title || '';
       card.append(h);
+      if (data.date) {
+        const date = document.createElement('time');
+        date.className = 'custom-card-date';
+        date.textContent = data.date;
+        if (/^\d{4}-\d{2}-\d{2}$/.test(data.date)) date.dateTime = data.date;
+        card.append(date);
+      }
       const subtitle = localized(data, 'subtitle') || data.subtitle || '';
       if (subtitle) addRich(card, 'custom-card-subtitle', subtitle);
       addRich(card, 'module-body rich-description', localized(data, 'body'));
