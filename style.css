@@ -397,6 +397,9 @@ p, li, blockquote { text-align: justify; text-justify: inter-word; }
 .profile-contact { font-size: 14px; }
 .module-text-layout-full { grid-template-columns: minmax(0, 1fr); }
 .module-text-layout-full .module-text-main { width: 100%; max-width: none; }
+/* Keep text-only modules full width even when an older cached script is loaded. */
+.module-text-layout:not(:has(> .module-image)) { grid-template-columns: minmax(0, 1fr); }
+.module-text-layout:not(:has(> .module-image)) .module-text-main { width: 100%; max-width: none; }
 @media (max-width: 760px) {
   .topbar nav a { font-size: 14px; }
   .profile-contact { font-size: 14px; }
