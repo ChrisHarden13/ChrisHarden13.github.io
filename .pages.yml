@@ -53,25 +53,6 @@ content:
           - {name: phone, label: Phone number, type: string}
           - {name: heroKickerEn, label: Short profile label (English), type: string}
           - {name: heroKickerZh, label: Short profile label (Chinese), type: string}
-          - name: navigation
-            label: Main page names and order
-            type: object
-            list:
-              collapsible: {collapsed: true, summary: "{fields.labelEn} / {fields.labelZh}"}
-            fields:
-              - name: key
-                label: Page
-                type: select
-                options:
-                  values:
-                    - {name: profile, label: Profile}
-                    - {name: education, label: Education}
-                    - {name: research, label: Research}
-                    - {name: publication, label: Publication}
-                    - {name: honor, label: Honor}
-                    - {name: life, label: Life}
-              - {name: labelEn, label: Navigation name (English), type: string}
-              - {name: labelZh, label: Navigation name (Chinese), type: string}
           - {name: languageSwitchEn, label: Language switch text (English page), type: string}
           - {name: languageSwitchZh, label: Language switch text (Chinese page), type: string}
           - {name: showHeader, label: Show navigation bar, type: boolean}
@@ -85,6 +66,24 @@ content:
             label: Footer text (Chinese)
             type: rich-text
             options: {format: markdown, switcher: false, media: site_images, path: content}
+      - name: navigation
+        label: Main page navigation (names and order)
+        type: file
+        path: data/navigation.json
+        format: json
+        fields:
+          - name: items
+            label: Main pages
+            type: object
+            list:
+              collapsible: {collapsed: true, summary: "{fields.labelEn} / {fields.labelZh}"}
+            fields:
+              - name: key
+                label: Page destination
+                type: select
+                options: {values: [profile, education, research, publication, honor, life]}
+              - {name: labelEn, label: Navigation name (English), type: string}
+              - {name: labelZh, label: Navigation name (Chinese), type: string}
       - name: appearance
         label: Global appearance
         type: file
