@@ -675,3 +675,8 @@ p, li, blockquote { text-align: justify; text-justify: inter-word; }
 .publication-entry .project-venue,
 .publication-entry .project-authors p,
 .publication-entry .project-venue p { font-size: 18px; }
+
+
+/* Slightly enlarge the email icon and center it against the text. */
+#profile-email { align-items: center; }
+#profile-email svg { flex-basis: 18px; width: 18px; height: 18px; }
