@@ -7,12 +7,12 @@
   "colorBorder": "#e3e7e8",
   "colorBackground": "#ffffff",
   "colorSoft": "#f3f6f7",
-  "bodyFontSize": 16,
+  "bodyFontSize": 17,
   "bodyLineHeight": 1.75,
   "headingScale": 1,
-  "contentWidth": 1160,
-  "pageGutter": 42,
-  "sectionSpacing": 55,
+  "contentWidth": 1020,
+  "pageGutter": 34,
+  "sectionSpacing": 38,
   "cardRadius": 4,
   "columnGap": 48,
   "avatarSize": 154,
@@ -21,4 +21,3 @@
   "profileColumns": 2,
   "textLineLimit": 10
 }
-
