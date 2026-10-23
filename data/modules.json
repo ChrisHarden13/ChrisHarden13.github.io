@@ -83,13 +83,12 @@
       "items": [
         {
           "type": "university",
-          "degreeEn": "Doctor of Philosophy (Ph.D) student",
+          "degreeEn": "Doctor of Philosophy (Ph.D) Student",
           "degreeZh": "博士生",
           "schoolEn": "The Hong Kong Polytechnic University (PolyU)",
           "schoolZh": "香港理工大学",
           "departmentEn": "Physics and Materials (PM)",
           "departmentZh": "物理与材料系",
-          "departmentUrl": "https://www.polyu.edu.hk/pm/",
           "dates": "Sept. 2024 – Present",
           "url": "https://www.polyu.edu.hk/",
           "logoUrl": "https://www.polyu.edu.hk/-/media/department/home/content/about-polyu/university-identity/logo_1200x672_with-bg.jpg?bc=ffffff&h=336&hash=E881BF93D3E13ABEDC8E1A528EE58767&rev=e7968d84f1884c2893c72cac91815018&w=600"
@@ -102,7 +101,6 @@
           "schoolZh": "南方科技大学",
           "departmentEn": "Electrical and Electronic Engineering (EEE)",
           "departmentZh": "电气与电子工程系",
-          "departmentUrl": "https://eee.sustech.edu.cn/",
           "dates": "Sept. 2020 - Jul. 2024",
           "url": "https://www.sustech.edu.cn/",
           "logoUrl": "https://sustech.edu.cn/uploads/logo1.png"
