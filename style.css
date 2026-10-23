@@ -97,7 +97,11 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outlin
 .profile-photo { position: absolute; inset: 0; width: 100%; height: 100%; border-radius: inherit; object-fit: cover; }
 .profile-initials[hidden], .profile-photo[hidden] { display: none; }
 .profile-affiliation { margin: 20px 0 7px; color: var(--muted); font-size: 12px; line-height: 1.6; }
-.profile-email { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; overflow-wrap: anywhere; }
+.profile-contacts { display: grid; gap: 9px; margin-top: 17px; }
+.profile-contact { display: inline-flex; align-items: center; gap: 9px; width: fit-content; max-width: 100%; color: var(--muted); font-size: 12px; overflow-wrap: anywhere; transition: color .2s ease; }
+.profile-contact:hover { color: var(--accent); }
+.profile-contact svg { flex: 0 0 15px; width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.profile-contact[hidden] { display: none; }
 .social-links { display: flex; flex-wrap: wrap; gap: 5px 15px; margin-top: 14px; }
 .social-links a { font-size: 12px; }
 .eyebrow, .section-kicker, .card-label, .project-number, .skill-group > span {
@@ -115,7 +119,7 @@ h1, .intro h2, .section-heading h2, .education h2, .contact h2 {
   font-family: var(--serif);
   font-weight: 400;
 }
-h1 { margin: 0 0 20px; font-size: clamp(var(--h1-min, 48px), var(--h1-fluid, 6.2vw), var(--h1-max, 68px)); line-height: 1.02; letter-spacing: -2.8px; }
+h1 { display: flex; flex-wrap: nowrap; align-items: baseline; gap: .18em; margin: 0 0 20px; font-size: clamp(var(--h1-min, 48px), var(--h1-fluid, 6.2vw), var(--h1-max, 68px)); line-height: 1.02; letter-spacing: -2.8px; white-space: nowrap; }
 h1 em { color: var(--accent); font-style: normal; }
 .hero-role { max-width: 610px; margin: 0 0 14px; font: 22px/1.45 var(--serif); }
 .hero-note { max-width: 650px; margin: 0; color: var(--muted); font-size: 14px; }
@@ -262,10 +266,11 @@ footer .wordmark-name { color: var(--muted); }
   .profile-card { display: grid; grid-template-columns: 76px 1fr; column-gap: 16px; align-items: center; }
   .profile-monogram { grid-row: 1 / span 3; width: min(var(--avatar-size), 76px); height: min(var(--avatar-size), 76px); font-size: 29px; letter-spacing: -2px; }
   .profile-affiliation { margin: 0 0 2px; }
-  .profile-email { font-size: 11px; }
+  .profile-contacts { gap: 7px; margin-top: 10px; }
+  .profile-contact { font-size: 11px; }
   .social-links { gap: 4px 11px; margin-top: 4px; }
   .social-links a { font-size: 11px; }
-  h1 { font-size: var(--mobile-h1-size, 55px); }
+  h1 { font-size: clamp(35px, 11vw, var(--mobile-h1-size, 55px)); letter-spacing: -.06em; }
   .hero-role { font-size: 19px; }
   .hero-actions { gap: 16px; flex-wrap: wrap; }
   .section { padding: 42px 0 46px; }
@@ -297,4 +302,3 @@ footer .wordmark-name { color: var(--muted); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
-
