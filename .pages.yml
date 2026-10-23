@@ -239,6 +239,8 @@ content:
                       - {name: departmentZh, label: Department (Chinese), type: string}
                       - {name: departmentUrl, label: Department URL, type: string}
                       - {name: dates, label: Dates, type: string}
+                      - {name: supervisorEn, label: Supervisor (English), type: rich-text, options: {format: markdown, switcher: false, media: site_images, path: content}}
+                      - {name: supervisorZh, label: Supervisor (Chinese), type: rich-text, options: {format: markdown, switcher: false, media: site_images, path: content}}
                       - {name: bodyEn, label: Description (English), type: rich-text, options: {format: markdown, switcher: false, media: site_images, path: content}}
                       - {name: bodyZh, label: Description (Chinese), type: rich-text, options: {format: markdown, switcher: false, media: site_images, path: content}}
                       - {name: url, label: School website URL, type: string}
