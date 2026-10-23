@@ -340,7 +340,9 @@ h1 em { color: var(--ink); font-style: normal; }
 .topbar nav a { font-size: 15px; }
 .profile-contact { font-size: 14px; }
 .module-text-layout-full { grid-template-columns: minmax(0, 1fr); }
-.module-text-layout-full .module-text-main { width: 100%; max-width: none; }
+.module-text-layout-full .module-text-main,
+.module-text-layout-full .module-body { width: 100%; max-width: none; }
+.module-text-layout-full .module-body { text-align: justify; text-justify: inter-word; }
 .custom-card-date { display: block; margin-top: 7px; color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
 .custom-card-date + .custom-card-subtitle { margin-top: 4px; }
 
