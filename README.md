@@ -1,30 +1,26 @@
 # Kexin Xiang — personal website
 
-A responsive, bilingual (English / Chinese) static portfolio built from the supplied CV. No build step or framework is required. Website content lives in `data/content.json`, separate from the page design.
+A responsive bilingual website published with GitHub Pages. Content and many visual settings can be edited through Pages CMS; uploaded images are stored in this repository.
 
-## Preview
+## Edit the website
 
-Serve this folder with any static file server. Because the page loads `data/content.json`, opening `index.html` directly as a local file may block the content request in some browsers.
+1. Sign in to [Pages CMS](https://app.pagescms.org/) with the GitHub account that has access to `ChrisHarden13/Portfolio`.
+2. Open the `Portfolio` repository and choose **Website content**.
+3. Edit profile information, English and Chinese text, publication and profile cards, links, and list items. List entries can be added, removed, and reordered.
+4. In **Typography, colors, spacing, and layout**, adjust font families, hex colors, font size, line spacing, heading scale, page width, side padding, section spacing, card corners, columns, and visible text line limits.
+5. In **Show or hide page modules**, turn page sections on or off.
+6. In **Profile and site settings → Profile photo**, upload or select your picture. It appears in the circular area on the left. You can also change its description, circle size, and roundness.
+7. Save your changes. Pages CMS commits them to GitHub, and GitHub Pages republishes the site.
 
-## Publish publicly with GitHub Pages
+Rich-text fields support formatted text, hyperlinks, and inline image uploads. Publication, affiliation, and profile cards also have dedicated link and image fields. Colors are entered as six-digit hex values (for example, `#2f698a`). Images uploaded through the CMS are kept under `assets/` in the repository.
 
-1. Create a GitHub repository for this site and upload the **contents** of this folder to its root (including `.pages.yml` and `data/content.json`).
-2. In the repository, open **Settings → Pages** and choose **Deploy from a branch**, then select the `main` branch and `/ (root)`.
-3. GitHub will show the public website address in the Pages settings after publishing.
+## Preview locally
 
-GitHub Pages publishes static HTML, CSS, and JavaScript from a repository. See the [GitHub Pages setup guide](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site). The site uses Google Fonts when a network connection is available and falls back to local system fonts otherwise.
+Serve this folder with any static file server. Opening `index.html` directly may prevent the browser from loading `data/content.json`.
 
-## Edit the website without editing code
+## Site files
 
-1. Sign in to [Pages CMS](https://app.pagescms.org/) with the GitHub account that owns the repository.
-2. Install its GitHub App for this repository, then open the repository in Pages CMS.
-3. Choose **Website content** to edit the profile, contact email, academic figures, projects, education, skills, honors, academic links, and bilingual page text. Project, skill, honor, and link lists can be added, removed, or reordered. Save the changes; they are committed to GitHub and GitHub Pages republishes the site.
-
-The editor configuration is in `.pages.yml`. In **Other page text and labels**, each item has an internal key connecting it to the page; leave that key unchanged. Visual design, layout, colors, and typography remain in `style.css` and `index.html`. Follow the [Pages CMS quick start](https://pagescms.org/docs/quick-start/) to connect the repository.
-
-## Before publishing
-
-- Confirm the GPA, major ranking, IELTS score, award dates, and contact email are still appropriate to share.
-- The education line is explicitly marked as recorded in the supplied CV; update it if your current status has changed.
-- The phone number and street address from the CV were left off the public page.
+- `.pages.yml` defines the Pages CMS editor fields and image storage.
+- `data/content.json` contains editable page content and design settings.
+- `style.css` and `script.js` render the theme and content.
 

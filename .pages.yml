@@ -1,3 +1,12 @@
+media:
+  - name: site_images
+    label: Website images
+    input: assets
+    output: /Portfolio/assets
+    extensions: [jpg, jpeg, png, webp, gif, svg]
+    categories: [image]
+    rename: safe
+
 content:
   - name: website
     label: Website content
@@ -33,12 +42,107 @@ content:
           - name: profileLocationZh
             label: Profile card location / affiliation in Chinese
             type: string
+          - name: avatar
+            label: Profile photo (upload or choose an image)
+            type: image
+            options:
+              media: site_images
+              path: profiles
+              extensions: [jpg, jpeg, png, webp]
+          - name: avatarAlt
+            label: Profile photo description
+            type: string
+          - name: nameUrl
+            label: Name link (optional)
+            type: string
+          - name: monogram
+            label: Initials shown when no photo is uploaded
+            type: string
+      - name: style
+        label: Typography, colors, spacing, and layout
+        type: object
+        fields:
+          - name: fontBody
+            label: Body font CSS family
+            type: string
+          - name: fontHeading
+            label: Heading font CSS family
+            type: string
+          - name: colorText
+            label: Main text color (hex)
+            type: string
+            pattern: "^#[0-9a-fA-F]{6}$"
+          - name: colorMuted
+            label: Secondary text color (hex)
+            type: string
+            pattern: "^#[0-9a-fA-F]{6}$"
+          - name: colorAccent
+            label: Accent and link color (hex)
+            type: string
+            pattern: "^#[0-9a-fA-F]{6}$"
+          - name: colorBorder
+            label: Border color (hex)
+            type: string
+            pattern: "^#[0-9a-fA-F]{6}$"
+          - name: colorBackground
+            label: Page background color (hex)
+            type: string
+            pattern: "^#[0-9a-fA-F]{6}$"
+          - name: colorSoft
+            label: Soft panel color (hex)
+            type: string
+            pattern: "^#[0-9a-fA-F]{6}$"
+          - name: bodyFontSize
+            label: Base font size (px)
+            type: number
+          - name: bodyLineHeight
+            label: Body line spacing
+            type: number
+          - name: headingScale
+            label: Heading size scale
+            type: number
+          - name: contentWidth
+            label: Maximum page width (px)
+            type: number
+          - name: pageGutter
+            label: Side padding (px)
+            type: number
+          - name: sectionSpacing
+            label: Section vertical spacing (px)
+            type: number
+          - name: cardRadius
+            label: Card corner radius (px)
+            type: number
+          - name: columnGap
+            label: Column spacing (px)
+            type: number
+          - name: avatarSize
+            label: Circular portrait size (px)
+            type: number
+          - name: avatarRadius
+            label: Portrait roundness (percent)
+            type: number
+          - name: projectColumns
+            label: Publication card columns
+            type: number
+          - name: profileColumns
+            label: Profile card columns
+            type: number
+          - name: textLineLimit
+            label: Visible text line limit
+            type: number
       - name: modules
         label: Show or hide page modules
         type: object
         fields:
+          - name: header
+            label: Header and navigation
+            type: boolean
           - name: hero
             label: Hero introduction
+            type: boolean
+          - name: heroProfileCard
+            label: Profile card and circular photo
             type: boolean
           - name: about
             label: About section
@@ -53,7 +157,7 @@ content:
             label: Affiliation section
             type: boolean
           - name: skills
-        label: Additional details and skills card
+            label: Additional details and skills card
             type: boolean
           - name: honors
             label: Profile links section
@@ -63,6 +167,9 @@ content:
             type: boolean
           - name: profiles
             label: Profile links in hero card
+            type: boolean
+          - name: footer
+            label: Footer
             type: boolean
       - name: stats
         label: Academic figures
@@ -80,10 +187,14 @@ content:
             type: string
           - name: labelEn
             label: Label in English
-            type: string
+            type: rich-text
+            options:
+              format: markdown
           - name: labelZh
             label: Label in Chinese
-            type: string
+            type: rich-text
+            options:
+              format: markdown
       - name: projects
         label: Publications and projects
         type: object
@@ -115,10 +226,18 @@ content:
             type: string
           - name: descriptionEn
             label: Description in English
-            type: text
+            type: rich-text
+            options:
+              format: markdown
+              media: site_images
+              path: content
           - name: descriptionZh
             label: Description in Chinese
-            type: text
+            type: rich-text
+            options:
+              format: markdown
+              media: site_images
+              path: content
           - name: tags
             label: Tags
             type: string
@@ -129,6 +248,16 @@ content:
           - name: url
             label: Link URL
             type: string
+          - name: image
+            label: Image (optional upload)
+            type: image
+            options:
+              media: site_images
+              path: publications
+              extensions: [jpg, jpeg, png, webp, gif, svg]
+          - name: imageAlt
+            label: Image description
+            type: string
       - name: education
         label: Publication affiliation and education
         type: object
@@ -136,24 +265,61 @@ content:
           - name: institution
             label: Institution name
             type: string
+          - name: institutionUrl
+            label: Institution link (optional)
+            type: string
+          - name: image
+            label: Institution image (optional upload)
+            type: image
+            options:
+              media: site_images
+              path: affiliations
+              extensions: [jpg, jpeg, png, webp, svg]
+          - name: imageAlt
+            label: Institution image description
+            type: string
           - name: locationEn
             label: Location and dates in English
-            type: string
+            type: rich-text
+            options:
+              format: markdown
+              media: site_images
+              path: content
           - name: locationZh
             label: Location and dates in Chinese
-            type: string
+            type: rich-text
+            options:
+              format: markdown
+              media: site_images
+              path: content
           - name: departmentEn
             label: Department in English
-            type: string
+            type: rich-text
+            options:
+              format: markdown
+              media: site_images
+              path: content
           - name: departmentZh
             label: Department in Chinese
-            type: string
+            type: rich-text
+            options:
+              format: markdown
+              media: site_images
+              path: content
           - name: programEn
             label: Program in English
-            type: string
+            type: rich-text
+            options:
+              format: markdown
+              media: site_images
+              path: content
           - name: programZh
             label: Program in Chinese
-            type: string
+            type: rich-text
+            options:
+              format: markdown
+              media: site_images
+              path: content
           - name: sealEn
             label: Short name in English
             type: string
@@ -205,15 +371,33 @@ content:
             type: string
           - name: detailEn
             label: Description in English
-            type: text
+            type: rich-text
+            options:
+              format: markdown
+              media: site_images
+              path: content
           - name: detailZh
             label: Description in Chinese
-            type: text
+            type: rich-text
+            options:
+              format: markdown
+              media: site_images
+              path: content
           - name: wide
             label: Use full-width card
             type: boolean
           - name: url
             label: Link URL
+            type: string
+          - name: image
+            label: Image (optional upload)
+            type: image
+            options:
+              media: site_images
+              path: profiles
+              extensions: [jpg, jpeg, png, webp, gif, svg]
+          - name: imageAlt
+            label: Image description
             type: string
       - name: profiles
         label: Academic and social links
@@ -246,8 +430,16 @@ content:
             type: string
           - name: en
             label: English
-            type: text
+            type: rich-text
+            options:
+              format: markdown
+              media: site_images
+              path: content
           - name: zh
             label: Chinese
-            type: text
+            type: rich-text
+            options:
+              format: markdown
+              media: site_images
+              path: content
 

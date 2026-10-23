@@ -1,13 +1,78 @@
 {
+  "translations": [
+    {"key":"copy-001","label":"about","en":"About","zh":"关于"},
+    {"key":"copy-002","label":"research","en":"Publication","zh":"学术论文"},
+    {"key":"copy-003","label":"education","en":"Affiliation","zh":"署名单位"},
+    {"key":"copy-004","label":"honors","en":"Profiles","zh":"个人主页"},
+    {"key":"copy-005","label":"research-area","en":"ORGANIC ELECTRONICS · NEUROMORPHIC DEVICES","zh":"有机电子 · 神经形态器件"},
+    {"key":"copy-006","label":"research-topic","en":"Research on organic electrochemical transistors and neuromorphic devices.","zh":"关注有机电化学晶体管与神经形态器件。"},
+    {"key":"copy-007","label":"verified-profile","en":"Kexin Xiang is listed as the first author of a 2026 review on organic electrochemical transistors for neuromorphic devices. The paper lists The Hong Kong Polytechnic University affiliations.","zh":"公开论文记录列 Kexin Xiang 为一篇 2026 年有机电化学晶体管与神经形态器件综述的第一作者，并列出香港理工大学署名单位。"},
+    {"key":"copy-008","label":"view-publication","en":"View publication","zh":"查看论文"},
+    {"key":"copy-009","label":"view-profiles","en":"Profiles & identifiers","zh":"个人主页与学术标识"},
+    {"key":"copy-010","label":"scroll-to-explore","en":"SCROLL TO EXPLORE","zh":"向下浏览"},
+    {"key":"copy-011","label":"about-me","en":"ABOUT","zh":"关于"},
+    {"key":"copy-012","label":"research-interest","en":"Organic electrochemical transistors for neuromorphic devices.","zh":"面向神经形态器件的有机电化学晶体管。"},
+    {"key":"copy-013","label":"research-bio","en":"The public research record associated with the supplied ORCID lists Kexin Xiang as the first author of “Organic Electrochemical Transistors for Neuromorphic Devices and Applications,” published in Advanced Materials in 2026. The review discusses organic electrochemical transistor platforms for neuromorphic devices and applications.","zh":"与所提供 ORCID 关联的公开论文记录显示，Kexin Xiang 是《Organic Electrochemical Transistors for Neuromorphic Devices and Applications》的第一作者。该综述于 2026 年发表于 Advanced Materials，讨论有机电化学晶体管在神经形态器件及相关应用中的进展。"},
+    {"key":"copy-017","label":"stat-note","en":"","zh":""},
+    {"key":"copy-018","label":"publication-section","en":"SELECTED PUBLICATION","zh":"公开论文"},
+    {"key":"copy-019","label":"publication-heading","en":"Organic electrochemical transistors","zh":"有机电化学晶体管"},
+    {"key":"copy-020","label":"publication-intro","en":"A publication listed by the Hong Kong Polytechnic University Research Centre for Organic Electronics.","zh":"香港理工大学有机电子研究中心列出的论文。"},
+    {"key":"copy-029","label":"affiliation-section","en":"PUBLICATION AFFILIATION","zh":"论文署名单位"},
+    {"key":"copy-030","label":"affiliation-label","en":"AFFILIATION LISTED ON THE ARTICLE","zh":"论文列出的署名单位"},
+    {"key":"copy-033","label":"institution-departments","en":"ALSO LISTED IN THE ARTICLE","zh":"论文中另列单位"},
+    {"key":"copy-034","label":"institution-secondary","en":"Department of Applied Biology and Chemical Technology","zh":"应用生物及化学科技学系"},
+    {"key":"copy-039","label":"profiles-section","en":"PUBLIC PROFILES","zh":"公开个人主页"},
+    {"key":"copy-040","label":"profile-heading","en":"Find me online","zh":"在这些平台查看我的资料"},
+    {"key":"copy-041","label":"profiles-note","en":"Links supplied by Kexin Xiang. Some services may require sign-in to view profile details.","zh":"以下链接由 Kexin Xiang 提供；部分平台可能要求登录后才能查看完整资料。"},
+    {"key":"copy-049","label":"contact-heading","en":"Get in touch","zh":"保持联系"},
+    {"key":"copy-050","label":"contact-note","en":"For current details, please use the public profile links above.","zh":"如需查看最新资料，请使用上方公开主页链接。"},
+    {"key":"copy-051","label":"footer-note","en":"Personal profile · Information from linked public pages","zh":"个人主页 · 内容依据所链接的公开页面"},
+    {"key":"copy-052","label":"back-to-top","en":"BACK TO TOP ↑","zh":"返回顶部 ↑"},
+    {"key":"copy-053","label":"affiliation","en":"HONG KONG POLYTECHNIC UNIVERSITY","zh":"香港理工大学"},
+    {"key":"copy-057","label":"connect","en":"PUBLIC\nPROFILES","zh":"公开\n主页"},
+    {"key":"copy-058","label":"profile-links-note","en":"PUBLIC RESEARCH & PROFESSIONAL PROFILES","zh":"学术与职业主页"}
+  ],
   "site": {
     "firstName": "Kexin",
     "lastName": "Xiang",
     "email": "chrisxiang13@gmail.com",
     "pageTitle": "Kexin Xiang",
-    "schoolShort": "PolyU"
+    "pageDescription": "Kexin Xiang — public research profile and publication information.",
+    "schoolShort": "PolyU",
+    "profileLocation": "PUBLICATION AFFILIATION · HONG KONG",
+    "profileLocationZh": "论文署名单位 · 香港",
+    "avatar": "",
+    "avatarAlt": "Portrait of Kexin Xiang",
+    "nameUrl": "",
+    "monogram": "KX"
+  },
+  "style": {
+    "fontBody": "-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+    "fontHeading": "Georgia, Times New Roman, serif",
+    "colorText": "#26323d",
+    "colorMuted": "#65717b",
+    "colorAccent": "#2f698a",
+    "colorBorder": "#e3e7e8",
+    "colorBackground": "#ffffff",
+    "colorSoft": "#f3f6f7",
+    "bodyFontSize": 16,
+    "bodyLineHeight": 1.75,
+    "headingScale": 1,
+    "contentWidth": 1160,
+    "pageGutter": 42,
+    "sectionSpacing": 55,
+    "cardRadius": 4,
+    "columnGap": 48,
+    "avatarSize": 154,
+    "avatarRadius": 50,
+    "projectColumns": 1,
+    "profileColumns": 2,
+    "textLineLimit": 10
   },
   "modules": {
+    "header": true,
     "hero": true,
+    "heroProfileCard": true,
     "about": true,
     "stats": true,
     "research": true,
@@ -15,279 +80,54 @@
     "skills": true,
     "honors": true,
     "contact": true,
-    "profiles": true
+    "profiles": true,
+    "footer": true
   },
-  "stats": [
-    {}
-  ],
+  "stats": [],
   "projects": [
     {
-      "number": "01",
-      "categoryEn": "JOURNAL ARTICLE · FIRST AUTHOR",
-      "categoryZh": "期刊论文 · 第一作者",
-      "titleEn": "Organic Electrochemical Transistors for Neuromorphic Devices and Applications",
-      "titleZh": "有机电化学晶体管的神经形态器件及应用",
-      "supervisorEn": "Kexin Xiang · Jiajun Song · Hong Liu · Junxin Chen · Feng Yan",
-      "supervisorZh": "Kexin Xiang · Jiajun Song · Hong Liu · Junxin Chen · Feng Yan",
-      "descriptionEn": "Advanced Materials, 38(9), e15532 (2026). DOI: 10.1002/adma.202515532.",
-      "descriptionZh": "发表于 Advanced Materials，38(9)，e15532（2026）。DOI：10.1002/adma.202515532。",
-      "tags": [
-        "ADVANCED MATERIALS",
-        "2026"
-      ],
-      "glyph": "device",
-      "url": "https://doi.org/10.1002/adma.202515532"
+      "number":"01",
+      "url":"https://doi.org/10.1002/adma.202515532",
+      "titleEn":"Organic Electrochemical Transistors for Neuromorphic Devices and Applications",
+      "titleZh":"有机电化学晶体管的神经形态器件及应用",
+      "supervisorEn":"Kexin Xiang · Jiajun Song · Hong Liu · Junxin Chen · Feng Yan",
+      "supervisorZh":"Kexin Xiang · Jiajun Song · Hong Liu · Junxin Chen · Feng Yan",
+      "descriptionEn":"Advanced Materials, 38(9), e15532 (2026). DOI: 10.1002/adma.202515532.",
+      "descriptionZh":"发表于 Advanced Materials，38(9)，e15532（2026）。DOI：10.1002/adma.202515532。",
+      "tags":["ADVANCED MATERIALS","2026"],
+      "glyph":"device",
+      "image":"",
+      "imageAlt":"",
+      "categoryEn":"JOURNAL ARTICLE · FIRST AUTHOR",
+      "categoryZh":"期刊论文 · 第一作者"
     }
   ],
   "education": {
-    "institution": "The Hong Kong Polytechnic University",
-    "locationEn": "Hong Kong SAR",
-    "locationZh": "中国香港特别行政区",
-    "departmentEn": "Department of Applied Physics",
-    "departmentZh": "应用物理学系",
-    "sealEn": "PolyU",
-    "sealZh": "香港理工大学"
+    "institution":"The Hong Kong Polytechnic University",
+    "institutionUrl":"",
+    "image":"",
+    "imageAlt":"",
+    "locationEn":"Hong Kong SAR",
+    "locationZh":"中国香港特别行政区",
+    "departmentEn":"Department of Applied Physics",
+    "departmentZh":"应用物理学系",
+    "programEn":"Also listed: Department of Applied Biology and Chemical Technology",
+    "programZh":"另列署名单位：应用生物及化学科技学系",
+    "sealEn":"PolyU",
+    "sealZh":"香港理工大学"
   },
+  "skills": [],
   "honors": [
-    {
-      "year": "WEB",
-      "titleEn": "Google Scholar",
-      "titleZh": "Google Scholar",
-      "detailEn": "Author profile",
-      "detailZh": "作者主页",
-      "wide": false,
-      "url": "https://scholar.google.com/citations?hl=zh-CN&user=cuZ_BaUAAAAJ"
-    },
-    {
-      "year": "ID",
-      "titleEn": "ORCID",
-      "titleZh": "ORCID",
-      "detailEn": "0009-0006-9623-7871",
-      "detailZh": "0009-0006-9623-7871",
-      "wide": false,
-      "url": "https://orcid.org/0009-0006-9623-7871"
-    },
-    {
-      "year": "WEB",
-      "titleEn": "LinkedIn",
-      "titleZh": "LinkedIn",
-      "detailEn": "Professional profile",
-      "detailZh": "职业主页",
-      "wide": false,
-      "url": "https://www.linkedin.com/in/kexin-xiang-2baa19358/"
-    },
-    {
-      "year": "WEB",
-      "titleEn": "GitHub",
-      "titleZh": "GitHub",
-      "detailEn": "ChrisHarden13",
-      "detailZh": "ChrisHarden13",
-      "wide": false,
-      "url": "https://github.com/ChrisHarden13"
-    }
+    {"year":"WEB","titleEn":"Google Scholar","titleZh":"Google Scholar","detailEn":"Author profile","detailZh":"作者主页","url":"https://scholar.google.com/citations?hl=zh-CN&user=cuZ_BaUAAAAJ","image":"","imageAlt":""},
+    {"year":"ID","titleEn":"ORCID","titleZh":"ORCID","detailEn":"0009-0006-9623-7871","detailZh":"0009-0006-9623-7871","url":"https://orcid.org/0009-0006-9623-7871","image":"","imageAlt":""},
+    {"year":"WEB","titleEn":"LinkedIn","titleZh":"LinkedIn","detailEn":"Professional profile","detailZh":"职业主页","url":"https://www.linkedin.com/in/kexin-xiang-2baa19358/","image":"","imageAlt":""},
+    {"year":"WEB","titleEn":"GitHub","titleZh":"GitHub","detailEn":"ChrisHarden13","detailZh":"ChrisHarden13","url":"https://github.com/ChrisHarden13","image":"","imageAlt":""}
   ],
   "profiles": [
-    {
-      "label": "Google Scholar",
-      "url": "https://scholar.google.com/citations?hl=zh-CN&user=cuZ_BaUAAAAJ"
-    },
-    {
-      "label": "ORCID",
-      "url": "https://orcid.org/0009-0006-9623-7871"
-    },
-    {
-      "label": "LinkedIn",
-      "url": "https://www.linkedin.com/in/kexin-xiang-2baa19358/"
-    },
-    {
-      "label": "GitHub",
-      "url": "https://github.com/ChrisHarden13"
-    }
-  ],
-  "translations": [
-    {
-      "key": "copy-001",
-      "label": "about",
-      "en": "About",
-      "zh": "关于"
-    },
-    {
-      "key": "copy-002",
-      "label": "research",
-      "en": "Publication",
-      "zh": "学术论文"
-    },
-    {
-      "key": "copy-003",
-      "label": "education",
-      "en": "Affiliation",
-      "zh": "署名单位"
-    },
-    {
-      "key": "copy-004",
-      "label": "honors",
-      "en": "Profiles",
-      "zh": "个人主页"
-    },
-    {
-      "key": "copy-005",
-      "label": "research-area",
-      "en": "ORGANIC ELECTRONICS · NEUROMORPHIC DEVICES",
-      "zh": "有机电子 · 神经形态器件"
-    },
-    {
-      "key": "copy-006",
-      "label": "research-topic",
-      "en": "Research on organic electrochemical transistors and neuromorphic devices.",
-      "zh": "关注有机电化学晶体管与神经形态器件。"
-    },
-    {
-      "key": "copy-007",
-      "label": "verified-profile",
-      "en": "Kexin Xiang is listed as the first author of a 2026 review on organic electrochemical transistors for neuromorphic devices. The paper lists The Hong Kong Polytechnic University affiliations.",
-      "zh": "公开论文记录列 Kexin Xiang 为一篇 2026 年有机电化学晶体管与神经形态器件综述的第一作者，并列出香港理工大学署名单位。"
-    },
-    {
-      "key": "copy-008",
-      "label": "view-publication",
-      "en": "View publication",
-      "zh": "查看论文"
-    },
-    {
-      "key": "copy-009",
-      "label": "view-profiles",
-      "en": "Profiles & identifiers",
-      "zh": "个人主页与学术标识"
-    },
-    {
-      "key": "copy-010",
-      "label": "scroll-to-explore",
-      "en": "SCROLL TO EXPLORE",
-      "zh": "向下浏览"
-    },
-    {
-      "key": "copy-011",
-      "label": "about-me",
-      "en": "ABOUT",
-      "zh": "关于"
-    },
-    {
-      "key": "copy-012",
-      "label": "research-interest",
-      "en": "Organic electrochemical transistors for neuromorphic devices.",
-      "zh": "面向神经形态器件的有机电化学晶体管。"
-    },
-    {
-      "key": "copy-013",
-      "label": "research-bio",
-      "en": "The public research record associated with the supplied ORCID lists Kexin Xiang as the first author of “Organic Electrochemical Transistors for Neuromorphic Devices and Applications,” published in Advanced Materials in 2026. The review discusses organic electrochemical transistor platforms for neuromorphic devices and applications.",
-      "zh": "与所提供 ORCID 关联的公开论文记录显示，Kexin Xiang 是《Organic Electrochemical Transistors for Neuromorphic Devices and Applications》的第一作者。该综述于 2026 年发表于 Advanced Materials，讨论有机电化学晶体管在神经形态器件及相关应用中的进展。"
-    },
-    {
-      "key": "copy-017",
-      "label": "stat-note"
-    },
-    {
-      "key": "copy-018",
-      "label": "publication-section",
-      "en": "SELECTED PUBLICATION",
-      "zh": "公开论文"
-    },
-    {
-      "key": "copy-019",
-      "label": "publication-heading",
-      "en": "Organic electrochemical transistors",
-      "zh": "有机电化学晶体管"
-    },
-    {
-      "key": "copy-020",
-      "label": "publication-intro",
-      "en": "A publication listed by the Hong Kong Polytechnic University Research Centre for Organic Electronics.",
-      "zh": "香港理工大学有机电子研究中心列出的论文。"
-    },
-    {
-      "key": "copy-029",
-      "label": "affiliation-section",
-      "en": "PUBLICATION AFFILIATION",
-      "zh": "论文署名单位"
-    },
-    {
-      "key": "copy-030",
-      "label": "affiliation-label",
-      "en": "AFFILIATION LISTED ON THE ARTICLE",
-      "zh": "论文列出的署名单位"
-    },
-    {
-      "key": "copy-033",
-      "label": "institution-departments",
-      "en": "ALSO LISTED IN THE ARTICLE",
-      "zh": "论文中另列单位"
-    },
-    {
-      "key": "copy-034",
-      "label": "institution-secondary",
-      "en": "Department of Applied Biology and Chemical Technology",
-      "zh": "应用生物及化学科技学系"
-    },
-    {
-      "key": "copy-039",
-      "label": "profiles-section",
-      "en": "PUBLIC PROFILES",
-      "zh": "公开个人主页"
-    },
-    {
-      "key": "copy-040",
-      "label": "profile-heading",
-      "en": "Find me online",
-      "zh": "在这些平台查看我的资料"
-    },
-    {
-      "key": "copy-041",
-      "label": "profiles-note",
-      "en": "Links supplied by Kexin Xiang. Some services may require sign-in to view profile details.",
-      "zh": "以下链接由 Kexin Xiang 提供；部分平台可能要求登录后才能查看完整资料。"
-    },
-    {
-      "key": "copy-049",
-      "label": "contact-heading",
-      "en": "Get in touch",
-      "zh": "保持联系"
-    },
-    {
-      "key": "copy-050",
-      "label": "contact-note",
-      "en": "For current details, please use the public profile links above.",
-      "zh": "如需查看最新资料，请使用上方公开主页链接。"
-    },
-    {
-      "key": "copy-051",
-      "label": "footer-note",
-      "en": "Personal profile · Information from linked public pages",
-      "zh": "个人主页 · 内容依据所链接的公开页面"
-    },
-    {
-      "key": "copy-052",
-      "label": "back-to-top",
-      "en": "BACK TO TOP ↑",
-      "zh": "返回顶部 ↑"
-    },
-    {
-      "key": "copy-053",
-      "label": "affiliation",
-      "en": "HONG KONG POLYTECHNIC UNIVERSITY",
-      "zh": "香港理工大学"
-    },
-    {
-      "key": "copy-057",
-      "label": "connect",
-      "en": "PUBLIC<br>PROFILES",
-      "zh": "公开<br>主页"
-    },
-    {
-      "key": "copy-058",
-      "label": "profile-links-note",
-      "en": "PUBLIC RESEARCH & PROFESSIONAL PROFILES",
-      "zh": "学术与职业主页"
-    }
+    {"label":"Google Scholar","url":"https://scholar.google.com/citations?hl=zh-CN&user=cuZ_BaUAAAAJ"},
+    {"label":"ORCID","url":"https://orcid.org/0009-0006-9623-7871"},
+    {"label":"LinkedIn","url":"https://www.linkedin.com/in/kexin-xiang-2baa19358/"},
+    {"label":"GitHub","url":"https://github.com/ChrisHarden13"}
   ]
 }
+
