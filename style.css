@@ -660,3 +660,11 @@ p, li, blockquote { text-align: justify; text-justify: inter-word; }
 /* Slightly larger publication authors and journal details. */
 .publication-entry .project-authors,
 .publication-entry .project-venue { font-size: 22px; }
+
+
+/* Rich-text authors and venues render inside paragraphs, so size those nodes too. */
+.publication-entry .project-authors p,
+.publication-entry .project-venue p {
+  font-size: 22px;
+  line-height: 1.8;
+}
