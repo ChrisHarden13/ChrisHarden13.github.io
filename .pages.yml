@@ -202,12 +202,12 @@ content:
                     type: object
                     list: {collapsible: {collapsed: true, summary: "{fields.title}"}}
                     fields:
-                      - {name: title, label: Publication title, type: string}
-                      - {name: titleZh, label: Publication title (Chinese), type: string}
-                      - {name: authors, label: Authors, type: text}
-                      - {name: venue, label: Journal or venue, type: string}
-                      - {name: venueZh, label: Journal or venue (Chinese), type: string}
-                      - {name: year, label: Year / issue, type: string}
+                      - {name: title, label: Publication title, type: rich-text, options: {format: markdown, switcher: false}}
+                      - {name: titleZh, label: Publication title (Chinese), type: rich-text, options: {format: markdown, switcher: false}}
+                      - {name: authors, label: Authors, type: rich-text, options: {format: markdown, switcher: false}}
+                      - {name: venue, label: Journal or venue, type: rich-text, options: {format: markdown, switcher: false}}
+                      - {name: venueZh, label: Journal or venue (Chinese), type: rich-text, options: {format: markdown, switcher: false}}
+                      - {name: year, label: Year / issue, type: rich-text, options: {format: markdown, switcher: false}}
                       - {name: bodyEn, label: Details (English), type: rich-text, options: {format: markdown, switcher: false}}
                       - {name: bodyZh, label: Details (Chinese), type: rich-text, options: {format: markdown, switcher: false}}
                       - {name: url, label: DOI or publication URL, type: string}
