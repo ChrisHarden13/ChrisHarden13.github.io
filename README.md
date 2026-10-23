@@ -7,7 +7,7 @@ The bilingual static site is published with GitHub Pages. Its information is org
 1. Sign in to [Pages CMS](https://app.pagescms.org/) with the GitHub account that can edit `ChrisHarden13/Portfolio`.
 2. Open **Website editor**. The left menu separates **Profile and homepage**, **Global appearance**, and **Page modules**.
 3. In **Page modules**, add, remove, and drag modules to reorder them. Select a module category: text/biography/research, publications, public links, or custom cards/experience/news.
-4. Each module has editable English and Chinese names/headings. Toggle page visibility and whether it appears in navigation. Rich-text fields support formatting, links, and inline images.
+4. Each module has editable English and Chinese names/headings. Toggle page visibility and whether it appears in navigation. You can also show or hide the header, name/photo area, and footer. Rich-text fields support formatting, links, and inline images.
 5. Add, remove, or reorder publication, link, and card entries inside their modules. Edit their titles, descriptions, URLs, and images.
 6. Upload your portrait under **Profile and homepage → Left circular photo**. It replaces the initials in the circular area on the left.
 7. Change fonts, six-digit hex colors, text size, line spacing, page width, section spacing, columns, text line limits, and portrait shape under **Global appearance**.

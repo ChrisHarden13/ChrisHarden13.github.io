@@ -327,6 +327,9 @@ function render() {
   document.querySelector('#first-name').textContent = site.firstName ?? '';
   document.querySelector('#last-name').textContent = site.lastName ?? '';
   document.querySelector('#site-mark').textContent = (site.monogram || site.firstName || 'K').slice(0, 1).toUpperCase();
+  document.querySelector('.topbar').hidden = site.showHeader === false;
+  document.querySelector('.hero').hidden = site.showHero === false;
+  document.querySelector('footer').hidden = site.showFooter === false;
   document.querySelector('#hero-kicker').textContent = language === 'en' ? (site.heroKickerEn ?? '') : (site.heroKickerZh ?? '');
   document.querySelector('#back-top').textContent = language === 'en' ? (site.backTopEn ?? '') : (site.backTopZh ?? '');
   const initials = document.querySelector('#profile-initials');

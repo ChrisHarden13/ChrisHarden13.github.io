@@ -104,6 +104,9 @@ content:
           - {name: backTopZh, label: Back-to-top link (Chinese), type: string}
       - {name: languageSwitchEn, label: Language switch text (English page), type: string}
       - {name: languageSwitchZh, label: Language switch text (Chinese page), type: string}
+          - {name: showHeader, label: Show top navigation, type: boolean}
+          - {name: showHero, label: Show name and photo area, type: boolean}
+          - {name: showFooter, label: Show footer, type: boolean}
           - name: footerTextEn
             label: Footer text in English
             type: rich-text

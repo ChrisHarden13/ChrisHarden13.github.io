@@ -13,6 +13,9 @@
   "backTopZh": "返回顶部 ↑",
   "languageSwitchEn": "中文",
   "languageSwitchZh": "EN",
+  "showHeader": true,
+  "showHero": true,
+  "showFooter": true,
   "footerTextEn": "Personal website · Research profile",
   "footerTextZh": "个人主页 · 学术简介"
 }
