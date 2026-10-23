@@ -208,11 +208,9 @@ content:
                       - {name: venue, label: Journal or venue, type: string}
                       - {name: venueZh, label: Journal or venue (Chinese), type: string}
                       - {name: year, label: Year / issue, type: string}
-                      - {name: bodyEn, label: Details (English), type: rich-text, options: {format: markdown, switcher: false, media: site_images, path: content}}
-                      - {name: bodyZh, label: Details (Chinese), type: rich-text, options: {format: markdown, switcher: false, media: site_images, path: content}}
+                      - {name: bodyEn, label: Details (English), type: rich-text, options: {format: markdown, switcher: false}}
+                      - {name: bodyZh, label: Details (Chinese), type: rich-text, options: {format: markdown, switcher: false}}
                       - {name: url, label: DOI or publication URL, type: string}
-                      - {name: image, label: Optional image, type: image, options: {media: site_images, path: publications, extensions: [jpg, jpeg, png, webp, gif, svg]}}
-                      - {name: imageAlt, label: Image description, type: string}
               - name: education
                 label: Education (school icon and description)
                 fields:
