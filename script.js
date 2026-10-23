@@ -218,27 +218,52 @@ function makeSection(section, index) {
     list.className = 'education-list';
     (section.items ?? []).forEach((item) => {
       const row = document.createElement('article');
-      row.className = `education-row${item.type ? ` education-row-${item.type}` : ''}`;
+      const typeClass = String(item.type ?? '').toLowerCase().replace(/[^a-z0-9-]+/g, '-');
+      row.className = `education-row${typeClass ? ` education-row-${typeClass}` : ''}`;
       const icon = document.createElement('div');
       icon.className = 'school-icon';
       if (item.logoUrl || item.logo) addImage(icon, item.logoUrl || item.logo, item.schoolEn ?? '', 'school-logo');
       else icon.append(svgIcon('school'));
       const details = document.createElement('div');
       details.className = 'school-details';
-      const school = language === 'zh' ? (item.schoolZh || item.schoolEn) : item.schoolEn;
-      const schoolHeading = document.createElement('h3');
-      const schoolUrl = safePublicUrl(item.url);
-      if (schoolUrl) {
-        const link = document.createElement('a');
-        link.href = schoolUrl; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.textContent = school || '';
-        schoolHeading.append(link);
-      } else schoolHeading.textContent = school || '';
-      details.append(schoolHeading);
       const degree = language === 'zh' ? (item.degreeZh || item.degreeEn) : item.degreeEn;
+      const school = language === 'zh' ? (item.schoolZh || item.schoolEn) : item.schoolEn;
       const department = language === 'zh' ? (item.departmentZh || item.departmentEn) : item.departmentEn;
-      const meta = [degree, department, item.dates].filter(Boolean).join(' · ');
-      if (meta) { const line = document.createElement('p'); line.className = 'school-meta'; line.textContent = meta; details.append(line); }
-      addRich(details, 'school-description', localized(item, 'body'));
+      const schoolUrl = item.url ? safePublicUrl(item.url) : '';
+      const appendField = (key, labelEn, labelZh, value, renderValue) => {
+        if (!value && !renderValue) return;
+        const field = document.createElement('div');
+        field.className = `school-field school-field-${key}`;
+        const dot = document.createElement('span');
+        dot.className = 'school-field-dot';
+        dot.setAttribute('aria-hidden', 'true');
+        const content = document.createElement('div');
+        content.className = 'school-field-content';
+        const label = document.createElement('strong');
+        label.textContent = `${language === 'zh' ? labelZh : labelEn}:`;
+        content.append(label);
+        if (renderValue) renderValue(content);
+        else {
+          const text = document.createElement('span');
+          text.textContent = value;
+          content.append(' ', text);
+        }
+        field.append(dot, content);
+        details.append(field);
+      };
+      appendField('degree', 'Degree', '学位', degree);
+      appendField('school', 'School', '学校', school, school ? (content) => {
+        const text = document.createElement(schoolUrl ? 'a' : 'span');
+        if (schoolUrl) { text.href = schoolUrl; text.target = '_blank'; text.rel = 'noopener noreferrer'; }
+        text.textContent = school;
+        content.append(' ', text);
+      } : null);
+      appendField('department', 'Department', '院系', department);
+      appendField('dates', 'Dates', '时间', item.dates);
+      const description = localized(item, 'body');
+      appendField('description', 'Description', '描述', description, description
+        ? (content) => addRich(content, 'school-description rich-description', description)
+        : null);
       row.append(icon, details);
       list.append(row);
     });
