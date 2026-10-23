@@ -341,7 +341,14 @@ function render() {
   photo.alt = site.avatarAlt ?? '';
   const email = document.querySelector('#profile-email');
   email.hidden = !site.email;
-  if (site.email) { email.href = `mailto:${site.email}`; email.textContent = site.email; }
+  if (site.email) { email.href = `mailto:${site.email}`; email.querySelector('span').textContent = site.email; }
+  const phone = document.querySelector('#profile-phone');
+  phone.hidden = !site.phone;
+  if (site.phone) {
+    const dialable = String(site.phone).replace(/[^\d+*#]/g, '');
+    phone.href = `tel:${dialable}`;
+    phone.querySelector('span').textContent = site.phone;
+  }
   renderRichText(document.querySelector('#footer-copy'), language === 'en' ? site.footerTextEn : site.footerTextZh);
   applyTheme();
   renderNavigation();
@@ -370,4 +377,3 @@ langToggle.addEventListener('click', () => {
   language = language === 'en' ? 'zh' : 'en';
   render();
 });
-
