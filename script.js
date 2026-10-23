@@ -265,11 +265,11 @@ function makeSection(section, index) {
         text.textContent = department;
         content.append(' ', text);
       } : null);
-      appendField('dates', 'Dates', '时间', item.dates);
       const supervisor = localized(item, 'supervisor');
       appendField('supervisor', 'Supervisor', '导师', supervisor, supervisor
         ? (content) => addRich(content, 'school-supervisor rich-description', supervisor)
         : null);
+      appendField('dates', 'Dates', '时间', item.dates);
       const description = localized(item, 'body');
       appendField('description', 'Description', '描述', description, description
         ? (content) => addRich(content, 'school-description rich-description', description)
