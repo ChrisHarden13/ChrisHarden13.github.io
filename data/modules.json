@@ -25,7 +25,9 @@
       },
       "items": [
         {
-          "type": "news"
+          "type": "news",
+          "titleEn": "sss",
+          "date": "aaa"
         }
       ]
     },
