@@ -336,6 +336,34 @@ h1 em { color: var(--ink); font-style: normal; }
   footer { flex-wrap: wrap; }
   footer p { order: 3; width: 100%; }
 }
+
+/* Requested profile alignment and reading rhythm */
+.hero { display: flex; justify-content: center; padding: 54px 0 46px; text-align: center; }
+.hero-copy { display: none; }
+.profile-card { display: flex; width: min(100%, 430px); flex-direction: column; align-items: center; text-align: center; }
+.profile-contacts { justify-items: center; margin-top: 18px; }
+.profile-contact { justify-content: center; text-align: left; }
+.page-modules, #page-modules { text-align: left; }
+p, li, blockquote { text-align: justify; text-justify: inter-word; }
+.module-body, .module-intro, .school-description, .project-main > p, .custom-card-subtitle, .module-link-description { font-size: 17px; line-height: 1.9; }
+.school-details h3 { font-size: 24px; }
+.project-main h3, .custom-card h3, .homepage-link h3 { font-size: 19px; }
+.section-kicker { display: none; }
+.section { border-top: 0; border-bottom: 1px solid var(--line); }
+.education-row { grid-template-columns: minmax(190px, .65fr) minmax(0, 1.8fr); }
+.school-icon { min-height: 125px; padding: 14px; }
+.school-logo { max-width: min(100%, 260px); max-height: 110px; }
+.project-card, .custom-card { text-align: left; }
+
+@media (max-width: 560px) {
+  .hero { flex-direction: column; align-items: center; padding: 38px 0 32px; }
+  .profile-card { display: flex; width: 100%; align-items: center; }
+  .profile-monogram { grid-row: auto; }
+  .profile-contacts { align-items: center; }
+  .education-row { grid-template-columns: 86px minmax(0, 1fr); gap: 16px; }
+  .school-icon { min-height: 76px; padding: 8px; }
+  .school-logo { max-width: 100%; max-height: 68px; }
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
