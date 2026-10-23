@@ -98,6 +98,7 @@ content:
           - {name: avatarAlt, label: Photo description, type: string}
           - {name: monogram, label: Initials shown without photo, type: string}
           - {name: email, label: Email (optional), type: string}
+          - {name: phone, label: Phone (optional; displayed below the portrait), type: string}
           - {name: heroKickerEn, label: Small label above your name (English), type: string}
           - {name: heroKickerZh, label: Small label above your name (Chinese), type: string}
           - {name: backTopEn, label: Back-to-top link (English), type: string}
@@ -221,4 +222,3 @@ content:
                     list: {collapsible: {collapsed: true, summary: "{fields.card.titleEn} / {fields.card.titleZh}"}}
                     fields:
                       - {component: cardFields, name: card, label: Card details}
-
