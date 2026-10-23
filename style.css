@@ -365,6 +365,7 @@ h1 em { color: var(--ink); font-style: normal; }
 .profile-card { display: flex; width: min(100%, 430px); flex-direction: column; align-items: center; text-align: center; }
 .profile-contacts { justify-items: center; margin-top: 18px; }
 .profile-contact { justify-content: center; text-align: left; }
+.profile-contact { font-size: 17px; }
 .page-modules, #page-modules { text-align: left; }
 p, li, blockquote { text-align: justify; text-justify: inter-word; }
 .module-body, .module-intro, .school-description, .project-main > p, .custom-card-subtitle, .module-link-description { font-size: 17px; line-height: 1.9; }
