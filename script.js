@@ -169,7 +169,7 @@ function makeSection(section, index) {
     addRich(main, 'module-body rich-description', localized(section, 'body'));
     layout.append(main);
     const image = addImage(layout, section.image, section.imageAlt, 'module-image');
-    if (!image) layout.classList.add('module-text-layout-full');
+    if (section.layout === 'full' || !image) layout.classList.add('module-text-layout-full');
     root.append(layout);
     return root;
   }
