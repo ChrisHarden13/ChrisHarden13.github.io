@@ -236,6 +236,7 @@ content:
                       - {name: bodyEn, label: Description (English), type: rich-text, options: {format: markdown, switcher: false, media: site_images, path: content}}
                       - {name: bodyZh, label: Description (Chinese), type: rich-text, options: {format: markdown, switcher: false, media: site_images, path: content}}
                       - {name: url, label: School website URL, type: string}
+                      - {name: logoUrl, label: School logo image URL (editable), type: string}
                       - {name: logo, label: School icon or logo, type: image, options: {media: site_images, path: education, extensions: [jpg, jpeg, png, webp, svg]}}
               - name: links
                 label: Personal homepages / social links
