@@ -89,7 +89,7 @@
           "schoolZh": "香港理工大学",
           "departmentEn": "Physics and Materials (PM)",
           "departmentZh": "物理与材料系",
-          "departmentUrl": "https://www.polyu.edu.hk/pm",
+          "departmentUrl": "https://www.polyu.edu.hk/pm/",
           "dates": "Sept. 2024 – Present",
           "url": "https://www.polyu.edu.hk/",
           "logo": "/Portfolio/assets/polyu-logo.png"
@@ -102,6 +102,7 @@
           "schoolZh": "南方科技大学",
           "departmentEn": "Electrical and Electronic Engineering (EEE)",
           "departmentZh": "电气与电子工程系",
+          "departmentUrl": "https://eee.sustech.edu.cn/",
           "dates": "Sept. 2020 - Jul. 2024",
           "url": "https://www.sustech.edu.cn/",
           "logo": "/Portfolio/assets/sustech-logo.png"
