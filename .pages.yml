@@ -27,12 +27,43 @@ content:
           - name: schoolShort
             label: Short university name
             type: string
-          - name: locationEn
-            label: Location in English
+          - name: profileLocation
+            label: Profile card location / affiliation
             type: string
-          - name: locationZh
-            label: Location in Chinese
+          - name: profileLocationZh
+            label: Profile card location / affiliation in Chinese
             type: string
+      - name: modules
+        label: Show or hide page modules
+        type: object
+        fields:
+          - name: hero
+            label: Hero introduction
+            type: boolean
+          - name: about
+            label: About section
+            type: boolean
+          - name: stats
+            label: Stats strip
+            type: boolean
+          - name: research
+            label: Publication section
+            type: boolean
+          - name: education
+            label: Affiliation section
+            type: boolean
+          - name: skills
+            label: Skills and tools card
+            type: boolean
+          - name: honors
+            label: Profile links section
+            type: boolean
+          - name: contact
+            label: Contact section
+            type: boolean
+          - name: profiles
+            label: Profile links in hero card
+            type: boolean
       - name: stats
         label: Academic figures
         type: object
@@ -94,6 +125,9 @@ content:
             list: true
           - name: glyph
             label: Illustration style (crystal, device, or lens)
+            type: string
+          - name: url
+            label: Link URL
             type: string
       - name: education
         label: Education
@@ -178,6 +212,9 @@ content:
           - name: wide
             label: Use full-width card
             type: boolean
+          - name: url
+            label: Link URL
+            type: string
       - name: profiles
         label: Academic and social links
         type: object

@@ -40,12 +40,18 @@ function renderSite() {
     element.textContent = `${site.firstName} ${site.lastName}`.toUpperCase();
   });
   document.querySelector('[data-site="schoolShort"]').textContent = site.schoolShort;
+  document.querySelector('#profile-location').textContent =
+    language === 'en' ? site.profileLocation : site.profileLocationZh;
   document.querySelector('#profile-monogram').textContent = `${site.firstName.slice(0, 1)}${site.lastName.slice(0, 1)}`.toUpperCase();
+  const monogram = document.querySelector('.mark');
+  monogram.firstChild.textContent = `${site.firstName.slice(0, 1)}`;
   document.querySelectorAll('[data-site-mail]').forEach((element) => {
     if (site.email) element.href = `mailto:${site.email}`;
     else element.hidden = true;
   });
-  document.querySelector('[data-site="email"]').textContent = site.email;
+  document.querySelectorAll('[data-site="email"]').forEach((element) => {
+    element.textContent = site.email;
+  });
   renderProfiles();
   document.querySelector('[data-site="institution"]').textContent = content.education.institution;
   document.querySelectorAll('[data-site="sealEn"]').forEach((element) => {
@@ -59,7 +65,27 @@ function renderSite() {
   renderEducation();
   renderSkills();
   renderHonors();
+  applyModuleVisibility();
   applyTranslations();
+}
+
+function applyModuleVisibility() {
+  const modules = content.modules ?? {};
+  const visibility = {
+    hero: document.querySelector('.hero'),
+    about: document.querySelector('#about'),
+    stats: document.querySelector('#stats-list'),
+    research: document.querySelector('#research'),
+    education: document.querySelector('#education'),
+    skills: document.querySelector('.toolkit'),
+    honors: document.querySelector('#honors'),
+    contact: document.querySelector('.contact'),
+    profiles: document.querySelector('#profile-links')
+  };
+  Object.entries(visibility).forEach(([key, element]) => {
+    if (!element || !(key in modules)) return;
+    element.hidden = !modules[key];
+  });
 }
 
 function renderProfiles() {
@@ -184,6 +210,9 @@ function renderLanguage() {
   renderEducation();
   renderSkills();
   renderHonors();
+  document.querySelector('#profile-location').textContent =
+    language === 'en' ? content.site.profileLocation : content.site.profileLocationZh;
+  applyModuleVisibility();
   applyTranslations();
 }
 
