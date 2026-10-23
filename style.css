@@ -402,7 +402,32 @@ p, li, blockquote { text-align: justify; text-justify: inter-word; }
 /* Keep text-only modules full width even when an older cached script is loaded. */
 .module-text-layout:not(:has(> .module-image)) { grid-template-columns: minmax(0, 1fr); }
 .module-text-layout:not(:has(> .module-image)) .module-text-main { width: 100%; max-width: none; }
+.dynamic-about-me .module-text-layout,
+.dynamic-about-me .module-text-layout-full {
+  grid-template-columns: var(--avatar-size) minmax(0, 1fr);
+  align-items: center;
+}
+.dynamic-about-me .module-text-main { width: 100%; max-width: none; }
+.dynamic-about-me .module-image {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  max-height: none;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+}
 @media (max-width: 760px) {
   .topbar nav a { font-size: 14px; }
   .profile-contact { font-size: 14px; }
+}
+@media (max-width: 560px) {
+  .dynamic-about-me .module-text-layout,
+  .dynamic-about-me .module-text-layout-full {
+    grid-template-columns: min(76px, var(--avatar-size)) minmax(0, 1fr);
+    gap: 17px;
+  }
+  .dynamic-about-me .module-image {
+    width: min(76px, var(--avatar-size));
+    height: min(76px, var(--avatar-size));
+  }
 }
