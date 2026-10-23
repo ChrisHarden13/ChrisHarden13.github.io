@@ -587,21 +587,15 @@ p, li, blockquote { text-align: justify; text-justify: inter-word; }
 .profile-contact { font-size: 17px; }
 
 
-/* Publications: larger, text-first entries with no displayed images. */
+/* Publications: image-free entries with larger, clearly legible type. */
 .publication-entry .project-number { font-size: 13px; }
-.publication-entry .project-main h3 { margin-bottom: 10px; font-size: 26px; line-height: 1.45; }
+.publication-entry .project-main h3 { margin-bottom: 10px; font-size: 28px; line-height: 1.45; }
 .publication-entry .project-authors,
-.publication-entry .project-venue { font-size: 16px; line-height: 1.8; }
+.publication-entry .project-venue { font-size: 20px; line-height: 1.8; }
 .publication-entry .rich-description { color: var(--muted); font-size: 18px; line-height: 1.9; }
 .publication-entry .rich-description p { font-size: 18px; line-height: 1.9; }
 .publication-entry .rich-inline-image { display: none; }
 @media (max-width: 760px) {
-  .publication-entry .project-main h3 { font-size: 23px; }
-  .publication-entry .project-authors,
-  .publication-entry .project-venue { font-size: 15px; }
   .publication-entry .rich-description,
   .publication-entry .rich-description p { font-size: 17px; }
-}
-@media (max-width: 560px) {
-  .publication-entry .project-main h3 { font-size: 21px; }
 }
