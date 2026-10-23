@@ -1,7 +1,7 @@
 {
   "firstName": "Kexin",
   "lastName": "Xiang",
-  "pageTitle": "KEXIN XIANG HOMEPAGE",
+  "pageTitle": "KEXIN XIANG (CHRIS) HOMEPAGE",
   "avatar": "/Portfolio/assets/cartoon.jpg",
   "avatarAlt": "Portrait of Kexin Xiang",
   "monogram": "KX",
@@ -13,6 +13,6 @@
   "showHeader": true,
   "showHero": true,
   "showFooter": true,
-  "footerTextEn": "KEXIN XIANG PERSONAL WEBPAGE",
+  "footerTextEn": "WELCOME TO KEXIN XIANG (CHRIS) HOMEPAGE",
   "footerTextZh": "向柯鑫个人主页"
 }
