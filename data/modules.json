@@ -20,7 +20,7 @@
         "showInNavigation": true,
         "sectionLabelEn": "AFFILIATION",
         "sectionLabelZh": "学术单位",
-        "titleEn": "Academic affiliation",
+        "titleEn": "Academic Affiliation",
         "titleZh": "学术单位"
       },
       "bodyEn": "The article's author biography identifies Kexin Xiang as a PhD student in the Department of Applied Physics at [The Hong Kong Polytechnic University](https://www.polyu.edu.hk/), Hong Kong SAR. The article lists the Department of Applied Physics and Research Center for Organic Electronics as his affiliation.",
@@ -46,7 +46,7 @@
         "showInNavigation": true,
         "sectionLabelEn": "PUBLICATION",
         "sectionLabelZh": "论文",
-        "titleEn": "Selected publication",
+        "titleEn": "Selected Publication",
         "titleZh": "代表性论文"
       },
       "items": [
