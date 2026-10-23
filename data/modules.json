@@ -3,81 +3,181 @@
     {
       "type": "text",
       "page": "profile",
-      "header": {"visible": true, "sectionLabelEn": "ABOUT ME", "sectionLabelZh": "关于我", "titleEn": "About me", "titleZh": "关于我"},
+      "header": {
+        "visible": true,
+        "sectionLabelEn": "ABOUT ME",
+        "sectionLabelZh": "关于我",
+        "titleEn": "About me",
+        "titleZh": "关于我"
+      },
       "bodyEn": "Kexin Xiang joined Professor Feng Yan's Organic Electronics Group in 2024. He earned a Bachelor of Engineering in Electrical and Electronic Engineering from Southern University of Science and Technology.",
       "bodyZh": "Kexin Xiang 于 2024 年加入 Feng Yan 教授的有机电子研究组。他获南方科技大学电子与电气工程系工学学士学位。"
     },
     {
       "type": "cards",
       "page": "profile",
-      "header": {"visible": true, "sectionLabelEn": "LATEST NEWS", "sectionLabelZh": "最新动态", "titleEn": "Latest news", "titleZh": "最新动态"},
-      "intro": {"introEn": "", "introZh": ""},
-      "items": []
+      "header": {
+        "visible": true,
+        "sectionLabelEn": "LATEST NEWS",
+        "sectionLabelZh": "最新动态",
+        "titleEn": "Latest news",
+        "titleZh": "最新动态"
+      }
     },
     {
       "type": "links",
       "page": "profile",
-      "header": {"visible": true, "sectionLabelEn": "PERSONAL HOMEPAGES", "sectionLabelZh": "个人主页", "titleEn": "Find me online", "titleZh": "我的学术与个人主页"},
-      "intro": {"introEn": "", "introZh": ""},
+      "header": {
+        "visible": true,
+        "sectionLabelEn": "PERSONAL HOMEPAGES",
+        "sectionLabelZh": "个人主页",
+        "titleEn": "Personal Homepages",
+        "titleZh": "我的个人主页"
+      },
       "items": [
-        {"labelEn": "Google Scholar", "labelZh": "Google Scholar", "bodyEn": "", "bodyZh": "", "url": "https://scholar.google.com/citations?hl=zh-CN&user=cuZ_BaUAAAAJ", "icon": "scholar"},
-        {"labelEn": "ORCID · 0009-0006-9623-7871", "labelZh": "ORCID · 0009-0006-9623-7871", "bodyEn": "", "bodyZh": "", "url": "https://orcid.org/0009-0006-9623-7871", "icon": "orcid"},
-        {"labelEn": "LinkedIn", "labelZh": "LinkedIn", "bodyEn": "", "bodyZh": "", "url": "https://www.linkedin.com/in/kexin-xiang-2baa19358/", "icon": "linkedin"},
-        {"labelEn": "GitHub · ChrisHarden13", "labelZh": "GitHub · ChrisHarden13", "bodyEn": "", "bodyZh": "", "url": "https://github.com/ChrisHarden13", "icon": "github"}
+        {
+          "labelEn": "Google Scholar",
+          "labelZh": "Google Scholar",
+          "url": "https://scholar.google.com/citations?hl=zh-CN&user=cuZ_BaUAAAAJ",
+          "icon": "scholar"
+        },
+        {
+          "labelEn": "ORCID",
+          "labelZh": "ORCID",
+          "url": "https://orcid.org/0009-0006-9623-7871",
+          "icon": "orcid"
+        },
+        {
+          "labelEn": "LinkedIn",
+          "labelZh": "LinkedIn",
+          "url": "https://www.linkedin.com/in/kexin-xiang-2baa19358/",
+          "icon": "linkedin"
+        },
+        {
+          "labelEn": "GitHub",
+          "labelZh": "GitHub",
+          "url": "https://github.com/ChrisHarden13",
+          "icon": "github"
+        }
       ]
     },
     {
       "type": "education",
       "page": "education",
-      "header": {"visible": true, "sectionLabelEn": "EDUCATION", "sectionLabelZh": "教育经历", "titleEn": "Education", "titleZh": "教育经历"},
+      "header": {
+        "visible": true,
+        "sectionLabelEn": "EDUCATION",
+        "sectionLabelZh": "教育经历",
+        "titleEn": "Education",
+        "titleZh": "教育经历"
+      },
       "items": [
-        {"type": "university", "schoolEn": "The Hong Kong Polytechnic University", "schoolZh": "香港理工大学", "departmentEn": "Department of Physics and Materials Science", "departmentZh": "物理与材料科学系", "degreeEn": "PhD student", "degreeZh": "博士生", "dates": "2024–present", "bodyEn": "The department was formerly named the Department of Applied Physics.", "bodyZh": "该系此前名为应用物理学系。", "url": "https://www.polyu.edu.hk/", "logo": "", "logoUrl": "https://www.polyu.edu.hk/-/media/department/home/content/about-polyu/university-identity/logo_1200x672_with-bg.jpg?bc=ffffff&h=336&hash=E881BF93D3E13ABEDC8E1A528EE58767&rev=e7968d84f1884c2893c72cac91815018&w=600"},
-        {"type": "university", "schoolEn": "Southern University of Science and Technology", "schoolZh": "南方科技大学", "departmentEn": "Electrical and Electronic Engineering", "departmentZh": "电子与电气工程系", "degreeEn": "Bachelor of Engineering", "degreeZh": "工学学士", "dates": "", "bodyEn": "", "bodyZh": "", "url": "https://www.sustech.edu.cn/", "logo": "", "logoUrl": "https://sustech.edu.cn/uploads/logo1.png"}
+        {
+          "type": "university",
+          "schoolEn": "The Hong Kong Polytechnic University",
+          "schoolZh": "香港理工大学",
+          "departmentEn": "Department of Physics and Materials Science",
+          "departmentZh": "物理与材料科学系",
+          "degreeEn": "PhD student",
+          "degreeZh": "博士生",
+          "dates": "2024–present",
+          "bodyEn": "The department was formerly named the Department of Applied Physics.",
+          "bodyZh": "该系此前名为应用物理学系。",
+          "url": "https://www.polyu.edu.hk/",
+          "logoUrl": "https://www.polyu.edu.hk/-/media/department/home/content/about-polyu/university-identity/logo_1200x672_with-bg.jpg?bc=ffffff&h=336&hash=E881BF93D3E13ABEDC8E1A528EE58767&rev=e7968d84f1884c2893c72cac91815018&w=600"
+        },
+        {
+          "type": "university",
+          "schoolEn": "Southern University of Science and Technology",
+          "schoolZh": "南方科技大学",
+          "departmentEn": "Electrical and Electronic Engineering",
+          "departmentZh": "电子与电气工程系",
+          "degreeEn": "Bachelor of Engineering",
+          "degreeZh": "工学学士",
+          "url": "https://www.sustech.edu.cn/",
+          "logoUrl": "https://sustech.edu.cn/uploads/logo1.png"
+        }
       ]
     },
     {
       "type": "text",
       "page": "research",
-      "header": {"visible": true, "sectionLabelEn": "RESEARCH INTERESTS", "sectionLabelZh": "研究兴趣", "titleEn": "Research interests", "titleZh": "研究兴趣"},
+      "header": {
+        "visible": true,
+        "sectionLabelEn": "RESEARCH INTERESTS",
+        "sectionLabelZh": "研究兴趣",
+        "titleEn": "Research interests",
+        "titleZh": "研究兴趣"
+      },
       "bodyEn": "Organic electrochemical transistors and their neuromorphic applications.",
       "bodyZh": "有机电化学晶体管及其在神经形态器件中的应用。"
     },
     {
       "type": "cards",
       "page": "research",
-      "header": {"visible": true, "sectionLabelEn": "PROJECTS", "sectionLabelZh": "研究项目", "titleEn": "Projects", "titleZh": "研究项目"},
-      "intro": {"introEn": "", "introZh": ""},
-      "items": []
+      "header": {
+        "visible": true,
+        "sectionLabelEn": "PROJECTS",
+        "sectionLabelZh": "研究项目",
+        "titleEn": "Projects",
+        "titleZh": "研究项目"
+      }
     },
     {
       "type": "publication",
       "page": "publication",
-      "header": {"visible": true, "sectionLabelEn": "PUBLICATION", "sectionLabelZh": "论文", "titleEn": "Selected publication", "titleZh": "代表性论文"},
-      "intro": {"introEn": "", "introZh": ""},
+      "header": {
+        "visible": true,
+        "sectionLabelEn": "PUBLICATION",
+        "sectionLabelZh": "论文",
+        "titleEn": "Selected publication",
+        "titleZh": "代表性论文"
+      },
       "items": [
-        {"title": "Organic Electrochemical Transistors for Neuromorphic Devices and Applications", "titleZh": "有机电化学晶体管的神经形态器件及应用", "authors": "Kexin Xiang, Jiajun Song, Hong Liu, Junxin Chen, and Feng Yan", "venue": "Advanced Materials", "year": "38(9), e15532 · 2026", "bodyEn": "Review article. First published 4 January 2026.", "bodyZh": "综述论文，首次发表于 2026 年 1 月 4 日。", "url": "https://doi.org/10.1002/adma.202515532", "image": "", "imageAlt": ""}
+        {
+          "title": "Organic Electrochemical Transistors for Neuromorphic Devices and Applications",
+          "titleZh": "有机电化学晶体管的神经形态器件及应用",
+          "authors": "Kexin Xiang, Jiajun Song, Hong Liu, Junxin Chen, and Feng Yan",
+          "venue": "Advanced Materials",
+          "year": "38(9), e15532 · 2026",
+          "bodyEn": "Review article. First published 4 January 2026.",
+          "bodyZh": "综述论文，首次发表于 2026 年 1 月 4 日。",
+          "url": "https://doi.org/10.1002/adma.202515532"
+        }
       ]
     },
     {
       "type": "cards",
       "page": "honor",
-      "header": {"visible": true, "sectionLabelEn": "SCHOLARSHIPS", "sectionLabelZh": "奖学金", "titleEn": "Scholarships", "titleZh": "奖学金"},
-      "intro": {"introEn": "", "introZh": ""},
-      "items": []
+      "header": {
+        "visible": true,
+        "sectionLabelEn": "SCHOLARSHIPS",
+        "sectionLabelZh": "奖学金",
+        "titleEn": "Scholarships",
+        "titleZh": "奖学金"
+      }
     },
     {
       "type": "cards",
       "page": "honor",
-      "header": {"visible": true, "sectionLabelEn": "HONORS", "sectionLabelZh": "荣誉", "titleEn": "Honors", "titleZh": "荣誉"},
-      "intro": {"introEn": "", "introZh": ""},
-      "items": []
+      "header": {
+        "visible": true,
+        "sectionLabelEn": "HONORS",
+        "sectionLabelZh": "荣誉",
+        "titleEn": "Honors",
+        "titleZh": "荣誉"
+      }
     },
     {
       "type": "cards",
       "page": "life",
-      "header": {"visible": true, "sectionLabelEn": "LIFE", "sectionLabelZh": "生活", "titleEn": "Life", "titleZh": "生活"},
-      "intro": {"introEn": "", "introZh": ""},
-      "items": []
+      "header": {
+        "visible": true,
+        "sectionLabelEn": "LIFE",
+        "sectionLabelZh": "生活",
+        "titleEn": "Life",
+        "titleZh": "生活"
+      }
     }
   ]
 }
