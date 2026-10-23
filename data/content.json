@@ -13,27 +13,24 @@
       "categoryEn": "JOURNAL ARTICLE · FIRST AUTHOR",
       "categoryZh": "期刊论文 · 第一作者",
       "titleEn": "Organic Electrochemical Transistors for Neuromorphic Devices and Applications",
-      "titleZh": "Organic Electrochemical Transistors for Neuromorphic Devices and Applications",
+      "titleZh": "有机电化学晶体管的神经形态器件及应用",
       "supervisorEn": "Kexin Xiang · Jiajun Song · Hong Liu · Junxin Chen · Feng Yan",
       "supervisorZh": "Kexin Xiang · Jiajun Song · Hong Liu · Junxin Chen · Feng Yan",
-      "descriptionEn": "Advanced Materials, 38(9), e15532 (2026). Review of organic electrochemical transistor platforms for neuromorphic devices and applications. DOI: 10.1002/adma.202515532.",
-      "descriptionZh": "发表于 Advanced Materials，38(9)，e15532（2026）。综述有机电化学晶体管在神经形态器件及相关应用中的进展。DOI：10.1002/adma.202515532。",
+      "descriptionEn": "Advanced Materials, 38(9), e15532 (2026). DOI: 10.1002/adma.202515532.",
+      "descriptionZh": "发表于 Advanced Materials，38(9)，e15532（2026）。。DOI：10.1002/adma.202515532。",
       "tags": [
         "ADVANCED MATERIALS",
-        "2026",
-        "REVIEW"
+        "2026"
       ],
       "glyph": "device"
     }
   ],
   "education": {
     "institution": "The Hong Kong Polytechnic University",
-    "locationEn": "Hong Kong",
-    "locationZh": "中国香港",
-    "departmentEn": "Department of Applied Physics · Research Centre for Organic Electronics",
-    "departmentZh": "应用物理学系 · 有机电子研究中心",
-    "programEn": "Also listed: Department of Applied Biology and Chemical Technology",
-    "programZh": "另列署名单位：应用生物及化学科技学系",
+    "locationEn": "Hong Kong SAR",
+    "locationZh": "中国香港特别行政区",
+    "departmentEn": "Department of Applied Physics",
+    "departmentZh": "应用物理学系",
     "sealEn": "PolyU",
     "sealZh": "香港理工大学"
   },
