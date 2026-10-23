@@ -283,7 +283,7 @@ function makeSection(section, index) {
     list.className = 'project-list';
     (section.items ?? []).forEach((item, itemIndex) => {
       const article = document.createElement('article');
-      article.className = 'project-card';
+      article.className = 'project-card publication-entry';
       const numberCell = document.createElement('div');
       numberCell.className = 'project-number';
       numberCell.textContent = String(itemIndex + 1).padStart(2, '0');
@@ -304,7 +304,6 @@ function makeSection(section, index) {
       const venueLine = [venueName, item.year].filter(Boolean).join(' · ');
       if (venueLine) addRich(main, 'project-venue', venueLine);
       addRich(main, 'rich-description', localized(item, 'body'));
-      addImage(main, item.image, item.imageAlt, 'project-image');
       article.append(numberCell, main);
       list.append(article);
     });
