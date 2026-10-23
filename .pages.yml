@@ -33,9 +33,6 @@ content:
           - name: locationZh
             label: Location in Chinese
             type: string
-          - name: heroArtLabel
-            label: Illustration description for accessibility
-            type: string
       - name: stats
         label: Academic figures
         type: object
@@ -181,6 +178,20 @@ content:
           - name: wide
             label: Use full-width card
             type: boolean
+      - name: profiles
+        label: Academic and social links
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - name: label
+            label: Link label
+            type: string
+          - name: url
+            label: Profile URL
+            type: string
       - name: translations
         label: Other page text and labels
         type: object

@@ -40,11 +40,12 @@ function renderSite() {
     element.textContent = `${site.firstName} ${site.lastName}`.toUpperCase();
   });
   document.querySelector('[data-site="schoolShort"]').textContent = site.schoolShort;
-  document.querySelector('.hero-art').setAttribute('aria-label', site.heroArtLabel);
+  document.querySelector('#profile-monogram').textContent = `${site.firstName.slice(0, 1)}${site.lastName.slice(0, 1)}`.toUpperCase();
   document.querySelectorAll('[data-site-mail]').forEach((element) => {
     element.href = `mailto:${site.email}`;
   });
   document.querySelector('[data-site="email"]').textContent = site.email;
+  renderProfiles();
   document.querySelector('[data-site="institution"]').textContent = content.education.institution;
   document.querySelectorAll('[data-site="sealEn"]').forEach((element) => {
     element.textContent = content.education.sealEn;
@@ -58,6 +59,19 @@ function renderSite() {
   renderSkills();
   renderHonors();
   applyTranslations();
+}
+
+function renderProfiles() {
+  const container = document.querySelector('#profile-links');
+  container.replaceChildren();
+  content.profiles.forEach((profile) => {
+    const link = document.createElement('a');
+    link.href = profile.url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.textContent = profile.label;
+    container.append(link);
+  });
 }
 
 function renderStats() {

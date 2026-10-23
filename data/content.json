@@ -175,24 +175,6 @@
       "zh": "中国深圳"
     },
     {
-      "key": "copy-054",
-      "label": "art-field-label",
-      "en": "FIELD / 01<br>λ · MATERIAL · DEVICE",
-      "zh": "领域 / 01<br>波长 · 材料 · 器件"
-    },
-    {
-      "key": "copy-055",
-      "label": "art-coordinate",
-      "en": "22°35′N<br>114°01′E",
-      "zh": "22°35′N<br>114°01′E"
-    },
-    {
-      "key": "copy-056",
-      "label": "art-photonics-in-motion",
-      "en": "PHOTONICS<br>IN MOTION",
-      "zh": "光子学<br>动态之美"
-    },
-    {
       "key": "copy-057",
       "label": "contact-orb",
       "en": "LET’S<br>CONNECT",
@@ -211,8 +193,7 @@
     "email": "chrisxiang13@gmail.com",
     "pageTitle": "Kexin Xiang — Optoelectronics",
     "pageDescription": "Kexin Xiang — optoelectronics, photonic devices, and experimental research.",
-    "schoolShort": "SUSTech",
-    "heroArtLabel": "Abstract photonic wave illustration"
+    "schoolShort": "SUSTech"
   },
   "stats": [
     {
@@ -364,6 +345,24 @@
       "detailEn": "76 volunteer service hours; Deputy Director, Innovation and Entrepreneurship Department, Shude College (2021–2022).",
       "detailZh": "累计志愿服务 76 小时；曾任树德书院创新创业部副部长（2021–2022）。",
       "wide": true
+    }
+  ],
+  "profiles": [
+    {
+      "label": "Google Scholar",
+      "url": "https://scholar.google.com/citations?hl=zh-CN&user=cuZ_BaUAAAAJ"
+    },
+    {
+      "label": "ORCID",
+      "url": "https://orcid.org/0009-0006-9623-7871"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/kexin-xiang-2baa19358/"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/ChrisHarden13"
     }
   ]
 }
