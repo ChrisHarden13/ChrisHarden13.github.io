@@ -14,6 +14,30 @@ function safePublicUrl(value) {
   return '';
 }
 
+function setCircularFavicon(source) {
+  const favicon = document.querySelector('#site-favicon');
+  favicon.href = source;
+  const image = new Image();
+  image.crossOrigin = 'anonymous';
+  image.onload = () => {
+    const size = 64;
+    const canvas = document.createElement('canvas');
+    canvas.width = size;
+    canvas.height = size;
+    const context = canvas.getContext('2d');
+    if (!context) return;
+    const scale = Math.max(size / image.naturalWidth, size / image.naturalHeight);
+    const width = image.naturalWidth * scale;
+    const height = image.naturalHeight * scale;
+    context.beginPath();
+    context.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
+    context.clip();
+    context.drawImage(image, (size - width) / 2, (size - height) / 2, width, height);
+    try { favicon.href = canvas.toDataURL('image/png'); } catch { favicon.href = source; }
+  };
+  image.src = source;
+}
+
 function appendInlineMarkdown(parent, text) {
   const pattern = /!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)|\[([^\]]+)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)|\*\*([^*]+)\*\*|\*([^*]+)\*|`([^`]+)`|~~([^~]+)~~/g;
   let cursor = 0;
@@ -385,7 +409,7 @@ function render() {
   siteLogo.hidden = !avatarUrl;
   if (avatarUrl) {
     siteLogo.src = avatarUrl;
-    favicon.href = avatarUrl;
+    setCircularFavicon(avatarUrl);
   } else {
     siteLogo.removeAttribute('src');
     favicon.href = 'data:,';
