@@ -376,7 +376,20 @@ function render() {
   document.querySelector('meta[name="description"]').content = site.pageDescription ?? '';
   document.querySelector('#first-name').textContent = site.firstName ?? '';
   document.querySelector('#last-name').textContent = site.lastName ?? '';
-  document.querySelector('#site-mark').textContent = (site.monogram || site.firstName || 'K').slice(0, 1).toUpperCase();
+  const siteMark = document.querySelector('#site-mark');
+  const siteLogo = document.querySelector('#site-logo');
+  const favicon = document.querySelector('#site-favicon');
+  const avatarUrl = site.avatar ? safePublicUrl(site.avatar) : '';
+  siteMark.textContent = (site.monogram || site.firstName || 'K').slice(0, 1).toUpperCase();
+  siteMark.hidden = Boolean(avatarUrl);
+  siteLogo.hidden = !avatarUrl;
+  if (avatarUrl) {
+    siteLogo.src = avatarUrl;
+    favicon.href = avatarUrl;
+  } else {
+    siteLogo.removeAttribute('src');
+    favicon.href = 'data:,';
+  }
   document.querySelector('.topbar').hidden = site.showHeader === false;
   document.querySelector('.hero').hidden = site.showHero === false || activePage !== 'profile';
   document.querySelector('footer').hidden = site.showFooter === false;
