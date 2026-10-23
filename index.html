@@ -3,85 +3,44 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#fbfbf9">
-  <meta name="description" content="Kexin Xiang — public research profile and publication information.">
-  <title>Kexin Xiang — Research Profile</title>
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Kexin Xiang's research profile and selected publication.">
+  <title>Kexin Xiang — Personal Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="page-shell">
     <header class="topbar">
-      <a class="wordmark" href="#home" aria-label="Kexin Xiang home"><span class="mark">K<span>.</span></span><span class="wordmark-name">KEXIN XIANG</span></a>
-      <nav aria-label="Main navigation">
-        <a href="#about" data-copy="copy-001">About</a>
-        <a href="#research" data-copy="copy-002">Research</a>
-        <a href="#education" data-copy="copy-003">Education</a>
-        <a href="#honors" data-copy="copy-004">Honors</a>
-      </nav>
+      <a class="wordmark" href="#home" aria-label="Back to top">
+        <span class="mark" id="site-mark">K</span>
+      </a>
+      <nav id="module-nav" aria-label="Page modules"></nav>
       <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language">中文</button>
     </header>
-
     <main>
       <section class="hero" id="home">
-        <div class="hero-copy">
-          <p class="eyebrow"><span class="pulse"></span><span data-copy="copy-005">ORGANIC ELECTRONICS · NEUROMORPHIC DEVICES</span></p>
-          <h1><span data-site="firstName">Kexin</span><br><em data-site="lastName">Xiang</em></h1>
-          <p class="hero-role" data-copy="copy-006">Research on organic electrochemical transistors and neuromorphic devices.</p>
-          <p class="hero-note" data-copy="copy-007">Kexin Xiang is listed as the first author of a 2026 review on organic electrochemical transistors for neuromorphic devices.</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#research"><span data-copy="copy-008">View publication</span><span aria-hidden="true">↘</span></a>
-            <a class="button button-quiet" href="#honors"><span data-copy="copy-009">Profiles & identifiers</span><span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-        <aside class="profile-card" aria-label="Profile and external links">
+        <aside class="profile-card" aria-label="Personal photo and contact">
           <div class="profile-monogram" id="profile-monogram" aria-hidden="true">
-            <span class="profile-initials" id="profile-initials">KX</span>
+            <span id="profile-initials">KX</span>
             <img class="profile-photo" id="profile-photo" alt="" hidden>
           </div>
-          <p class="profile-affiliation"><span id="profile-location">PUBLICATION AFFILIATION · HONG KONG</span><span aria-hidden="true"> · </span><span data-site="schoolShort">PolyU</span></p>
-          <a class="profile-email" data-site-mail href="mailto:" hidden><span data-site="email"></span><span aria-hidden="true">↗</span></a>
-          <nav class="social-links" id="profile-links" aria-label="Academic and professional profiles"></nav>
+          <a class="profile-email" id="profile-email" href="mailto:" hidden></a>
         </aside>
-      </section>
-
-      <section class="intro section" id="about">
-        <div class="section-kicker"><span>01</span><span data-copy="copy-011">A LITTLE ABOUT ME</span></div>
-        <div class="intro-content">
-          <h2 data-copy="copy-012">Organic electrochemical transistors for neuromorphic devices.</h2>
-          <div class="intro-detail">
-            <p data-copy="copy-013">The public research record associated with the supplied ORCID lists Kexin Xiang as the first author of a 2026 review in Advanced Materials.</p>
-            <div class="stats" id="stats-list" hidden></div>
-            <p class="stat-note" data-copy="copy-017"></p>
-          </div>
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="pulse"></span><span id="hero-kicker">PERSONAL WEBSITE</span></p>
+          <h1><span id="first-name">Kexin</span><br><em id="last-name">Xiang</em></h1>
+          <p class="hero-role" id="hero-role"></p>
         </div>
       </section>
-
-      <section class="research section" id="research">
-        <div class="section-kicker"><span>02</span><span data-copy="copy-018">SELECTED PUBLICATION</span></div>
-        <div class="section-heading"><h2 data-copy="copy-019">Organic electrochemical transistors</h2><p data-copy="copy-020">A publication listed by PolyU’s Research Centre for Organic Electronics.</p></div>
-        <div class="project-list" id="project-list"></div>
-      </section>
-
-      <section class="education section" id="education">
-        <div class="section-kicker"><span>03</span><span data-copy="copy-029">PUBLICATION AFFILIATION</span></div>
-        <div class="edu-grid">
-          <div class="education-card"><span class="card-label" data-copy="copy-030">AFFILIATION LISTED ON ARTICLE</span><h2 data-site="institution">The Hong Kong Polytechnic University</h2><p class="edu-location" data-site-lang="location">Hong Kong</p><div class="edu-rule"></div><p class="edu-detail"><span data-site-lang="department">Department of Applied Physics · Research Centre for Organic Electronics</span><br><span data-site-lang="program">Department of Applied Biology and Chemical Technology</span></p><span class="edu-seal"><span data-site="sealEn">PolyU</span> <span data-site="sealZh">香港理工大学</span></span></div>
-          <div class="toolkit"><span class="card-label" data-copy="copy-033">TOOLS & METHODS</span><h2 data-copy="copy-034">A practical toolkit</h2><div class="skill-list" id="skill-list"></div></div>
-        </div>
-      </section>
-
-      <section class="honors section" id="honors">
-        <div class="section-kicker"><span>04</span><span data-copy="copy-039">PUBLIC PROFILES</span></div>
-        <div class="section-heading"><h2 data-copy="copy-040">Find me online</h2><p data-copy="copy-041">Some services may require sign-in to view profile details.</p></div>
-        <div class="honor-grid" id="honor-grid"></div>
-      </section>
-
-      <section class="contact">
-        <div class="contact-orb"><span data-copy="copy-057">LET’S<br>CONNECT</span></div>
-        <div class="contact-copy"><p class="eyebrow" data-copy="copy-058">PUBLIC RESEARCH & PROFESSIONAL PROFILES</p><h2 data-copy="copy-049">Get in touch</h2><p data-copy="copy-050">For current details, please use the public profile links above.</p><a class="email-link" data-site-mail href="mailto:" hidden><span data-site="email"></span><span>↗</span></a></div>
-      </section>
+      <div id="page-modules"></div>
     </main>
-    <footer><a class="wordmark" href="#home"><span class="mark">K<span>.</span></span><span class="wordmark-name">KEXIN XIANG</span></a><p data-copy="copy-051">Personal profile · Information from linked public pages</p><a href="#home" class="back-top" data-copy="copy-052">BACK TO TOP ↑</a></footer>
+    <footer>
+      <p id="footer-copy"></p>
+      <a href="#home" class="back-top" id="back-top">BACK TO TOP ↑</a>
+    </footer>
   </div>
   <script src="script.js"></script>
 </body>

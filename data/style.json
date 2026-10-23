@@ -1,0 +1,24 @@
+{
+  "fontBody": "-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+  "fontHeading": "Georgia, Times New Roman, serif",
+  "colorText": "#26323d",
+  "colorMuted": "#65717b",
+  "colorAccent": "#2f698a",
+  "colorBorder": "#e3e7e8",
+  "colorBackground": "#ffffff",
+  "colorSoft": "#f3f6f7",
+  "bodyFontSize": 16,
+  "bodyLineHeight": 1.75,
+  "headingScale": 1,
+  "contentWidth": 1160,
+  "pageGutter": 42,
+  "sectionSpacing": 55,
+  "cardRadius": 4,
+  "columnGap": 48,
+  "avatarSize": 154,
+  "avatarRadius": 50,
+  "projectColumns": 1,
+  "profileColumns": 2,
+  "textLineLimit": 10
+}
+

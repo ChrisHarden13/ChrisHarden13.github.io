@@ -1,28 +1,21 @@
-const toggle = document.querySelector('#lang-toggle');
+const langToggle = document.querySelector('#lang-toggle');
 let language = 'en';
-let content;
-let translations = new Map();
-
-function addText(parent, tag, className, text) {
-  const child = document.createElement(tag);
-  if (className) child.className = className;
-  child.textContent = text ?? '';
-  parent.append(child);
-  return child;
-}
+let site = {};
+let theme = {};
+let sections = [];
 
 function safePublicUrl(value) {
   try {
-    const url = new URL(value, window.location.href);
+    const url = new URL(String(value ?? ''), window.location.href);
     if (['http:', 'https:', 'mailto:', 'tel:'].includes(url.protocol)) return url.href;
   } catch {}
   return '';
 }
 
 function appendInlineMarkdown(parent, text) {
-  const pattern = /!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)|\[([^\]]+)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)|\*\*([^*]+)\*\*|\*([^*]+)\*/g;
+  const pattern = /!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)|\[([^\]]+)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)|\*\*([^*]+)\*\*|\*([^*]+)\*|`([^`]+)`|~~([^~]+)~~/g;
   let cursor = 0;
-  for (const match of text.matchAll(pattern)) {
+  for (const match of String(text ?? '').matchAll(pattern)) {
     const index = match.index ?? 0;
     if (index > cursor) parent.append(document.createTextNode(text.slice(cursor, index)));
     if (match[1] !== undefined) {
@@ -41,10 +34,7 @@ function appendInlineMarkdown(parent, text) {
       if (href) {
         const link = document.createElement('a');
         link.href = href;
-        if (/^https?:/i.test(href)) {
-          link.target = '_blank';
-          link.rel = 'noopener noreferrer';
-        }
+        if (/^https?:/i.test(href)) { link.target = '_blank'; link.rel = 'noopener noreferrer'; }
         link.textContent = match[4];
         parent.append(link);
       } else parent.append(document.createTextNode(match[0]));
@@ -52,135 +42,249 @@ function appendInlineMarkdown(parent, text) {
       const strong = document.createElement('strong');
       strong.textContent = match[7];
       parent.append(strong);
-    } else {
+    } else if (match[8] !== undefined) {
       const emphasis = document.createElement('em');
       emphasis.textContent = match[8];
       parent.append(emphasis);
+    } else if (match[9] !== undefined) {
+      const code = document.createElement('code');
+      code.textContent = match[9];
+      parent.append(code);
+    } else {
+      const deleted = document.createElement('del');
+      deleted.textContent = match[10];
+      parent.append(deleted);
     }
     cursor = index + match[0].length;
   }
-  if (cursor < text.length) parent.append(document.createTextNode(text.slice(cursor)));
+  if (cursor < String(text ?? '').length) parent.append(document.createTextNode(String(text).slice(cursor)));
 }
 
 function renderRichText(element, text) {
-  const parts = String(text ?? '').split(/\r?\n/);
   element.replaceChildren();
-  parts.forEach((part, index) => {
-    if (index) element.append(document.createElement('br'));
-    appendInlineMarkdown(element, part);
-  });
-}
-
-function applyTranslations() {
-  document.documentElement.lang = language === 'en' ? 'en' : 'zh-CN';
-  document.querySelectorAll('[data-copy]').forEach((element) => {
-    const text = translations.get(element.dataset.copy)?.[language];
-    if (typeof text === 'string') renderRichText(element, text);
-  });
-  toggle.textContent = language === 'en' ? '中文' : 'EN';
-  toggle.setAttribute('aria-label', language === 'en' ? 'Switch language to Chinese' : 'Switch language to English');
-}
-
-function renderSite() {
-  const site = content.site;
-  document.title = site.pageTitle;
-  document.querySelector('meta[name="description"]').content = site.pageDescription;
-  document.querySelector('meta[name="theme-color"]').content = content.style?.colorBackground || '#ffffff';
-  document.querySelector('[data-site="firstName"]').textContent = site.firstName;
-  document.querySelector('[data-site="lastName"]').textContent = site.lastName;
-  document.querySelectorAll('.wordmark-name').forEach((element) => {
-    element.textContent = `${site.firstName} ${site.lastName}`.toUpperCase();
-  });
-  const heroName = document.querySelector('h1');
-  if (site.nameUrl) {
-    let nameLink = heroName.querySelector('a');
-    if (!nameLink) {
-      nameLink = document.createElement('a');
-      nameLink.className = 'hero-name-link';
-      while (heroName.firstChild) nameLink.append(heroName.firstChild);
-      heroName.append(nameLink);
-    }
-    nameLink.href = safePublicUrl(site.nameUrl);
-  } else {
-    const nameLink = heroName.querySelector('a');
-    if (nameLink) {
-      while (nameLink.firstChild) heroName.insertBefore(nameLink.firstChild, nameLink);
-      nameLink.remove();
+  const lines = String(text ?? '').split(/\r?\n/);
+  let paragraph = [];
+  let list = null;
+  let listTag = '';
+  const flushParagraph = () => {
+    if (!paragraph.length) return;
+    const p = document.createElement('p');
+    appendInlineMarkdown(p, paragraph.join(' '));
+    element.append(p);
+    paragraph = [];
+  };
+  const closeList = () => { list = null; listTag = ''; };
+  for (const raw of lines) {
+    const line = raw.trim();
+    if (!line) { flushParagraph(); closeList(); continue; }
+    const heading = /^(#{1,4})\s+(.+)$/.exec(line);
+    const bullet = /^[-*+]\s+(.+)$/.exec(line);
+    const ordered = /^\d+[.)]\s+(.+)$/.exec(line);
+    if (heading) {
+      flushParagraph(); closeList();
+      const h = document.createElement(`h${Math.min(4, heading[1].length + 1)}`);
+      appendInlineMarkdown(h, heading[2]);
+      element.append(h);
+    } else if (bullet || ordered) {
+      flushParagraph();
+      const tag = bullet ? 'ul' : 'ol';
+      if (!list || listTag !== tag) { closeList(); listTag = tag; list = document.createElement(tag); element.append(list); }
+      const item = document.createElement('li');
+      appendInlineMarkdown(item, (bullet ?? ordered)[1]);
+      list.append(item);
+    } else if (line.startsWith('> ')) {
+      flushParagraph(); closeList();
+      const quote = document.createElement('blockquote');
+      appendInlineMarkdown(quote, line.slice(2));
+      element.append(quote);
+    } else if (/^(---+|\*\*\*+)$/.test(line)) {
+      flushParagraph(); closeList(); element.append(document.createElement('hr'));
+    } else {
+      closeList(); paragraph.push(line);
     }
   }
-  document.querySelector('[data-site="schoolShort"]').textContent = site.schoolShort;
-  document.querySelector('#profile-location').textContent =
-    language === 'en' ? site.profileLocation : site.profileLocationZh;
-  const profilePhoto = document.querySelector('#profile-photo');
-  const profileInitials = document.querySelector('#profile-initials');
-  profileInitials.textContent = (site.monogram || `${site.firstName.slice(0, 1)}${site.lastName.slice(0, 1)}`).toUpperCase();
-  profilePhoto.hidden = !site.avatar;
-  profileInitials.hidden = Boolean(site.avatar);
-  if (site.avatar) profilePhoto.src = safePublicUrl(site.avatar);
-  profilePhoto.alt = site.avatarAlt || `Portrait of ${site.firstName} ${site.lastName}`;
-  const monogram = document.querySelector('.mark');
-  monogram.firstChild.textContent = (site.monogram || site.firstName.slice(0, 1)).slice(0, 1);
-  document.querySelectorAll('[data-site-mail]').forEach((element) => {
-    if (site.email) element.href = `mailto:${site.email}`;
-    else element.hidden = true;
-  });
-  document.querySelectorAll('[data-site="email"]').forEach((element) => {
-    element.textContent = site.email;
-  });
-  applyTheme();
-  renderProfiles();
-  document.querySelectorAll('[data-site="sealEn"]').forEach((element) => {
-    element.textContent = content.education.sealEn;
-  });
-  document.querySelectorAll('[data-site="sealZh"]').forEach((element) => {
-    element.textContent = content.education.sealZh;
-  });
-  renderStats();
-  renderProjects();
-  renderEducation();
-  renderSkills();
-  renderHonors();
-  applyModuleVisibility();
-  applyTranslations();
+  flushParagraph();
 }
 
-function applyModuleVisibility() {
-  const modules = content.modules ?? {};
-  const visibility = {
-    header: document.querySelector('.topbar'),
-    hero: document.querySelector('.hero'),
-    heroProfileCard: document.querySelector('.profile-card'),
-    about: document.querySelector('#about'),
-    stats: document.querySelector('#stats-list'),
-    research: document.querySelector('#research'),
-    education: document.querySelector('#education'),
-    skills: document.querySelector('.toolkit'),
-    honors: document.querySelector('#honors'),
-    contact: document.querySelector('.contact'),
-    profiles: document.querySelector('#profile-links'),
-    footer: document.querySelector('footer')
-  };
-  Object.entries(visibility).forEach(([key, element]) => {
-    if (!element || !(key in modules)) return;
-    element.hidden = !modules[key];
+function moduleHeader(section) { return section.header ?? section; }
+function localized(section, stem) { return section[`${stem}${language === 'en' ? 'En' : 'Zh'}`] ?? ''; }
+function slug(value, index) {
+  const result = String(value ?? '').toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  return `module-${index + 1}${result ? `-${result}` : ''}`;
+}
+function addRich(parent, className, value) {
+  const node = document.createElement('div');
+  if (className) node.className = className;
+  renderRichText(node, value);
+  parent.append(node);
+  return node;
+}
+function addHeading(section, container) {
+  const h = document.createElement('h2');
+  h.textContent = localized(section, 'title');
+  container.append(h);
+  return h;
+}
+function addImage(parent, src, alt, className) {
+  const url = safePublicUrl(src);
+  if (!url) return null;
+  const image = document.createElement('img');
+  image.src = url;
+  image.alt = alt ?? '';
+  image.loading = 'lazy';
+  image.className = className;
+  parent.append(image);
+  return image;
+}
+function makeSection(section, index) {
+  const header = moduleHeader(section);
+  if (header.visible === false) return null;
+  const root = document.createElement('section');
+  root.className = `section dynamic-section dynamic-${section.type}`;
+  root.id = slug(header.sectionLabelEn || header.sectionLabelZh, index);
+  const kicker = document.createElement('div');
+  kicker.className = 'section-kicker';
+  const number = document.createElement('span');
+  number.textContent = String(index + 1).padStart(2, '0');
+  const label = document.createElement('span');
+  label.textContent = localized(header, 'sectionLabel');
+  kicker.append(number, label);
+  root.append(kicker);
+
+  if (section.type === 'text') {
+    const layout = document.createElement('div');
+    layout.className = 'module-text-layout';
+    const main = document.createElement('div');
+    main.className = 'module-text-main';
+    addHeading(header, main);
+    addRich(main, 'module-body rich-description', localized(section, 'body'));
+    layout.append(main);
+    addImage(layout, section.image, section.imageAlt, 'module-image');
+    root.append(layout);
+    return root;
+  }
+
+  const title = document.createElement('div');
+  title.className = 'section-heading dynamic-heading';
+  addHeading(header, title);
+  const intro = localized(section.intro ?? {}, 'intro');
+  if (intro) addRich(title, 'module-intro', intro);
+  root.append(title);
+
+  if (section.type === 'publication') {
+    const list = document.createElement('div');
+    list.className = 'project-list';
+    (section.items ?? []).forEach((item, itemIndex) => {
+      const article = document.createElement('article');
+      article.className = 'project-card';
+      const numberCell = document.createElement('div');
+      numberCell.className = 'project-number';
+      numberCell.textContent = String(itemIndex + 1).padStart(2, '0');
+      const main = document.createElement('div');
+      main.className = 'project-main';
+      const h = document.createElement('h3');
+      if (item.url && safePublicUrl(item.url)) {
+        const a = document.createElement('a');
+        a.href = safePublicUrl(item.url);
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.textContent = (language === 'zh' && item.titleZh) ? item.titleZh : (item.title ?? '');
+        h.append(a);
+      } else h.textContent = (language === 'zh' && item.titleZh) ? item.titleZh : (item.title ?? '');
+      main.append(h);
+      if (item.authors) addRich(main, 'project-authors', item.authors);
+      const venueName = (language === 'zh' && item.venueZh) ? item.venueZh : item.venue;
+      const venueLine = [venueName, item.year].filter(Boolean).join(' · ');
+      if (venueLine) addRich(main, 'project-venue', venueLine);
+      addRich(main, 'rich-description', localized(item, 'body'));
+      addImage(main, item.image, item.imageAlt, 'project-image');
+      article.append(numberCell, main);
+      list.append(article);
+    });
+    root.append(list);
+  } else if (section.type === 'links') {
+    const list = document.createElement('div');
+      list.className = 'honor-grid';
+    (section.items ?? []).forEach((item) => {
+      const card = document.createElement('article');
+      const label = document.createElement('span');
+      label.className = 'honor-year';
+      label.textContent = '↗';
+      const body = document.createElement('div');
+      const h = document.createElement('h3');
+      if (item.url && safePublicUrl(item.url)) {
+        const a = document.createElement('a');
+        a.href = safePublicUrl(item.url);
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.textContent = localized(item, 'label') || item.label || '';
+        h.append(a);
+      } else h.textContent = localized(item, 'label') || item.label || '';
+      body.append(h);
+      addRich(body, 'module-link-description', localized(item, 'body'));
+      addImage(body, item.image, item.imageAlt, 'honor-image');
+      const arrow = document.createElement('span');
+      arrow.className = 'honor-arrow';
+      arrow.setAttribute('aria-hidden', 'true');
+      arrow.textContent = '↗';
+      card.append(label, body, arrow);
+      list.append(card);
+    });
+    root.append(list);
+  } else if (section.type === 'cards') {
+    const list = document.createElement('div');
+    list.className = 'custom-card-grid';
+    (section.items ?? []).forEach((item) => {
+      const data = item.card ?? item;
+      const card = document.createElement('article');
+      card.className = 'custom-card';
+      addImage(card, data.image, data.imageAlt, 'project-image');
+      const h = document.createElement('h3');
+      h.textContent = localized(data, 'title') || data.title || '';
+      card.append(h);
+      const subtitle = localized(data, 'subtitle') || data.subtitle || '';
+      if (subtitle) addRich(card, 'custom-card-subtitle', subtitle);
+      addRich(card, 'module-body rich-description', localized(data, 'body'));
+      if (data.url && safePublicUrl(data.url)) {
+        const link = document.createElement('a');
+        link.href = safePublicUrl(data.url);
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = localized(data, 'linkLabel') || (language === 'en' ? 'Read more ↗' : '查看详情 ↗');
+        card.append(link);
+      }
+      list.append(card);
+    });
+    root.append(list);
+  }
+  return root;
+}
+
+function renderNavigation() {
+  const nav = document.querySelector('#module-nav');
+  nav.replaceChildren();
+  sections.forEach((section, index) => {
+    const header = moduleHeader(section);
+    if (header.visible === false || header.showInNavigation === false) return;
+    const label = localized(header, 'sectionLabel');
+    if (!label) return;
+    const link = document.createElement('a');
+    link.href = `#${slug(header.sectionLabelEn || header.sectionLabelZh, index)}`;
+    link.textContent = label;
+    nav.append(link);
   });
+  nav.hidden = nav.childElementCount === 0;
 }
 
 function applyTheme() {
-  const theme = content.style ?? {};
   const root = document.documentElement;
   const colors = {
-    '--ink': theme.colorText,
-    '--muted': theme.colorMuted,
-    '--accent': theme.colorAccent,
-    '--line': theme.colorBorder,
-    '--paper': theme.colorBackground,
-    '--soft': theme.colorSoft
+    '--ink': theme.colorText, '--muted': theme.colorMuted, '--accent': theme.colorAccent,
+    '--line': theme.colorBorder, '--paper': theme.colorBackground, '--soft': theme.colorSoft
   };
   Object.entries(colors).forEach(([key, value]) => {
     if (/^#[0-9a-f]{6}$/i.test(value ?? '')) root.style.setProperty(key, value);
   });
-  document.querySelector('meta[name="theme-color"]').content = colors['--paper'] ?? '#ffffff';
   const bodyFont = String(theme.fontBody ?? '').replace(/[^a-z0-9 ,"'_-]/gi, '');
   const headingFont = String(theme.fontHeading ?? '').replace(/[^a-z0-9 ,"'_-]/gi, '');
   if (bodyFont) root.style.setProperty('--sans', bodyFont);
@@ -200,210 +304,67 @@ function applyTheme() {
     '--text-line-limit': [theme.textLineLimit, 1, 30, '']
   };
   Object.entries(numeric).forEach(([key, [value, min, max, unit]]) => {
-    const number = Number(value);
-    if (Number.isFinite(number)) root.style.setProperty(key, `${Math.min(max, Math.max(min, number))}${unit}`);
+    const n = Number(value);
+    if (Number.isFinite(n)) root.style.setProperty(key, `${Math.min(max, Math.max(min, n))}${unit}`);
   });
-  const headingScale = Math.min(1.6, Math.max(0.7, Number(theme.headingScale) || 1));
-  const scaled = {
-    '--h1-min': [48 * headingScale, 'px'],
-    '--h1-fluid': [6.2 * headingScale, 'vw'],
-    '--h1-max': [68 * headingScale, 'px'],
-    '--title-min': [29 * headingScale, 'px'],
-    '--title-fluid': [3.8 * headingScale, 'vw'],
-    '--title-max': [39 * headingScale, 'px'],
-    '--section-title-size': [35 * headingScale, 'px'],
-    '--item-title-size': [22 * headingScale, 'px'],
-    '--card-title-size': [27 * headingScale, 'px'],
-    '--contact-title-size': [34 * headingScale, 'px'],
-    '--mobile-h1-size': [55 * headingScale, 'px'],
-    '--mobile-title-size': [30 * headingScale, 'px'],
-    '--mobile-section-title-size': [31 * headingScale, 'px'],
-    '--mobile-item-title-size': [20 * headingScale, 'px'],
-    '--mobile-card-title-size': [25 * headingScale, 'px'],
-    '--mobile-contact-title-size': [30 * headingScale, 'px']
+  const scale = Math.min(1.6, Math.max(.7, Number(theme.headingScale) || 1));
+  root.style.setProperty('--heading-scale', scale);
+  const scaledSizes = {
+    '--h1-min': `${48 * scale}px`, '--h1-fluid': `${6.2 * scale}vw`, '--h1-max': `${68 * scale}px`,
+    '--title-min': `${29 * scale}px`, '--title-fluid': `${3.8 * scale}vw`, '--title-max': `${39 * scale}px`,
+    '--section-title-size': `${35 * scale}px`, '--item-title-size': `${22 * scale}px`,
+    '--mobile-h1-size': `${55 * scale}px`, '--mobile-title-size': `${30 * scale}px`,
+    '--mobile-section-title-size': `${31 * scale}px`, '--mobile-item-title-size': `${20 * scale}px`
   };
-  Object.entries(scaled).forEach(([key, [value, unit]]) => root.style.setProperty(key, `${value}${unit}`));
+  Object.entries(scaledSizes).forEach(([key, value]) => root.style.setProperty(key, value));
+  document.querySelector('meta[name="theme-color"]').content = theme.colorBackground || '#ffffff';
 }
 
-function renderProfiles() {
-  const container = document.querySelector('#profile-links');
+function render() {
+  document.documentElement.lang = language === 'en' ? 'en' : 'zh-CN';
+  document.title = site.pageTitle || `${site.firstName ?? ''} ${site.lastName ?? ''}`.trim();
+  document.querySelector('meta[name="description"]').content = site.pageDescription ?? '';
+  document.querySelector('#first-name').textContent = site.firstName ?? '';
+  document.querySelector('#last-name').textContent = site.lastName ?? '';
+  document.querySelector('#site-mark').textContent = (site.monogram || site.firstName || 'K').slice(0, 1).toUpperCase();
+  document.querySelector('#hero-kicker').textContent = language === 'en' ? (site.heroKickerEn ?? '') : (site.heroKickerZh ?? '');
+  document.querySelector('#back-top').textContent = language === 'en' ? (site.backTopEn ?? '') : (site.backTopZh ?? '');
+  const initials = document.querySelector('#profile-initials');
+  const photo = document.querySelector('#profile-photo');
+  initials.textContent = (site.monogram || `${site.firstName?.[0] ?? ''}${site.lastName?.[0] ?? ''}`).toUpperCase();
+  photo.hidden = !site.avatar;
+  initials.hidden = Boolean(site.avatar);
+  if (site.avatar) photo.src = safePublicUrl(site.avatar);
+  photo.alt = site.avatarAlt ?? '';
+  const email = document.querySelector('#profile-email');
+  email.hidden = !site.email;
+  if (site.email) { email.href = `mailto:${site.email}`; email.textContent = site.email; }
+  renderRichText(document.querySelector('#footer-copy'), language === 'en' ? site.footerTextEn : site.footerTextZh);
+  applyTheme();
+  renderNavigation();
+  const container = document.querySelector('#page-modules');
   container.replaceChildren();
-  content.profiles.forEach((profile) => {
-    const link = document.createElement('a');
-    link.href = profile.url;
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    link.textContent = profile.label;
-    container.append(link);
+  sections.forEach((section, index) => {
+    const node = makeSection(section, index);
+    if (node) container.append(node);
   });
+  langToggle.textContent = language === 'en' ? (site.languageSwitchEn ?? '中文') : (site.languageSwitchZh ?? 'EN');
+  langToggle.setAttribute('aria-label', language === 'en' ? 'Switch language to Chinese' : 'Switch language to English');
 }
 
-function renderStats() {
-  const container = document.querySelector('#stats-list');
-  container.replaceChildren();
-  content.stats.forEach((stat) => {
-    const item = document.createElement('div');
-    const value = addText(item, 'strong', '', stat.value);
-    if (stat.suffix) addText(value, 'span', '', stat.suffix);
-    const label = addText(item, 'small', '', '');
-    renderRichText(label, language === 'en' ? stat.labelEn : stat.labelZh);
-    container.append(item);
-  });
-}
+Promise.all([
+  fetch('data/site.json').then((response) => { if (!response.ok) throw new Error('Could not load profile'); return response.json(); }),
+  fetch('data/style.json').then((response) => { if (!response.ok) throw new Error('Could not load appearance settings'); return response.json(); }),
+  fetch('data/modules.json').then((response) => { if (!response.ok) throw new Error('Could not load modules'); return response.json(); })
+]).then(([profile, appearance, page]) => {
+  site = profile;
+  theme = appearance;
+  sections = Array.isArray(page.sections) ? page.sections : [];
+  render();
+}).catch((error) => console.error(error));
 
-function renderGlyph(glyph) {
-  const item = document.createElement('div');
-  item.className = `project-glyph glyph-${glyph}`;
-  const count = glyph === 'crystal' ? 9 : glyph === 'device' ? 4 : 3;
-  for (let index = 0; index < count; index += 1) item.append(document.createElement('i'));
-  if (glyph === 'device') addText(item, 'b', '', '+');
-  return item;
-}
-
-function renderProjects() {
-  const container = document.querySelector('#project-list');
-  container.replaceChildren();
-  content.projects.forEach((project) => {
-    const card = document.createElement('article');
-    card.className = `project-card${project.glyph === 'lens' ? ' project-coursework' : ''}`;
-    const number = addText(card, 'div', 'project-number', project.number);
-    addText(number, 'span', '', '—');
-    number.append(document.createTextNode(` ${language === 'en' ? project.categoryEn : project.categoryZh}`));
-    const main = document.createElement('div');
-    main.className = 'project-main';
-    const title = addText(main, 'h3', '', language === 'en' ? project.titleEn : project.titleZh);
-    if (project.url) {
-      const link = document.createElement('a');
-      link.href = safePublicUrl(project.url);
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      link.textContent = title.textContent;
-      title.replaceChildren(link);
-    }
-    const supervisor = language === 'en' ? project.supervisorEn : project.supervisorZh;
-    if (supervisor) addText(main, 'p', 'supervisor', supervisor);
-    const description = addText(main, 'p', 'rich-description', '');
-    renderRichText(description, language === 'en' ? project.descriptionEn : project.descriptionZh);
-    if (project.image) {
-      const image = document.createElement('img');
-      image.className = 'project-image';
-      image.src = safePublicUrl(project.image);
-      image.alt = project.imageAlt ?? '';
-      image.loading = 'lazy';
-      main.insertBefore(image, main.firstChild);
-    }
-    const tags = document.createElement('div');
-    tags.className = 'tags';
-    project.tags.forEach((tag) => addText(tags, 'span', '', tag));
-    main.append(tags);
-    card.append(main, renderGlyph(project.glyph));
-    container.append(card);
-  });
-}
-
-function renderEducation() {
-  const education = content.education;
-  const title = document.querySelector('[data-site="institution"]');
-  title.replaceChildren();
-  renderRichText(title, education.institution);
-  if (education.institutionUrl) {
-    const link = document.createElement('a');
-    link.href = safePublicUrl(education.institutionUrl);
-    while (title.firstChild) link.append(title.firstChild);
-    title.append(link);
-  }
-  title.parentElement.querySelector('.institution-image')?.remove();
-  if (education.image) {
-    const image = document.createElement('img');
-    image.className = 'institution-image';
-    image.src = safePublicUrl(education.image);
-    image.alt = education.imageAlt ?? '';
-    image.loading = 'lazy';
-    title.before(image);
-  }
-  renderRichText(document.querySelector('[data-site-lang="location"]'), language === 'en' ? education.locationEn : education.locationZh);
-  renderRichText(document.querySelector('[data-site-lang="department"]'), language === 'en' ? education.departmentEn : education.departmentZh);
-  renderRichText(document.querySelector('[data-site-lang="program"]'), language === 'en' ? education.programEn : education.programZh);
-}
-
-function renderSkills() {
-  const container = document.querySelector('#skill-list');
-  container.replaceChildren();
-  content.skills.forEach((group) => {
-    const section = document.createElement('div');
-    section.className = 'skill-group';
-    addText(section, 'span', '', language === 'en' ? group.titleEn : group.titleZh);
-    const paragraph = document.createElement('p');
-    const lines = group.lines ?? (language === 'en' ? group.linesEn : group.linesZh);
-    lines.forEach((line, index) => {
-      if (index) paragraph.append(document.createElement('br'));
-      appendInlineMarkdown(paragraph, line);
-    });
-    section.append(paragraph);
-    container.append(section);
-  });
-}
-
-function renderHonors() {
-  const container = document.querySelector('#honor-grid');
-  container.replaceChildren();
-  content.honors.forEach((honor) => {
-    const article = document.createElement('article');
-    if (honor.wide) article.classList.add('honor-wide');
-    addText(article, 'span', 'honor-year', honor.year);
-    const description = document.createElement('div');
-    const title = addText(description, 'h3', '', language === 'en' ? honor.titleEn : honor.titleZh);
-    if (honor.url) {
-      const link = document.createElement('a');
-      link.href = safePublicUrl(honor.url);
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      while (title.firstChild) link.append(title.firstChild);
-      title.replaceChildren(link);
-    }
-    if (honor.image) {
-      const image = document.createElement('img');
-      image.className = 'honor-image';
-      image.src = safePublicUrl(honor.image);
-      image.alt = honor.imageAlt ?? '';
-      image.loading = 'lazy';
-      description.prepend(image);
-    }
-    const detail = addText(description, 'p', 'rich-description', '');
-    renderRichText(detail, language === 'en' ? honor.detailEn : honor.detailZh);
-    article.append(description);
-    addText(article, 'span', 'honor-arrow', '↗');
-    container.append(article);
-  });
-}
-
-function renderLanguage() {
-  if (!content) return;
-  renderStats();
-  renderProjects();
-  renderEducation();
-  renderSkills();
-  renderHonors();
-  document.querySelector('#profile-location').textContent =
-    language === 'en' ? content.site.profileLocation : content.site.profileLocationZh;
-  applyModuleVisibility();
-  applyTranslations();
-}
-
-fetch('data/content.json')
-  .then((response) => {
-    if (!response.ok) throw new Error('Could not load editable site content.');
-    return response.json();
-  })
-  .then((loaded) => {
-    content = loaded;
-    translations = new Map(content.translations.map((item) => [item.key, item]));
-    renderSite();
-  })
-  .catch((error) => console.error(error));
-
-toggle.addEventListener('click', () => {
+langToggle.addEventListener('click', () => {
   language = language === 'en' ? 'zh' : 'en';
-  renderLanguage();
+  render();
 });
 
