@@ -337,6 +337,18 @@ h1 em { color: var(--ink); font-style: normal; }
   footer p { order: 3; width: 100%; }
 }
 
+.topbar nav a { font-size: 15px; }
+.profile-contact { font-size: 14px; }
+.module-text-layout-full { grid-template-columns: minmax(0, 1fr); }
+.module-text-layout-full .module-text-main { width: 100%; max-width: none; }
+.custom-card-date { display: block; margin-top: 7px; color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
+.custom-card-date + .custom-card-subtitle { margin-top: 4px; }
+
+@media (max-width: 760px) {
+  .topbar nav a { font-size: 14px; }
+  .profile-contact { font-size: 14px; }
+}
+
 /* Requested profile alignment and reading rhythm */
 .hero { display: flex; justify-content: center; padding: 54px 0 46px; text-align: center; }
 .hero-copy { display: none; }
@@ -378,4 +390,14 @@ p, li, blockquote { text-align: justify; text-justify: inter-word; }
   .school-meta { font-size: 12px; }
   .homepage-links { grid-template-columns: 1fr; }
   .dynamic-heading .module-intro { max-width: none; }
+}
+
+/* Requested text sizing and full-width About Me body */
+.topbar nav a { font-size: 15px; }
+.profile-contact { font-size: 14px; }
+.module-text-layout-full { grid-template-columns: minmax(0, 1fr); }
+.module-text-layout-full .module-text-main { width: 100%; max-width: none; }
+@media (max-width: 760px) {
+  .topbar nav a { font-size: 14px; }
+  .profile-contact { font-size: 14px; }
 }
