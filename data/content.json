@@ -1,0 +1,317 @@
+{
+  "translations": [
+    {
+      "key": "copy-001",
+      "label": "about",
+      "en": "About",
+      "zh": "关于"
+    },
+    {
+      "key": "copy-002",
+      "label": "research",
+      "en": "Research",
+      "zh": "研究"
+    },
+    {
+      "key": "copy-003",
+      "label": "education",
+      "en": "Education",
+      "zh": "教育"
+    },
+    {
+      "key": "copy-004",
+      "label": "honors",
+      "en": "Honors",
+      "zh": "荣誉"
+    },
+    {
+      "key": "copy-005",
+      "label": "optoelectronics-photonics-devices",
+      "en": "OPTOELECTRONICS · PHOTONICS · DEVICES",
+      "zh": "光电信息 · 光子学 · 器件"
+    },
+    {
+      "key": "copy-006",
+      "label": "exploring-how-light-materials-and-devices-",
+      "en": "Exploring how light, materials, and devices meet.",
+      "zh": "探索光、材料与器件的交汇。"
+    },
+    {
+      "key": "copy-007",
+      "label": "optoelectronics-researcher-with-experience",
+      "en": "Optoelectronics researcher with experience in photonic-crystal simulation, optoelectronic device fabrication, and characterization.",
+      "zh": "具有光子晶体仿真、光电器件制备与表征经验的光电信息研究者。"
+    },
+    {
+      "key": "copy-008",
+      "label": "explore-my-work",
+      "en": "Explore my work",
+      "zh": "了解研究经历"
+    },
+    {
+      "key": "copy-009",
+      "label": "get-in-touch",
+      "en": "Get in touch",
+      "zh": "联系我"
+    },
+    {
+      "key": "copy-010",
+      "label": "scroll-to-explore",
+      "en": "SCROLL TO EXPLORE",
+      "zh": "向下探索"
+    },
+    {
+      "key": "copy-011",
+      "label": "a-little-about-me",
+      "en": "A LITTLE ABOUT ME",
+      "zh": "关于我"
+    },
+    {
+      "key": "copy-012",
+      "label": "curious-about-the-technologies-that-make-l",
+      "en": "Curious about the technologies that make light useful.",
+      "zh": "关注让光发挥作用的技术。"
+    },
+    {
+      "key": "copy-013",
+      "label": "i-studied-optoelectronics-in-the-departmen",
+      "en": "I studied optoelectronics in the Department of Electrical and Electronic Engineering at Southern University of Science and Technology. My academic interests span photonic structures, optoelectronic devices, and the practical work of building and measuring them.",
+      "zh": "我曾在南方科技大学电气与电子工程系学习光电信息科学与工程。我的学术兴趣涵盖光子结构、光电器件，以及器件制备与测试实践。"
+    },
+    {
+      "key": "copy-014",
+      "label": "cumulative-gpa-cv",
+      "en": "CUMULATIVE GPA · CV",
+      "zh": "累计 GPA · 简历数据"
+    },
+    {
+      "key": "copy-015",
+      "label": "major-rank-cv",
+      "en": "MAJOR RANK · CV",
+      "zh": "专业排名 · 简历数据"
+    },
+    {
+      "key": "copy-016",
+      "label": "ielts-cv",
+      "en": "IELTS · CV",
+      "zh": "雅思 · 简历数据"
+    },
+    {
+      "key": "copy-017",
+      "label": "academic-figures-are-reproduced-from-the-s",
+      "en": "Academic figures are reproduced from the supplied CV and may need updating.",
+      "zh": "以上学术数据摘自所提供的简历，发布前请确认是否需要更新。"
+    },
+    {
+      "key": "copy-018",
+      "label": "research-experience",
+      "en": "RESEARCH EXPERIENCE",
+      "zh": "研究经历"
+    },
+    {
+      "key": "copy-019",
+      "label": "questions-explored",
+      "en": "Questions explored",
+      "zh": "探索的问题"
+    },
+    {
+      "key": "copy-020",
+      "label": "selected-projects-from-my-academic-work",
+      "en": "Selected projects from my academic work.",
+      "zh": "节选自我的学术项目经历。"
+    },
+    {
+      "key": "copy-021",
+      "label": "valley-topological-photonic-crystal",
+      "en": "Valley topological photonic crystal",
+      "zh": "谷拓扑光子晶体"
+    },
+    {
+      "key": "copy-022",
+      "label": "supervised-by-prof-zhen-gao",
+      "en": "Supervised by Prof. Zhen Gao",
+      "zh": "指导教师：高振教授"
+    },
+    {
+      "key": "copy-023",
+      "label": "comsol-simulation-and-experimental-assista",
+      "en": "COMSOL simulation and experimental assistance. Built a foundation in solid-state physics and topological photonics, with hands-on simulation experience.",
+      "zh": "参与 COMSOL 仿真与实验辅助工作。学习固体物理与拓扑光子学基础，并积累光子晶体仿真实践经验。"
+    },
+    {
+      "key": "copy-024",
+      "label": "qled-and-pressure-sensor-integration",
+      "en": "QLED and pressure-sensor integration",
+      "zh": "QLED 与压力传感器集成"
+    },
+    {
+      "key": "copy-025",
+      "label": "supervised-by-prof-shuming-chen",
+      "en": "Supervised by Prof. Shuming Chen",
+      "zh": "指导教师：陈树明教授"
+    },
+    {
+      "key": "copy-026",
+      "label": "device-fabrication-and-characterization-le",
+      "en": "Device fabrication and characterization. Learned QLED device structures and common optoelectronic fabrication and measurement methods.",
+      "zh": "参与器件制备与表征，学习 QLED 发光器件结构及常用光电器件制备、测试方法。"
+    },
+    {
+      "key": "copy-027",
+      "label": "optics-photovoltaics-optical-networks",
+      "en": "Optics, photovoltaics & optical networks",
+      "zh": "光学设计、光伏与光网络"
+    },
+    {
+      "key": "copy-028",
+      "label": "led-light-distribution-simulation-with-mat",
+      "en": "LED light-distribution simulation with MATLAB and TracePro; a review of aluminum-oxide passivation for crystalline silicon; and OptiSystem simulation of a bidirectional WDM-PON.",
+      "zh": "使用 MATLAB 与 TracePro 仿真 LED 光分布；综述氧化铝钝化单晶硅；使用 OptiSystem 仿真双向 WDM-PON。"
+    },
+    {
+      "key": "copy-029",
+      "label": "education-toolkit",
+      "en": "EDUCATION & TOOLKIT",
+      "zh": "教育与技能"
+    },
+    {
+      "key": "copy-030",
+      "label": "education-as-listed-in-cv",
+      "en": "EDUCATION · AS LISTED IN CV",
+      "zh": "教育经历 · 简历所载"
+    },
+    {
+      "key": "copy-031",
+      "label": "shenzhen-china-2020-cv-lists-as-present",
+      "en": "Shenzhen, China · 2020 — CV lists as present",
+      "zh": "中国深圳 · 2020 年入学 · 简历记载为在读"
+    },
+    {
+      "key": "copy-032",
+      "label": "department-of-electrical-and-electronic-en",
+      "en": "Department of Electrical and Electronic Engineering<br>Undergraduate studies in Optoelectronics",
+      "zh": "电气与电子工程系<br>光电信息科学与工程本科"
+    },
+    {
+      "key": "copy-033",
+      "label": "tools-methods",
+      "en": "TOOLS & METHODS",
+      "zh": "工具与方法"
+    },
+    {
+      "key": "copy-034",
+      "label": "a-practical-toolkit",
+      "en": "A practical toolkit",
+      "zh": "实践工具箱"
+    },
+    {
+      "key": "copy-035",
+      "label": "computing-simulation",
+      "en": "COMPUTING & SIMULATION",
+      "zh": "编程与仿真"
+    },
+    {
+      "key": "copy-036",
+      "label": "device-fabrication",
+      "en": "DEVICE FABRICATION",
+      "zh": "器件制备"
+    },
+    {
+      "key": "copy-037",
+      "label": "spin-coating-thermal-evaporation-br-magnet",
+      "en": "Spin coating · Thermal evaporation<br>Magnetron sputtering",
+      "zh": "旋涂 · 热蒸发<br>磁控溅射"
+    },
+    {
+      "key": "copy-038",
+      "label": "also",
+      "en": "ALSO",
+      "zh": "其他"
+    },
+    {
+      "key": "copy-039",
+      "label": "honors-community",
+      "en": "HONORS & COMMUNITY",
+      "zh": "荣誉与服务"
+    },
+    {
+      "key": "copy-040",
+      "label": "a-few-milestones",
+      "en": "A few milestones",
+      "zh": "一些经历与里程碑"
+    },
+    {
+      "key": "copy-041",
+      "label": "awards-and-service-listed-in-the-supplied-",
+      "en": "Awards and service listed in the supplied CV.",
+      "zh": "奖项与服务经历摘自所提供的简历。"
+    },
+    {
+      "key": "copy-042",
+      "label": "honorable-mention",
+      "en": "Honorable Mention",
+      "zh": "荣誉提名奖"
+    },
+    {
+      "key": "copy-043",
+      "label": "mathematical-contest-in-modeling-comap",
+      "en": "Mathematical Contest in Modeling · COMAP",
+      "zh": "美国大学生数学建模竞赛 · COMAP"
+    },
+    {
+      "key": "copy-044",
+      "label": "first-prize-merit-student-scholarship",
+      "en": "First Prize, Merit Student Scholarship",
+      "zh": "优秀学生一等奖学金"
+    },
+    {
+      "key": "copy-045",
+      "label": "first-prize-merit-student-scholarship",
+      "en": "First Prize, Merit Student Scholarship",
+      "zh": "优秀学生一等奖学金"
+    },
+    {
+      "key": "copy-046",
+      "label": "special-prize-freshman-scholarship",
+      "en": "Special Prize, Freshman Scholarship",
+      "zh": "新生奖学金特别奖"
+    },
+    {
+      "key": "copy-047",
+      "label": "volunteer-student-leadership",
+      "en": "Volunteer & student leadership",
+      "zh": "志愿服务与学生工作"
+    },
+    {
+      "key": "copy-048",
+      "label": "76-volunteer-service-hours-deputy-director",
+      "en": "76 volunteer service hours; Deputy Director, Innovation and Entrepreneurship Department, Shude College (2021–2022).",
+      "zh": "累计志愿服务 76 小时；曾任树德书院创新创业部副部长（2021–2022）。"
+    },
+    {
+      "key": "copy-049",
+      "label": "have-a-project-in-mind",
+      "en": "Have a project in mind?",
+      "zh": "期待交流与合作"
+    },
+    {
+      "key": "copy-050",
+      "label": "i-m-open-to-conversations-about-photonics-",
+      "en": "I’m open to conversations about photonics, optoelectronic devices, and research.",
+      "zh": "欢迎交流光子学、光电器件与科研相关话题。"
+    },
+    {
+      "key": "copy-051",
+      "label": "a-personal-portfolio-content-based-on-cv-v",
+      "en": "A personal portfolio · Content based on CV-V4",
+      "zh": "个人作品集 · 内容依据 CV-V4 整理"
+    },
+    {
+      "key": "copy-052",
+      "label": "back-to-top",
+      "en": "BACK TO TOP ↑",
+      "zh": "返回顶部 ↑"
+    }
+  ]
+}
+

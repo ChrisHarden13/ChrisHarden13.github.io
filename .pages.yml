@@ -1,0 +1,29 @@
+content:
+  - name: translations
+    label: Website copy
+    type: file
+    path: data/content.json
+    format: json
+    fields:
+      - name: translations
+        label: Text in English and Chinese
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - name: key
+            label: Internal key (do not change)
+            type: string
+            readonly: true
+          - name: label
+            label: Section / item
+            type: string
+          - name: en
+            label: English
+            type: text
+          - name: zh
+            label: Chinese
+            type: text
+
