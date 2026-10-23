@@ -1,4 +1,183 @@
 {
+  "site": {
+    "firstName": "Kexin",
+    "lastName": "Xiang",
+    "email": "chrisxiang13@gmail.com",
+    "pageTitle": "Kexin Xiang — Optoelectronics",
+    "pageDescription": "Kexin Xiang — optoelectronics, photonic devices, and experimental research.",
+    "schoolShort": "SUSTech"
+  },
+  "stats": [
+    {
+      "value": "3.90",
+      "suffix": "/4.00",
+      "labelEn": "CUMULATIVE GPA · CV",
+      "labelZh": "累计 GPA · 简历数据"
+    },
+    {
+      "value": "#1",
+      "suffix": "/37",
+      "labelEn": "MAJOR RANK · CV",
+      "labelZh": "专业排名 · 简历数据"
+    },
+    {
+      "value": "7.0",
+      "labelEn": "IELTS · CV",
+      "labelZh": "雅思 · 简历数据"
+    }
+  ],
+  "projects": [
+    {
+      "number": "01",
+      "categoryEn": "PHOTONIC STRUCTURES",
+      "categoryZh": "光子结构",
+      "titleEn": "Valley topological photonic crystal",
+      "titleZh": "谷拓扑光子晶体",
+      "supervisorEn": "Supervised by Prof. Zhen Gao",
+      "supervisorZh": "指导教师：高振教授",
+      "descriptionEn": "COMSOL simulation and experimental assistance. Built a foundation in solid-state physics and topological photonics, with hands-on simulation experience.",
+      "descriptionZh": "参与 COMSOL 仿真与实验辅助工作。学习固体物理与拓扑光子学基础，并积累光子晶体仿真实践经验。",
+      "tags": [
+        "COMSOL",
+        "PHOTONICS",
+        "SIMULATION"
+      ],
+      "glyph": "crystal"
+    },
+    {
+      "number": "02",
+      "categoryEn": "OPTOELECTRONIC DEVICES",
+      "categoryZh": "光电器件",
+      "titleEn": "QLED and pressure-sensor integration",
+      "titleZh": "QLED 与压力传感器集成",
+      "supervisorEn": "Supervised by Prof. Shuming Chen",
+      "supervisorZh": "指导教师：陈树明教授",
+      "descriptionEn": "Device fabrication and characterization. Learned QLED device structures and common optoelectronic fabrication and measurement methods.",
+      "descriptionZh": "参与器件制备与表征，学习 QLED 发光器件结构及常用光电器件制备、测试方法。",
+      "tags": [
+        "QLED",
+        "FABRICATION",
+        "CHARACTERIZATION"
+      ],
+      "glyph": "device"
+    },
+    {
+      "number": "03",
+      "categoryEn": "COURSE PROJECTS",
+      "categoryZh": "课程项目",
+      "titleEn": "Optics, photovoltaics & optical networks",
+      "titleZh": "光学设计、光伏与光网络",
+      "descriptionEn": "LED light-distribution simulation with MATLAB and TracePro; a review of aluminum-oxide passivation for crystalline silicon; and OptiSystem simulation of a bidirectional WDM-PON.",
+      "descriptionZh": "使用 MATLAB 与 TracePro 仿真 LED 光分布；综述氧化铝钝化单晶硅；使用 OptiSystem 仿真双向 WDM-PON。",
+      "tags": [
+        "MATLAB",
+        "TRACEPRO",
+        "OPTISYSTEM"
+      ],
+      "glyph": "lens"
+    }
+  ],
+  "education": {
+    "institution": "Southern University of Science and Technology",
+    "locationEn": "Shenzhen, China · 2020 — CV lists as present",
+    "locationZh": "中国深圳 · 2020 年入学 · 简历记载为在读",
+    "departmentEn": "Department of  Electronic and Electrical Engineering",
+    "departmentZh": "电子与电气工程系",
+    "programEn": "Undergraduate studies in Optoelectronics",
+    "programZh": "光电信息科学与工程本科",
+    "sealEn": "SUSTech",
+    "sealZh": "南方科技大学"
+  },
+  "skills": [
+    {
+      "titleEn": "COMPUTING & SIMULATION",
+      "titleZh": "编程与仿真",
+      "lines": [
+        "MATLAB · Mathematica · Java",
+        "COMSOL · TracePro · OptiSystem",
+        "Silvaco · Dialux · Multisim"
+      ]
+    },
+    {
+      "titleEn": "DEVICE FABRICATION",
+      "titleZh": "器件制备",
+      "linesEn": [
+        "Spin coating · Thermal evaporation",
+        "Magnetron sputtering"
+      ],
+      "linesZh": [
+        "旋涂 · 热蒸发",
+        "磁控溅射"
+      ]
+    },
+    {
+      "titleEn": "ALSO",
+      "titleZh": "其他",
+      "lines": [
+        "Android Studio · English IELTS 7.0"
+      ]
+    }
+  ],
+  "honors": [
+    {
+      "year": "2023",
+      "titleEn": "Honorable Mention",
+      "titleZh": "荣誉提名奖",
+      "detailEn": "Mathematical Contest in Modeling · COMAP",
+      "detailZh": "美国大学生数学建模竞赛 · COMAP",
+      "wide": false
+    },
+    {
+      "year": "2022",
+      "titleEn": "First Prize, Merit Student Scholarship",
+      "titleZh": "优秀学生一等奖学金",
+      "detailEn": "SUSTech",
+      "detailZh": "南方科技大学",
+      "wide": false
+    },
+    {
+      "year": "2021",
+      "titleEn": "First Prize, Merit Student Scholarship",
+      "titleZh": "优秀学生一等奖学金",
+      "detailEn": "SUSTech",
+      "detailZh": "南方科技大学",
+      "wide": false
+    },
+    {
+      "year": "2020",
+      "titleEn": "Special Prize, Freshman Scholarship",
+      "titleZh": "新生奖学金特别奖",
+      "detailEn": "SUSTech",
+      "detailZh": "南方科技大学",
+      "wide": false
+    },
+    {
+      "year": "2020—",
+      "titleEn": "Volunteer & student leadership",
+      "titleZh": "志愿服务与学生工作",
+      "detailEn": "76 volunteer service hours; Deputy Director, Innovation and Entrepreneurship Department, Shude College (2021–2022).",
+      "detailZh": "累计志愿服务 76 小时；曾任树德书院创新创业部副部长（2021–2022）。",
+      "wide": true
+    }
+  ],
+  "profiles": [
+    {
+      "label": "Google Scholar",
+      "url": "https://scholar.google.com/citations?hl=zh-CN&user=cuZ_BaUAAAAJ"
+    },
+    {
+      "label": "ORCID",
+      "url": "https://orcid.org/0009-0006-9623-7871"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/kexin-xiang-2baa19358/"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/ChrisHarden13"
+    }
+  ],
   "translations": [
     {
       "key": "copy-001",
@@ -186,184 +365,5 @@
       "en": "ONE GOOD CONVERSATION CAN OPEN A NEW DOOR.",
       "zh": "一次交流，开启新的可能。"
     }
-  ],
-  "site": {
-    "firstName": "Kexin",
-    "lastName": "Xiang",
-    "email": "chrisxiang13@gmail.com",
-    "pageTitle": "Kexin Xiang — Optoelectronics",
-    "pageDescription": "Kexin Xiang — optoelectronics, photonic devices, and experimental research.",
-    "schoolShort": "SUSTech"
-  },
-  "stats": [
-    {
-      "value": "3.90",
-      "suffix": "/4.00",
-      "labelEn": "CUMULATIVE GPA · CV",
-      "labelZh": "累计 GPA · 简历数据"
-    },
-    {
-      "value": "#1",
-      "suffix": "/37",
-      "labelEn": "MAJOR RANK · CV",
-      "labelZh": "专业排名 · 简历数据"
-    },
-    {
-      "value": "7.0",
-      "suffix": "",
-      "labelEn": "IELTS · CV",
-      "labelZh": "雅思 · 简历数据"
-    }
-  ],
-  "projects": [
-    {
-      "number": "01",
-      "titleEn": "Valley topological photonic crystal",
-      "titleZh": "谷拓扑光子晶体",
-      "supervisorEn": "Supervised by Prof. Zhen Gao",
-      "supervisorZh": "指导教师：高振教授",
-      "descriptionEn": "COMSOL simulation and experimental assistance. Built a foundation in solid-state physics and topological photonics, with hands-on simulation experience.",
-      "descriptionZh": "参与 COMSOL 仿真与实验辅助工作。学习固体物理与拓扑光子学基础，并积累光子晶体仿真实践经验。",
-      "tags": [
-        "COMSOL",
-        "PHOTONICS",
-        "SIMULATION"
-      ],
-      "glyph": "crystal",
-      "categoryEn": "PHOTONIC STRUCTURES",
-      "categoryZh": "光子结构"
-    },
-    {
-      "number": "02",
-      "titleEn": "QLED and pressure-sensor integration",
-      "titleZh": "QLED 与压力传感器集成",
-      "supervisorEn": "Supervised by Prof. Shuming Chen",
-      "supervisorZh": "指导教师：陈树明教授",
-      "descriptionEn": "Device fabrication and characterization. Learned QLED device structures and common optoelectronic fabrication and measurement methods.",
-      "descriptionZh": "参与器件制备与表征，学习 QLED 发光器件结构及常用光电器件制备、测试方法。",
-      "tags": [
-        "QLED",
-        "FABRICATION",
-        "CHARACTERIZATION"
-      ],
-      "glyph": "device",
-      "categoryEn": "OPTOELECTRONIC DEVICES",
-      "categoryZh": "光电器件"
-    },
-    {
-      "number": "03",
-      "titleEn": "Optics, photovoltaics & optical networks",
-      "titleZh": "光学设计、光伏与光网络",
-      "supervisorEn": "",
-      "supervisorZh": "",
-      "descriptionEn": "LED light-distribution simulation with MATLAB and TracePro; a review of aluminum-oxide passivation for crystalline silicon; and OptiSystem simulation of a bidirectional WDM-PON.",
-      "descriptionZh": "使用 MATLAB 与 TracePro 仿真 LED 光分布；综述氧化铝钝化单晶硅；使用 OptiSystem 仿真双向 WDM-PON。",
-      "tags": [
-        "MATLAB",
-        "TRACEPRO",
-        "OPTISYSTEM"
-      ],
-      "glyph": "lens",
-      "categoryEn": "COURSE PROJECTS",
-      "categoryZh": "课程项目"
-    }
-  ],
-  "education": {
-    "institution": "Southern University of Science and Technology",
-    "locationEn": "Shenzhen, China · 2020 — CV lists as present",
-    "locationZh": "中国深圳 · 2020 年入学 · 简历记载为在读",
-    "departmentEn": "Department of Electrical and Electronic Engineering",
-    "departmentZh": "电气与电子工程系",
-    "programEn": "Undergraduate studies in Optoelectronics",
-    "programZh": "光电信息科学与工程本科",
-    "sealEn": "SUSTech",
-    "sealZh": "南方科技大学"
-  },
-  "skills": [
-    {
-      "titleEn": "COMPUTING & SIMULATION",
-      "titleZh": "编程与仿真",
-      "lines": [
-        "MATLAB · Mathematica · Java",
-        "COMSOL · TracePro · OptiSystem",
-        "Silvaco · Dialux · Multisim"
-      ]
-    },
-    {
-      "titleEn": "DEVICE FABRICATION",
-      "titleZh": "器件制备",
-      "linesEn": [
-        "Spin coating · Thermal evaporation",
-        "Magnetron sputtering"
-      ],
-      "linesZh": [
-        "旋涂 · 热蒸发",
-        "磁控溅射"
-      ]
-    },
-    {
-      "titleEn": "ALSO",
-      "titleZh": "其他",
-      "lines": [
-        "Android Studio · English IELTS 7.0"
-      ]
-    }
-  ],
-  "honors": [
-    {
-      "year": "2023",
-      "titleEn": "Honorable Mention",
-      "titleZh": "荣誉提名奖",
-      "detailEn": "Mathematical Contest in Modeling · COMAP",
-      "detailZh": "美国大学生数学建模竞赛 · COMAP"
-    },
-    {
-      "year": "2022",
-      "titleEn": "First Prize, Merit Student Scholarship",
-      "titleZh": "优秀学生一等奖学金",
-      "detailEn": "SUSTech",
-      "detailZh": "南方科技大学"
-    },
-    {
-      "year": "2021",
-      "titleEn": "First Prize, Merit Student Scholarship",
-      "titleZh": "优秀学生一等奖学金",
-      "detailEn": "SUSTech",
-      "detailZh": "南方科技大学"
-    },
-    {
-      "year": "2020",
-      "titleEn": "Special Prize, Freshman Scholarship",
-      "titleZh": "新生奖学金特别奖",
-      "detailEn": "SUSTech",
-      "detailZh": "南方科技大学"
-    },
-    {
-      "year": "2020—",
-      "titleEn": "Volunteer & student leadership",
-      "titleZh": "志愿服务与学生工作",
-      "detailEn": "76 volunteer service hours; Deputy Director, Innovation and Entrepreneurship Department, Shude College (2021–2022).",
-      "detailZh": "累计志愿服务 76 小时；曾任树德书院创新创业部副部长（2021–2022）。",
-      "wide": true
-    }
-  ],
-  "profiles": [
-    {
-      "label": "Google Scholar",
-      "url": "https://scholar.google.com/citations?hl=zh-CN&user=cuZ_BaUAAAAJ"
-    },
-    {
-      "label": "ORCID",
-      "url": "https://orcid.org/0009-0006-9623-7871"
-    },
-    {
-      "label": "LinkedIn",
-      "url": "https://www.linkedin.com/in/kexin-xiang-2baa19358/"
-    },
-    {
-      "label": "GitHub",
-      "url": "https://github.com/ChrisHarden13"
-    }
   ]
 }
-
