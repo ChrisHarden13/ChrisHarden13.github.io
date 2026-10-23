@@ -2,27 +2,42 @@
   "sections": [
     {
       "type": "text",
-      "header": {"visible": true, "showInNavigation": true, "sectionLabelEn": "PROFILE", "sectionLabelZh": "个人简介", "titleEn": "About Kexin", "titleZh": "关于 Kexin"},
-      "bodyEn": "The article's author biography notes that Kexin Xiang joined Professor Feng Yan's Organic Electronics Group in 2024. Before that, he earned a Bachelor of Engineering in Electrical and Electronic Engineering from Southern University of Science and Technology.",
-      "bodyZh": "论文作者简介记载，Kexin Xiang 于 2024 年加入 Feng Yan 教授的有机电子研究组；此前，他获南方科技大学电子与电气工程系工学学士学位。",
-      "image": "",
-      "imageAlt": ""
+      "header": {
+        "visible": true,
+        "showInNavigation": true,
+        "sectionLabelEn": "PROFILE",
+        "sectionLabelZh": "个人简介",
+        "titleEn": "About Kexin",
+        "titleZh": "关于柯鑫"
+      },
+      "bodyEn": "**Kexin Xiang** is currently a Ph.D. student in the Department of Applied Physics of The Hong Kong Polytechnic University, Hong Kong SAR, P. R. China. He joined Professor Yan’s Organic Electronics Group in 2024 after he obtained the bachelor degree of engineering from the Department of Electrical and Electronic Engineering of Southern University of Science and Technology, Shenzhen, P. R. China. His research interests focus on organic electrochemical transistors and their neuromorphic applications.",
+      "bodyZh": "向柯鑫现为香港理工大学应用物理系博士研究生。他在中国深圳南方科技大学电气与电子工程系获得工学学士学位后，于2024年加入严教授的有机电子研究课题组。主要研究方向为有机电化学晶体管及其神经形态学应用。"
     },
     {
       "type": "text",
-      "header": {"visible": true, "showInNavigation": true, "sectionLabelEn": "AFFILIATION", "sectionLabelZh": "学术单位", "titleEn": "Academic affiliation", "titleZh": "学术单位"},
+      "header": {
+        "visible": true,
+        "showInNavigation": true,
+        "sectionLabelEn": "AFFILIATION",
+        "sectionLabelZh": "学术单位",
+        "titleEn": "Academic affiliation",
+        "titleZh": "学术单位"
+      },
       "bodyEn": "The article's author biography identifies Kexin Xiang as a PhD student in the Department of Applied Physics at [The Hong Kong Polytechnic University](https://www.polyu.edu.hk/), Hong Kong SAR. The article lists the Department of Applied Physics and Research Center for Organic Electronics as his affiliation.",
-      "bodyZh": "论文作者简介记载，Kexin Xiang 是[香港理工大学](https://www.polyu.edu.hk/)应用物理学系博士生。论文列出的署名单位为应用物理学系及有机电子研究中心，所在地为中国香港特别行政区。",
-      "image": "",
-      "imageAlt": ""
+      "bodyZh": "论文作者简介记载，Kexin Xiang 是[香港理工大学](https://www.polyu.edu.hk/)应用物理学系博士生。论文列出的署名单位为应用物理学系及有机电子研究中心，所在地为中国香港特别行政区。"
     },
     {
       "type": "text",
-      "header": {"visible": true, "showInNavigation": true, "sectionLabelEn": "RESEARCH", "sectionLabelZh": "研究方向", "titleEn": "Research interests", "titleZh": "研究兴趣"},
+      "header": {
+        "visible": true,
+        "showInNavigation": true,
+        "sectionLabelEn": "RESEARCH",
+        "sectionLabelZh": "研究方向",
+        "titleEn": "Research interests",
+        "titleZh": "研究兴趣"
+      },
       "bodyEn": "Organic electrochemical transistors and their neuromorphic applications.",
-      "bodyZh": "有机电化学晶体管及其在神经形态器件中的应用。",
-      "image": "",
-      "imageAlt": ""
+      "bodyZh": "有机电化学晶体管及其在神经形态器件中的应用。"
     },
     {
       "type": "publication",
@@ -34,7 +49,6 @@
         "titleEn": "Selected publication",
         "titleZh": "代表性论文"
       },
-      "intro": {"introEn": "", "introZh": ""},
       "items": [
         {
           "title": "Organic Electrochemical Transistors for Neuromorphic Devices and Applications",
@@ -44,9 +58,7 @@
           "year": "38(9), e15532 · 2026",
           "bodyEn": "Review article. First published 4 January 2026.",
           "bodyZh": "综述论文，首次发表于 2026 年 1 月 4 日。",
-          "url": "https://doi.org/10.1002/adma.202515532",
-          "image": "",
-          "imageAlt": ""
+          "url": "https://doi.org/10.1002/adma.202515532"
         }
       ]
     },
@@ -60,14 +72,28 @@
         "titleEn": "Public profiles",
         "titleZh": "个人主页与学术资料"
       },
-      "intro": {"introEn": "", "introZh": ""},
       "items": [
-        {"labelEn": "Google Scholar", "labelZh": "Google Scholar", "bodyEn": "", "bodyZh": "", "url": "https://scholar.google.com/citations?hl=zh-CN&user=cuZ_BaUAAAAJ", "image": "", "imageAlt": ""},
-        {"labelEn": "ORCID · 0009-0006-9623-7871", "labelZh": "ORCID · 0009-0006-9623-7871", "bodyEn": "", "bodyZh": "", "url": "https://orcid.org/0009-0006-9623-7871", "image": "", "imageAlt": ""},
-        {"labelEn": "LinkedIn", "labelZh": "LinkedIn", "bodyEn": "", "bodyZh": "", "url": "https://www.linkedin.com/in/kexin-xiang-2baa19358/", "image": "", "imageAlt": ""},
-        {"labelEn": "GitHub · ChrisHarden13", "labelZh": "GitHub · ChrisHarden13", "bodyEn": "", "bodyZh": "", "url": "https://github.com/ChrisHarden13", "image": "", "imageAlt": ""}
+        {
+          "labelEn": "Google Scholar",
+          "labelZh": "Google Scholar",
+          "url": "https://scholar.google.com/citations?hl=zh-CN&user=cuZ_BaUAAAAJ"
+        },
+        {
+          "labelEn": "ORCID · 0009-0006-9623-7871",
+          "labelZh": "ORCID · 0009-0006-9623-7871",
+          "url": "https://orcid.org/0009-0006-9623-7871"
+        },
+        {
+          "labelEn": "LinkedIn",
+          "labelZh": "LinkedIn",
+          "url": "https://www.linkedin.com/in/kexin-xiang-2baa19358/"
+        },
+        {
+          "labelEn": "GitHub · ChrisHarden13",
+          "labelZh": "GitHub · ChrisHarden13",
+          "url": "https://github.com/ChrisHarden13"
+        }
       ]
     }
   ]
 }
-
