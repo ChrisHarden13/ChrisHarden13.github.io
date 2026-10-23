@@ -230,6 +230,7 @@ function makeSection(section, index) {
       const school = language === 'zh' ? (item.schoolZh || item.schoolEn) : item.schoolEn;
       const department = language === 'zh' ? (item.departmentZh || item.departmentEn) : item.departmentEn;
       const schoolUrl = item.url ? safePublicUrl(item.url) : '';
+      const departmentUrl = item.departmentUrl ? safePublicUrl(item.departmentUrl) : '';
       const appendField = (key, labelEn, labelZh, value, renderValue) => {
         if (!value && !renderValue) return;
         const field = document.createElement('div');
@@ -258,7 +259,12 @@ function makeSection(section, index) {
         text.textContent = school;
         content.append(' ', text);
       } : null);
-      appendField('department', 'Department', '院系', department);
+      appendField('department', 'Department', '院系', department, department ? (content) => {
+        const text = document.createElement(departmentUrl ? 'a' : 'span');
+        if (departmentUrl) { text.href = departmentUrl; text.target = '_blank'; text.rel = 'noopener noreferrer'; }
+        text.textContent = department;
+        content.append(' ', text);
+      } : null);
       appendField('dates', 'Dates', '时间', item.dates);
       const description = localized(item, 'body');
       appendField('description', 'Description', '描述', description, description
