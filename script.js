@@ -39,7 +39,7 @@ function setCircularFavicon(source) {
 }
 
 function appendInlineMarkdown(parent, text) {
-  const pattern = /!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)|\[([^\]]+)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)|\*\*([^*]+)\*\*|\*([^*]+)\*|`([^`]+)`|~~([^~]+)~~/g;
+  const pattern = /!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)|\[([^\]]+)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)|\*\*([^*]+)\*\*|(?<!\w)\*([^*]+)\*(?!\w)|`([^`]+)`|~~([^~]+)~~/g;
   let cursor = 0;
   for (const match of String(text ?? '').matchAll(pattern)) {
     const index = match.index ?? 0;
