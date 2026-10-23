@@ -655,3 +655,8 @@ p, li, blockquote { text-align: justify; text-justify: inter-word; }
 
 /* Slightly smaller publication titles. */
 .publication-entry .project-main h3 { font-size: 24px; }
+
+
+/* Slightly larger publication authors and journal details. */
+.publication-entry .project-authors,
+.publication-entry .project-venue { font-size: 22px; }
