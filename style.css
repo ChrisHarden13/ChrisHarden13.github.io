@@ -651,3 +651,7 @@ p, li, blockquote { text-align: justify; text-justify: inter-word; }
   .school-field { font-size: 16px; }
   .school-description { font-size: 16px; }
 }
+
+
+/* Slightly smaller publication titles. */
+.publication-entry .project-main h3 { font-size: 24px; }
