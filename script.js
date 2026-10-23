@@ -3,6 +3,7 @@ let language = 'en';
 let site = {};
 let theme = {};
 let sections = [];
+let activePage = 'profile';
 
 function safePublicUrl(value) {
   try {
@@ -136,6 +137,22 @@ function addImage(parent, src, alt, className) {
   parent.append(image);
   return image;
 }
+function svgIcon(kind) {
+  const paths = {
+    scholar: '<path d="m2 9 10-5 10 5-10 5L2 9Z"/><path d="M6 11v5c3 2 9 2 12 0v-5M22 9v6"/>',
+    orcid: '<circle cx="12" cy="12" r="9"/><text x="12" y="15.5" text-anchor="middle" font-size="8" font-family="Arial" font-weight="700" fill="currentColor" stroke="none">iD</text>',
+    linkedin: '<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.1M11 17v-7m0 3a3 3 0 0 1 6 0v4"/>',
+    github: '<path d="M9 19c-4 1.3-4-2-5-2m10 4v-3.1c0-.9.1-1.5-.5-2 3.2-.4 6.5-1.6 6.5-7A5.5 5.5 0 0 0 18.5 5 5.1 5.1 0 0 0 18.4 1S17.2.6 14 2.8a13.5 13.5 0 0 0-7 0C3.8.6 2.6 1 2.6 1A5.1 5.1 0 0 0 2.5 5 5.5 5.5 0 0 0 1 8.9c0 5.4 3.3 6.6 6.5 7-.6.5-.6 1.2-.5 2V21"/>',
+    website: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z"/>',
+    school: '<path d="m2 9 10-5 10 5-10 5L2 9Z"/><path d="M6 11v5c3 2 9 2 12 0v-5M22 9v6"/>'
+  };
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('viewBox', '0 0 24 24');
+  svg.setAttribute('aria-hidden', 'true');
+  svg.setAttribute('focusable', 'false');
+  svg.innerHTML = paths[kind] ?? paths.website;
+  return svg;
+}
 function makeSection(section, index) {
   const header = moduleHeader(section);
   if (header.visible === false) return null;
@@ -171,7 +188,37 @@ function makeSection(section, index) {
   if (intro) addRich(title, 'module-intro', intro);
   root.append(title);
 
-  if (section.type === 'publication') {
+  if (section.type === 'education') {
+    const list = document.createElement('div');
+    list.className = 'education-list';
+    (section.items ?? []).forEach((item) => {
+      const row = document.createElement('article');
+      row.className = `education-row${item.type ? ` education-row-${item.type}` : ''}`;
+      const icon = document.createElement('div');
+      icon.className = 'school-icon';
+      if (item.logo) addImage(icon, item.logo, item.schoolEn ?? '', 'school-logo');
+      else icon.append(svgIcon('school'));
+      const details = document.createElement('div');
+      details.className = 'school-details';
+      const school = language === 'zh' ? (item.schoolZh || item.schoolEn) : item.schoolEn;
+      const schoolHeading = document.createElement('h3');
+      const schoolUrl = safePublicUrl(item.url);
+      if (schoolUrl) {
+        const link = document.createElement('a');
+        link.href = schoolUrl; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.textContent = school || '';
+        schoolHeading.append(link);
+      } else schoolHeading.textContent = school || '';
+      details.append(schoolHeading);
+      const degree = language === 'zh' ? (item.degreeZh || item.degreeEn) : item.degreeEn;
+      const department = language === 'zh' ? (item.departmentZh || item.departmentEn) : item.departmentEn;
+      const meta = [degree, department, item.dates].filter(Boolean).join(' · ');
+      if (meta) { const line = document.createElement('p'); line.className = 'school-meta'; line.textContent = meta; details.append(line); }
+      addRich(details, 'school-description', localized(item, 'body'));
+      row.append(icon, details);
+      list.append(row);
+    });
+    root.append(list);
+  } else if (section.type === 'publication') {
     const list = document.createElement('div');
     list.className = 'project-list';
     (section.items ?? []).forEach((item, itemIndex) => {
@@ -204,22 +251,18 @@ function makeSection(section, index) {
     root.append(list);
   } else if (section.type === 'links') {
     const list = document.createElement('div');
-      list.className = 'honor-grid';
+    list.className = 'homepage-links';
     (section.items ?? []).forEach((item) => {
-      const card = document.createElement('article');
-      const label = document.createElement('span');
-      label.className = 'honor-year';
-      label.textContent = '↗';
+      const href = safePublicUrl(item.url);
+      const card = document.createElement(href ? 'a' : 'article');
+      card.className = 'homepage-link';
+      if (href) { card.href = href; card.target = '_blank'; card.rel = 'noopener noreferrer'; }
+      const icon = document.createElement('span');
+      icon.className = `homepage-icon homepage-icon-${item.icon || 'website'}`;
+      icon.append(svgIcon(item.icon || 'website'));
       const body = document.createElement('div');
       const h = document.createElement('h3');
-      if (item.url && safePublicUrl(item.url)) {
-        const a = document.createElement('a');
-        a.href = safePublicUrl(item.url);
-        a.target = '_blank';
-        a.rel = 'noopener noreferrer';
-        a.textContent = localized(item, 'label') || item.label || '';
-        h.append(a);
-      } else h.textContent = localized(item, 'label') || item.label || '';
+      h.textContent = localized(item, 'label') || item.label || '';
       body.append(h);
       addRich(body, 'module-link-description', localized(item, 'body'));
       addImage(body, item.image, item.imageAlt, 'honor-image');
@@ -227,7 +270,7 @@ function makeSection(section, index) {
       arrow.className = 'honor-arrow';
       arrow.setAttribute('aria-hidden', 'true');
       arrow.textContent = '↗';
-      card.append(label, body, arrow);
+      card.append(icon, body, arrow);
       list.append(card);
     });
     root.append(list);
@@ -237,7 +280,7 @@ function makeSection(section, index) {
     (section.items ?? []).forEach((item) => {
       const data = item.card ?? item;
       const card = document.createElement('article');
-      card.className = 'custom-card';
+      card.className = `custom-card${data.type ? ` custom-card-${data.type}` : ''}`;
       addImage(card, data.image, data.imageAlt, 'project-image');
       const h = document.createElement('h3');
       h.textContent = localized(data, 'title') || data.title || '';
@@ -263,13 +306,12 @@ function makeSection(section, index) {
 function renderNavigation() {
   const nav = document.querySelector('#module-nav');
   nav.replaceChildren();
-  sections.forEach((section, index) => {
-    const header = moduleHeader(section);
-    if (header.visible === false || header.showInNavigation === false) return;
-    const label = localized(header, 'sectionLabel');
-    if (!label) return;
+  (site.navigation ?? []).forEach((item) => {
+    const label = language === 'zh' ? (item.labelZh || item.labelEn) : item.labelEn;
+    if (!item.key || !label) return;
     const link = document.createElement('a');
-    link.href = `#${slug(header.sectionLabelEn || header.sectionLabelZh, index)}`;
+    link.href = `?page=${encodeURIComponent(item.key)}`;
+    if (item.key === activePage) link.setAttribute('aria-current', 'page');
     link.textContent = label;
     nav.append(link);
   });
@@ -354,7 +396,7 @@ function render() {
   renderNavigation();
   const container = document.querySelector('#page-modules');
   container.replaceChildren();
-  sections.forEach((section, index) => {
+  sections.filter((section) => (section.page || 'profile') === activePage).forEach((section, index) => {
     const node = makeSection(section, index);
     if (node) container.append(node);
   });
@@ -363,13 +405,16 @@ function render() {
 }
 
 Promise.all([
-  fetch('data/site.json').then((response) => { if (!response.ok) throw new Error('Could not load profile'); return response.json(); }),
-  fetch('data/style.json').then((response) => { if (!response.ok) throw new Error('Could not load appearance settings'); return response.json(); }),
-  fetch('data/modules.json').then((response) => { if (!response.ok) throw new Error('Could not load modules'); return response.json(); })
+  fetch('data/site.json', {cache: 'no-cache'}).then((response) => { if (!response.ok) throw new Error('Could not load profile'); return response.json(); }),
+  fetch('data/style.json', {cache: 'no-cache'}).then((response) => { if (!response.ok) throw new Error('Could not load appearance settings'); return response.json(); }),
+  fetch('data/modules.json', {cache: 'no-cache'}).then((response) => { if (!response.ok) throw new Error('Could not load modules'); return response.json(); })
 ]).then(([profile, appearance, page]) => {
   site = profile;
   theme = appearance;
   sections = Array.isArray(page.sections) ? page.sections : [];
+  const requested = new URLSearchParams(window.location.search).get('page');
+  const allowed = new Set((site.navigation ?? []).map((item) => item.key));
+  activePage = allowed.has(requested) ? requested : (site.navigation?.[0]?.key || 'profile');
   render();
 }).catch((error) => console.error(error));
 
