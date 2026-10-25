@@ -90,435 +90,453 @@ content:
         path: data/style.json
         format: json
         fields:
-          - name: typography
-            label: "Typography / 通用文字与标题"
+          - name: general
+            label: "General / 通用"
             type: object
             fields:
-                  - name: bodyWeight
-                label: "Body font weight / 正文字重"
-                type: number
-              - name: itemSize
-                label: "Entry title size (px) / 条目标题字号 (px)"
-                type: number
-              - name: itemWeight
-                label: "Entry title weight / 条目标题字重"
-                type: number
-              - name: itemLineHeight
-                label: "Entry title line height / 条目标题行距"
-                type: number
-              - name: metadataSize
-                label: "Metadata font size (px) / 作者、期刊、日期与副标题字号 (px)"
-                type: number
-              - name: metadataWeight
-                label: "Metadata weight / 信息文字字重"
-                type: number
-          - name: bodyFont
-                label: "Body font family / 正文字体"
-                type: string
-              - name: headingFont
-                label: "Heading font family / 标题字体"
-                type: string
-              - name: bodySize
-                label: "Base body font size (px) / 正文基础字号 (px)"
-                type: number
-              - name: bodyLineHeight
-                label: "Body line height (multiplier) / 正文行距（倍数）"
-                type: number
-              - name: headingSize
-                label: "Module heading size (px) / 模块标题字号 (px)"
-                type: number
-              - name: headingWeight
-                label: "Module heading weight / 模块标题字重"
-                type: number
-              - name: headingLineHeight
-                label: "Module heading line height / 模块标题行距"
-                type: number
-              - name: paragraphGap
-                label: "Paragraph spacing (px) / 段落间距 (px)"
-                type: number
-              - name: alignment
-                label: "Body text alignment / 正文对齐"
-                type: select
-                options: {values: ["left","center","right","justify"]}
-              - name: linkDecoration
-                label: "Link decoration / 链接装饰"
-                type: select
-                options: {values: ["none","underline"]}
-              - name: linkUnderlineOffset
-                label: "Link underline offset (px) / 链接下划线偏移 (px)"
-                type: number
-          - name: colors
-            label: "Colors / 全站颜色"
-            type: object
-            fields:
-              - name: text
-                label: "Main text color (HEX) / 主文字（HEX，如 #26323d）"
-                type: string
-              - name: muted
-                label: "Secondary text color (HEX) / 次要文字（HEX，如 #26323d）"
-                type: string
-              - name: accent
-                label: "Accent and link color (HEX) / 强调色与链接（HEX，如 #26323d）"
-                type: string
-              - name: border
-                label: "Border and divider color (HEX) / 边框与分隔线（HEX，如 #26323d）"
-                type: string
-              - name: background
-                label: "Page background color (HEX) / 页面背景（HEX，如 #26323d）"
-                type: string
-              - name: soft
-                label: "Soft background color (HEX) / 浅色背景（HEX，如 #26323d）"
-                type: string
-          - name: layout
-            label: "Layout and spacing / 页面布局与间距"
-            type: object
-            fields:
-              - name: width
-                label: "Maximum content width (px) / 内容最大宽度 (px)"
-                type: number
-              - name: gutter
-                label: "Page side padding (px) / 页面左右留白 (px)"
-                type: number
-              - name: sectionTop
-                label: "Module top spacing (px) / 模块顶部间距 (px)"
-                type: number
-              - name: sectionBottom
-                label: "Module bottom spacing (px) / 模块底部间距 (px)"
-                type: number
-              - name: columnGap
-                label: "Column gap (px) / 列间距 (px)"
-                type: number
-              - name: borderWidth
-                label: "Divider width (px) / 分隔线宽度 (px)"
-                type: number
-              - name: radius
-                label: "Default corner radius (px) / 通用圆角 (px)"
-                type: number
-              - name: headingGap
-                label: "Heading to content spacing (px) / 标题与内容间距 (px)"
-                type: number
-          - name: navigation
-            label: "Navigation and language button / 导航与语言按钮"
-            type: object
-            fields:
-              - name: fontSize
-                label: "Navigation font size (px) / 导航字号 (px)"
-                type: number
-              - name: height
-                label: "Minimum navigation height (px) / 导航栏最小高度 (px)"
-                type: number
-              - name: gap
-                label: "Navigation item spacing (px) / 导航项目间距 (px)"
-                type: number
-              - name: logoSize
-                label: "Header portrait logo size (px) / 左上角头像 Logo 尺寸 (px)"
-                type: number
-              - name: activeWeight
-                label: "Active navigation weight / 选中项目字重"
-                type: number
-              - name: buttonSize
-                label: "Language button font size (px) / 语言按钮字号 (px)"
-                type: number
-              - name: buttonRadius
-                label: "Language button radius (px) / 语言按钮圆角 (px)"
-                type: number
-          - name: profile
-            label: "Portrait and contacts / 头像与联系方式"
-            type: object
-            fields:
-              - name: avatarSize
-                label: "Portrait size (px) / 头像尺寸 (px)"
-                type: number
-              - name: avatarRadius
-                label: "Portrait roundness (%) / 头像圆角 (%)"
-                type: number
-              - name: imageFit
-                label: "Portrait image fit / 头像裁剪"
-                type: select
-                options: {values: ["cover","contain"]}
-              - name: top
-                label: "Portrait area top spacing (px) / 头像区域顶部间距 (px)"
-                type: number
-              - name: bottom
-                label: "Portrait area bottom spacing (px) / 头像区域底部间距 (px)"
-                type: number
-              - name: contactSize
-                label: "Email and phone font size (px) / 邮箱与电话字号 (px)"
-                type: number
-              - name: iconSize
-                label: "Contact icon size (px) / 联系方式图标尺寸 (px)"
-                type: number
-              - name: iconGap
-                label: "Icon to text spacing (px) / 图标与文字间距 (px)"
-                type: number
-              - name: contactTop
-                label: "Portrait to contacts spacing (px) / 头像与联系方式间距 (px)"
-                type: number
-              - name: contactGap
-                label: "Contact row spacing (px) / 多条联系方式间距 (px)"
-                type: number
-          - name: text
-            label: "About Me and text modules / 个人介绍与文字模块"
-            type: object
-            fields:
-              - name: fontSize
-                label: "Text module body size (px) / 文字模块正文字号 (px)"
-                type: number
-              - name: lineHeight
-                label: "Text module line height / 文字模块行距"
-                type: number
-              - name: imageSize
-                label: "About Me image size (px) / About Me 图片尺寸 (px)"
-                type: number
-              - name: imageRadius
-                label: "About Me image roundness (%) / About Me 图片圆角 (%)"
-                type: number
-              - name: imageGap
-                label: "About Me image to text spacing (px) / About Me 图片与文字间距 (px)"
-                type: number
-              - name: otherImageHeight
-                label: "Other text module image maximum height (px) / 其他文字模块图片最大高度 (px)"
-                type: number
-              - name: lineLimit
-                label: "Visible text lines (0 shows all) / 文字行数上限（0 为全部显示）"
-                type: number
-          - name: education
-            label: "Education / 教育经历"
-            type: object
-            fields:
-              - name: fontSize
-                label: "Education body font size (px) / 教育内容字号 (px)"
-                type: number
-              - name: lineHeight
-                label: "Content line height / 内容行距"
-                type: number
-              - name: labelWeight
-                label: "Field label weight / 分类名称字重"
-                type: number
-              - name: logoSize
-                label: "School logo size (px) / 学校 Logo 区域尺寸 (px)"
-                type: number
-              - name: logoFit
-                label: "Logo image fit / Logo 图片适应方式"
-                type: select
-                options: {values: ["contain","cover"]}
-              - name: logoRadius
-                label: "Logo corner radius (px) / Logo 圆角 (px)"
-                type: number
-              - name: columnGap
-                label: "Logo to text spacing (px) / Logo 与文字间距 (px)"
-                type: number
-              - name: textWidth
-                label: "Maximum text width (px) / 文字区域最大宽度 (px)"
-                type: number
-              - name: fieldGap
-                label: "Field row spacing (px) / 每行内容间距 (px)"
-                type: number
-              - name: entryPadding
-                label: "School entry vertical padding (px) / 每所学校上下间距 (px)"
-                type: number
-              - name: bulletSize
-                label: "Field bullet size (px) / 分类圆点尺寸 (px)"
-                type: number
-              - name: bulletGap
-                label: "Bullet to content spacing (px) / 圆点与内容间距 (px)"
-                type: number
-          - name: publications
-            label: "Publications / 论文"
-            type: object
-            fields:
-              - name: titleSize
-                label: "Publication title size (px) / 论文标题字号 (px)"
-                type: number
-              - name: authorsSize
-                label: "Authors font size (px) / 作者字号 (px)"
-                type: number
-              - name: venueSize
-                label: "Journal and year font size (px) / 期刊与年份字号 (px)"
-                type: number
-              - name: detailsSize
-                label: "Details font size (px) / 补充描述字号 (px)"
-                type: number
-              - name: titleLineHeight
-                label: "Title line height / 标题行距"
-                type: number
-              - name: bodyLineHeight
-                label: "Authors and journal line height / 作者与期刊行距"
-                type: number
-              - name: titleGap
-                label: "Spacing below title (px) / 标题下方间距 (px)"
-                type: number
-              - name: entryPadding
-                label: "Publication entry vertical padding (px) / 每篇论文上下间距 (px)"
-                type: number
-              - name: numberSize
-                label: "Publication number size (px) / 论文序号字号 (px)"
-                type: number
-              - name: numberWidth
-                label: "Number column width (px) / 序号区域宽度 (px)"
-                type: number
-              - name: numberGap
-                label: "Number to title spacing (px) / 序号与标题间距 (px)"
-                type: number
-              - name: columns
-                label: "Publication columns / 论文列数"
-                type: number
-          - name: news
-            label: "Latest News / 最新动态"
-            type: object
-            fields:
-              - name: font
-                label: "News font family / 新闻字体"
-                type: string
-              - name: dateSize
-                label: "Date font size (px) / 日期字号 (px)"
-                type: number
-              - name: titleSize
-                label: "News title size (px) / 新闻标题字号 (px)"
-                type: number
-              - name: bodySize
-                label: "News body font size (px) / 新闻正文字号 (px)"
-                type: number
-              - name: lineHeight
-                label: "News body line height / 新闻正文行距"
-                type: number
-              - name: entryGap
-                label: "News entry spacing (px) / 新闻条目间距 (px)"
-                type: number
-              - name: dateGap
-                label: "Date to content spacing (px) / 日期与内容间距 (px)"
-                type: number
-              - name: bulletSize
-                label: "Date bullet size (px) / 日期前方块尺寸 (px)"
-                type: number
-              - name: imageWidth
-                label: "Maximum image width (px) / 图片最大宽度 (px)"
-                type: number
-              - name: imageHeight
-                label: "Maximum image height (px) / 图片最大高度 (px)"
-                type: number
-              - name: imageRadius
-                label: "News image radius (px) / 新闻图片圆角 (px)"
-                type: number
-          - name: cards
-            label: "Research, Honor and Life cards / 研究、荣誉与生活卡片"
-            type: object
-            fields:
-              - name: columns
-                label: "Card columns / 卡片列数"
-                type: number
-              - name: titleSize
-                label: "Card title size (px) / 卡片标题字号 (px)"
-                type: number
-              - name: bodySize
-                label: "Card body font size (px) / 卡片正文字号 (px)"
-                type: number
-              - name: subtitleSize
-                label: "Subtitle font size (px) / 副标题字号 (px)"
-                type: number
-              - name: lineHeight
-                label: "Card body line height / 卡片正文行距"
-                type: number
-              - name: padding
-                label: "Card padding (px) / 卡片内边距 (px)"
-                type: number
-              - name: gap
-                label: "Card gap (px) / 卡片间距 (px)"
-                type: number
-              - name: radius
-                label: "Card corner radius (px) / 卡片圆角 (px)"
-                type: number
-              - name: imageHeight
-                label: "Maximum card image height (px) / 卡片图片最大高度 (px)"
-                type: number
-          - name: links
-            label: "Personal Homepages / 个人主页链接"
-            type: object
-            fields:
-              - name: columns
-                label: "Link card columns / 链接卡片列数"
-                type: number
-              - name: titleSize
-                label: "Homepage name size (px) / 主页名称字号 (px)"
-                type: number
-              - name: descriptionSize
-                label: "Homepage description size (px) / 主页描述字号 (px)"
-                type: number
-              - name: iconSize
-                label: "Icon area size (px) / 图标区域尺寸 (px)"
-                type: number
-              - name: iconGlyphSize
-                label: "Icon glyph size (px) / 图标本体尺寸 (px)"
-                type: number
-              - name: padding
-                label: "Link card padding (px) / 链接卡片内边距 (px)"
-                type: number
-              - name: gap
-                label: "Link card gap (px) / 链接卡片间距 (px)"
-                type: number
-              - name: radius
-                label: "Link card radius (px) / 链接卡片圆角 (px)"
-                type: number
-          - name: footer
-            label: "Footer / 页脚"
-            type: object
-            fields:
-              - name: fontSize
-                label: "Footer font size (px) / 页脚字号 (px)"
-                type: number
-              - name: padding
-                label: "Footer vertical padding (px) / 页脚上下内边距 (px)"
-                type: number
-              - name: alignment
-                label: "Footer text alignment / 页脚文字对齐"
-                type: select
-                options: {values: ["left","center","right","justify"]}
-          - name: mobile
-            label: "Mobile styles (560px and below) / 手机端样式"
-            type: object
-            fields:
+              - name: typography
+                label: "Typography / 通用文字与标题"
+                type: object
+                fields:
+                  - name: bodyFont
+                    label: "Body font family / 正文字体"
+                    type: string
+                  - name: headingFont
+                    label: "Heading font family / 标题字体"
+                    type: string
                   - name: bodySize
-                label: "Mobile body size (px) / 手机端正文字号 (px)"
-                type: number
-              - name: itemSize
-                label: "Mobile entry title size (px) / 手机端条目标题字号 (px)"
-                type: number
-              - name: metadataSize
-                label: "Mobile metadata size (px) / 手机端信息文字字号 (px)"
-                type: number
-          - name: gutter
-                label: "Page side padding (px) / 页面左右留白 (px)"
-                type: number
-              - name: headingSize
-                label: "Module heading size (px) / 模块标题字号 (px)"
-                type: number
-              - name: navigationSize
-                label: "Navigation font size (px) / 导航字号 (px)"
-                type: number
-              - name: avatarSize
-                label: "Portrait size (px) / 头像尺寸 (px)"
-                type: number
-              - name: aboutImageSize
-                label: "About Me image size (px) / About Me 图片尺寸 (px)"
-                type: number
-              - name: educationLogoSize
-                label: "School logo size (px) / 学校 Logo 尺寸 (px)"
-                type: number
-              - name: educationSize
-                label: "Education body font size (px) / 教育内容字号 (px)"
-                type: number
-              - name: publicationTitleSize
-                label: "Publication title size (px) / 论文标题字号 (px)"
-                type: number
-              - name: publicationBodySize
-                label: "Publication authors and journal size (px) / 论文作者与期刊字号 (px)"
-                type: number
-              - name: cardColumns
-                label: "Card columns / 卡片列数"
-                type: number
-              - name: linkColumns
-                label: "Homepage link columns / 主页链接列数"
-                type: number
+                    label: "Base body font size (px) / 正文基础字号 (px)"
+                    type: number
+                  - name: bodyLineHeight
+                    label: "Body line height (multiplier) / 正文行距（倍数）"
+                    type: number
+                  - name: headingSize
+                    label: "Module heading size (px) / 模块标题字号 (px)"
+                    type: number
+                  - name: headingWeight
+                    label: "Module heading weight / 模块标题字重"
+                    type: number
+                  - name: headingLineHeight
+                    label: "Module heading line height / 模块标题行距"
+                    type: number
+                  - name: paragraphGap
+                    label: "Paragraph spacing (px) / 段落间距 (px)"
+                    type: number
+                  - name: alignment
+                    label: "Body text alignment / 正文对齐"
+                    type: select
+                    options: {values: ["left","center","right","justify"]}
+                  - name: linkDecoration
+                    label: "Link decoration / 链接装饰"
+                    type: select
+                    options: {values: ["none","underline"]}
+                  - name: linkUnderlineOffset
+                    label: "Link underline offset (px) / 链接下划线偏移 (px)"
+                    type: number
+                  - name: bodyWeight
+                    label: "Body font weight / 正文字重"
+                    type: number
+                  - name: itemSize
+                    label: "Entry title size (px) / 条目标题字号 (px)"
+                    type: number
+                  - name: itemWeight
+                    label: "Entry title weight / 条目标题字重"
+                    type: number
+                  - name: itemLineHeight
+                    label: "Entry title line height / 条目标题行距"
+                    type: number
+                  - name: metadataSize
+                    label: "Metadata font size (px) / 作者、期刊、日期与副标题字号 (px)"
+                    type: number
+                  - name: metadataWeight
+                    label: "Metadata weight / 信息文字字重"
+                    type: number
+              - name: colors
+                label: "Colors / 全站颜色"
+                type: object
+                fields:
+                  - name: text
+                    label: "Main text color (HEX) / 主文字（HEX，如 #26323d）"
+                    type: string
+                  - name: muted
+                    label: "Secondary text color (HEX) / 次要文字（HEX，如 #26323d）"
+                    type: string
+                  - name: accent
+                    label: "Accent and link color (HEX) / 强调色与链接（HEX，如 #26323d）"
+                    type: string
+                  - name: border
+                    label: "Border and divider color (HEX) / 边框与分隔线（HEX，如 #26323d）"
+                    type: string
+                  - name: background
+                    label: "Page background color (HEX) / 页面背景（HEX，如 #26323d）"
+                    type: string
+                  - name: soft
+                    label: "Soft background color (HEX) / 浅色背景（HEX，如 #26323d）"
+                    type: string
+              - name: layout
+                label: "Layout and spacing / 页面布局与间距"
+                type: object
+                fields:
+                  - name: width
+                    label: "Maximum content width (px) / 内容最大宽度 (px)"
+                    type: number
+                  - name: gutter
+                    label: "Page side padding (px) / 页面左右留白 (px)"
+                    type: number
+                  - name: sectionTop
+                    label: "Module top spacing (px) / 模块顶部间距 (px)"
+                    type: number
+                  - name: sectionBottom
+                    label: "Module bottom spacing (px) / 模块底部间距 (px)"
+                    type: number
+                  - name: columnGap
+                    label: "Column gap (px) / 列间距 (px)"
+                    type: number
+                  - name: borderWidth
+                    label: "Divider width (px) / 分隔线宽度 (px)"
+                    type: number
+                  - name: radius
+                    label: "Default corner radius (px) / 通用圆角 (px)"
+                    type: number
+                  - name: headingGap
+                    label: "Heading to content spacing (px) / 标题与内容间距 (px)"
+                    type: number
+              - name: navigation
+                label: "Navigation and language button / 导航与语言按钮"
+                type: object
+                fields:
+                  - name: fontSize
+                    label: "Navigation font size (px) / 导航字号 (px)"
+                    type: number
+                  - name: height
+                    label: "Minimum navigation height (px) / 导航栏最小高度 (px)"
+                    type: number
+                  - name: gap
+                    label: "Navigation item spacing (px) / 导航项目间距 (px)"
+                    type: number
+                  - name: logoSize
+                    label: "Header portrait logo size (px) / 左上角头像 Logo 尺寸 (px)"
+                    type: number
+                  - name: activeWeight
+                    label: "Active navigation weight / 选中项目字重"
+                    type: number
+                  - name: buttonSize
+                    label: "Language button font size (px) / 语言按钮字号 (px)"
+                    type: number
+                  - name: buttonRadius
+                    label: "Language button radius (px) / 语言按钮圆角 (px)"
+                    type: number
+              - name: cards
+                label: "Cards / 通用卡片"
+                type: object
+                fields:
+                  - name: columns
+                    label: "Card columns / 卡片列数"
+                    type: number
+                  - name: padding
+                    label: "Card padding (px) / 卡片内边距 (px)"
+                    type: number
+                  - name: gap
+                    label: "Card gap (px) / 卡片间距 (px)"
+                    type: number
+                  - name: imageHeight
+                    label: "Maximum card image height (px) / 卡片图片最大高度 (px)"
+                    type: number
+              - name: footer
+                label: "Footer / 页脚"
+                type: object
+                fields:
+                  - name: fontSize
+                    label: "Footer font size (px) / 页脚字号 (px)"
+                    type: number
+                  - name: padding
+                    label: "Footer vertical padding (px) / 页脚上下内边距 (px)"
+                    type: number
+                  - name: alignment
+                    label: "Footer text alignment / 页脚文字对齐"
+                    type: select
+                    options: {values: ["left","center","right","justify"]}
+              - name: mobile
+                label: "Mobile styles / 手机端样式"
+                type: object
+                fields:
+                  - name: gutter
+                    label: "Page side padding (px) / 页面左右留白 (px)"
+                    type: number
+                  - name: headingSize
+                    label: "Module heading size (px) / 模块标题字号 (px)"
+                    type: number
+                  - name: navigationSize
+                    label: "Navigation font size (px) / 导航字号 (px)"
+                    type: number
+                  - name: avatarSize
+                    label: "Portrait size (px) / 头像尺寸 (px)"
+                    type: number
+                  - name: aboutImageSize
+                    label: "About Me image size (px) / About Me 图片尺寸 (px)"
+                    type: number
+                  - name: educationLogoSize
+                    label: "School logo size (px) / 学校 Logo 尺寸 (px)"
+                    type: number
+                  - name: cardColumns
+                    label: "Card columns / 卡片列数"
+                    type: number
+                  - name: linkColumns
+                    label: "Homepage link columns / 主页链接列数"
+                    type: number
+                  - name: bodySize
+                    label: "Mobile body size (px) / 手机端正文字号 (px)"
+                    type: number
+                  - name: itemSize
+                    label: "Mobile entry title size (px) / 手机端条目标题字号 (px)"
+                    type: number
+                  - name: metadataSize
+                    label: "Mobile metadata size (px) / 手机端信息文字字号 (px)"
+                    type: number
+              - name: text
+                label: "Text modules / 文字模块"
+                type: object
+                fields:
+                  - name: otherImageHeight
+                    label: "Other text module image maximum height (px) / 其他文字模块图片最大高度 (px)"
+                    type: number
+                  - name: lineLimit
+                    label: "Visible text lines (0 shows all) / 文字行数上限（0 为全部显示）"
+                    type: number
+          - name: mainPages
+            label: "Main pages / 主页面"
+            type: object
+            fields:
+              - name: profile
+                label: "Profile / 个人介绍"
+                type: object
+                fields:
+                  - name: spacing
+                    label: "Module spacing (optional) / 模块间距（留空继承通用）"
+                    type: object
+                    fields:
+                      - name: top
+                        label: "Top spacing (px) / 顶部间距 (px)"
+                        type: number
+                      - name: bottom
+                        label: "Bottom spacing (px) / 底部间距 (px)"
+                        type: number
+                  - name: portrait
+                    label: "Portrait and contacts / 头像与联系方式"
+                    type: object
+                    fields:
+                      - name: avatarSize
+                        label: "Portrait size (px) / 头像尺寸 (px)"
+                        type: number
+                      - name: avatarRadius
+                        label: "Portrait roundness (%) / 头像圆角 (%)"
+                        type: number
+                      - name: imageFit
+                        label: "Portrait image fit / 头像裁剪"
+                        type: select
+                        options: {values: ["cover","contain"]}
+                      - name: top
+                        label: "Portrait area top spacing (px) / 头像区域顶部间距 (px)"
+                        type: number
+                      - name: bottom
+                        label: "Portrait area bottom spacing (px) / 头像区域底部间距 (px)"
+                        type: number
+                      - name: contactSize
+                        label: "Email and phone font size (px) / 邮箱与电话字号 (px)"
+                        type: number
+                      - name: iconSize
+                        label: "Contact icon size (px) / 联系方式图标尺寸 (px)"
+                        type: number
+                      - name: iconGap
+                        label: "Icon to text spacing (px) / 图标与文字间距 (px)"
+                        type: number
+                      - name: contactTop
+                        label: "Portrait to contacts spacing (px) / 头像与联系方式间距 (px)"
+                        type: number
+                      - name: contactGap
+                        label: "Contact row spacing (px) / 多条联系方式间距 (px)"
+                        type: number
+                  - name: about
+                    label: "About Me / 个人介绍图片"
+                    type: object
+                    fields:
+                      - name: imageSize
+                        label: "About Me image size (px) / About Me 图片尺寸 (px)"
+                        type: number
+                      - name: imageRadius
+                        label: "About Me image roundness (%) / About Me 图片圆角 (%)"
+                        type: number
+                      - name: imageGap
+                        label: "About Me image to text spacing (px) / About Me 图片与文字间距 (px)"
+                        type: number
+                  - name: news
+                    label: "Latest News / 最新动态"
+                    type: object
+                    fields:
+                      - name: entryGap
+                        label: "News entry spacing (px) / 新闻条目间距 (px)"
+                        type: number
+                      - name: dateGap
+                        label: "Date to content spacing (px) / 日期与内容间距 (px)"
+                        type: number
+                      - name: bulletSize
+                        label: "Date bullet size (px) / 日期前方块尺寸 (px)"
+                        type: number
+                      - name: imageWidth
+                        label: "Maximum image width (px) / 图片最大宽度 (px)"
+                        type: number
+                      - name: imageHeight
+                        label: "Maximum image height (px) / 图片最大高度 (px)"
+                        type: number
+                      - name: imageRadius
+                        label: "News image radius (px) / 新闻图片圆角 (px)"
+                        type: number
+                  - name: links
+                    label: "Personal Homepages / 个人主页链接"
+                    type: object
+                    fields:
+                      - name: columns
+                        label: "Link card columns / 链接卡片列数"
+                        type: number
+                      - name: iconSize
+                        label: "Icon area size (px) / 图标区域尺寸 (px)"
+                        type: number
+                      - name: iconGlyphSize
+                        label: "Icon glyph size (px) / 图标本体尺寸 (px)"
+                        type: number
+                      - name: padding
+                        label: "Link card padding (px) / 链接卡片内边距 (px)"
+                        type: number
+                      - name: gap
+                        label: "Link card gap (px) / 链接卡片间距 (px)"
+                        type: number
+              - name: education
+                label: "Education / 教育经历"
+                type: object
+                fields:
+                  - name: spacing
+                    label: "Module spacing (optional) / 模块间距（留空继承通用）"
+                    type: object
+                    fields:
+                      - name: top
+                        label: "Top spacing (px) / 顶部间距 (px)"
+                        type: number
+                      - name: bottom
+                        label: "Bottom spacing (px) / 底部间距 (px)"
+                        type: number
+                  - name: schools
+                    label: "School layout / 学校布局"
+                    type: object
+                    fields:
+                      - name: labelWeight
+                        label: "Field label weight / 分类名称字重"
+                        type: number
+                      - name: logoSize
+                        label: "School logo size (px) / 学校 Logo 区域尺寸 (px)"
+                        type: number
+                      - name: logoFit
+                        label: "Logo image fit / Logo 图片适应方式"
+                        type: select
+                        options: {values: ["contain","cover"]}
+                      - name: logoRadius
+                        label: "Logo corner radius (px) / Logo 圆角 (px)"
+                        type: number
+                      - name: columnGap
+                        label: "Logo to text spacing (px) / Logo 与文字间距 (px)"
+                        type: number
+                      - name: textWidth
+                        label: "Maximum text width (px) / 文字区域最大宽度 (px)"
+                        type: number
+                      - name: fieldGap
+                        label: "Field row spacing (px) / 每行内容间距 (px)"
+                        type: number
+                      - name: entryPadding
+                        label: "School entry vertical padding (px) / 每所学校上下间距 (px)"
+                        type: number
+                      - name: bulletSize
+                        label: "Field bullet size (px) / 分类圆点尺寸 (px)"
+                        type: number
+                      - name: bulletGap
+                        label: "Bullet to content spacing (px) / 圆点与内容间距 (px)"
+                        type: number
+              - name: research
+                label: "Research / 研究"
+                type: object
+                fields:
+                  - name: spacing
+                    label: "Module spacing (optional) / 模块间距（留空继承通用）"
+                    type: object
+                    fields:
+                      - name: top
+                        label: "Top spacing (px) / 顶部间距 (px)"
+                        type: number
+                      - name: bottom
+                        label: "Bottom spacing (px) / 底部间距 (px)"
+                        type: number
+              - name: publication
+                label: "Publication / 论文"
+                type: object
+                fields:
+                  - name: spacing
+                    label: "Module spacing (optional) / 模块间距（留空继承通用）"
+                    type: object
+                    fields:
+                      - name: top
+                        label: "Top spacing (px) / 顶部间距 (px)"
+                        type: number
+                      - name: bottom
+                        label: "Bottom spacing (px) / 底部间距 (px)"
+                        type: number
+                  - name: entries
+                    label: "Publication layout / 论文布局"
+                    type: object
+                    fields:
+                      - name: titleGap
+                        label: "Spacing below title (px) / 标题下方间距 (px)"
+                        type: number
+                      - name: entryPadding
+                        label: "Publication entry vertical padding (px) / 每篇论文上下间距 (px)"
+                        type: number
+                      - name: numberSize
+                        label: "Publication number size (px) / 论文序号字号 (px)"
+                        type: number
+                      - name: numberWidth
+                        label: "Number column width (px) / 序号区域宽度 (px)"
+                        type: number
+                      - name: numberGap
+                        label: "Number to title spacing (px) / 序号与标题间距 (px)"
+                        type: number
+                      - name: columns
+                        label: "Publication columns / 论文列数"
+                        type: number
+              - name: honor
+                label: "Honor / 荣誉"
+                type: object
+                fields:
+                  - name: spacing
+                    label: "Module spacing (optional) / 模块间距（留空继承通用）"
+                    type: object
+                    fields:
+                      - name: top
+                        label: "Top spacing (px) / 顶部间距 (px)"
+                        type: number
+                      - name: bottom
+                        label: "Bottom spacing (px) / 底部间距 (px)"
+                        type: number
+              - name: life
+                label: "Life / 生活"
+                type: object
+                fields:
+                  - name: spacing
+                    label: "Module spacing (optional) / 模块间距（留空继承通用）"
+                    type: object
+                    fields:
+                      - name: top
+                        label: "Top spacing (px) / 顶部间距 (px)"
+                        type: number
+                      - name: bottom
+                        label: "Bottom spacing (px) / 底部间距 (px)"
+                        type: number
       - name: modules
         label: Page modules and submodules
         type: file

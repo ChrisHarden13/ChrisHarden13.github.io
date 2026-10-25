@@ -825,3 +825,9 @@ footer p, footer .back-top { font-size: var(--appearance-footer-font-size, 10px)
   --shared-item-size: var(--appearance-mobile-item-size, 22px);
  }
 }
+
+/* Per-page spacing inherits General whenever the optional control is empty. */
+.section.dynamic-section {
+ padding-top: var(--appearance-page-top, var(--appearance-layout-section-top, 32px));
+ padding-bottom: var(--appearance-page-bottom, var(--appearance-layout-section-bottom, 36px));
+}
