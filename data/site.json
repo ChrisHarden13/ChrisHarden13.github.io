@@ -13,6 +13,8 @@
   "showHeader": true,
   "showHero": true,
   "showFooter": true,
-  "footerTextEn": "WELCOME TO KEXIN XIANG (CHRIS) HOMEPAGE",
-  "footerTextZh": "欢迎来到向柯鑫（CHRIS）的主页"
+  "footerTextEn": "Welcome to Kexin Xiang (Chris)'s Homepage",
+  "footerTextZh": "Welcome to Kexin Xiang (Chris)'s Homepage",
+  "footerCounterStart": "2002-04-06T07:02:00+08:00",
+  "footerCounterEnabled": true
 }

@@ -525,6 +525,50 @@ function applyPageAppearance() {
   }
 }
 
+
+function footerElapsedParts(now, start) {
+  const seconds = Math.max(0, Math.floor((now - start) / 1000));
+  return [Math.floor(seconds / 86400), Math.floor(seconds / 3600) % 24,
+    Math.floor(seconds / 60) % 60, seconds % 60];
+}
+
+function updateFooterClock() {
+  const counter = document.querySelector('#footer-counter');
+  if (!counter) return;
+  const start = Date.parse(site.footerCounterStart || '2002-04-06T07:02:00+08:00');
+  counter.hidden = site.footerCounterEnabled === false || !Number.isFinite(start);
+  if (counter.hidden) return;
+  const labels = ['Days', 'Hrs', 'Mins', 'Secs'];
+  if (!counter.children.length) {
+    for (const label of labels) {
+      const group = document.createElement('span');
+      group.className = 'footer-counter-group';
+      const slot = document.createElement('span');
+      slot.className = 'footer-counter-window';
+      const number = document.createElement('span');
+      number.className = 'footer-counter-number';
+      slot.append(number);
+      const unit = document.createElement('span');
+      unit.className = 'footer-counter-unit';
+      unit.textContent = label;
+      group.append(slot, unit);
+      counter.append(group);
+    }
+  }
+  const parts = footerElapsedParts(Date.now(), start);
+  counter.querySelectorAll('.footer-counter-number').forEach((number, index) => {
+    const value = index === 0 ? String(parts[index]) : String(parts[index]).padStart(2, '0');
+    if (number.textContent === value) return;
+    const hasPrevious = number.textContent !== '';
+    number.textContent = value;
+    if (hasPrevious && number.animate && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      number.animate([{transform: 'translateY(-100%)', opacity: 0.25},
+        {transform: 'translateY(0)', opacity: 1}], {duration: 280, easing: 'ease-out'});
+    }
+  });
+}
+
+
 function render() {
   document.documentElement.lang = language === 'en' ? 'en' : 'zh-CN';
   document.title = site.pageTitle || `${site.firstName ?? ''} ${site.lastName ?? ''}`.trim();
@@ -568,6 +612,7 @@ function render() {
     phone.querySelector('span').textContent = site.phone;
   }
   renderRichText(document.querySelector('#footer-copy'), language === 'en' ? site.footerTextEn : site.footerTextZh);
+  updateFooterClock();
   applyTheme();
   applyAppearance();
   applyPageAppearance();
@@ -600,6 +645,7 @@ Promise.all([
   cleanUrl.searchParams.delete('page');
   if (cleanUrl.href !== window.location.href) history.replaceState(null, '', cleanUrl);
   render();
+  window.setInterval(updateFooterClock, 1000);
 }).catch((error) => console.error(error));
 
 langToggle.addEventListener('click', () => {

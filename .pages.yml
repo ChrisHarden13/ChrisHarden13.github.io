@@ -66,6 +66,12 @@ content:
             label: Footer text (Chinese)
             type: rich-text
             options: {format: markdown, switcher: false, media: site_images, path: content}
+          - name: footerCounterEnabled
+            label: Show footer timer / 显示页脚计时
+            type: boolean
+          - name: footerCounterStart
+            label: "Timer start (ISO 8601 with timezone) / 计时起点（含时区，如 2002-04-06T07:02:00+08:00）"
+            type: string
       - name: navigation
         label: Main page navigation (names and order)
         type: file

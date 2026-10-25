@@ -901,3 +901,39 @@ h1, h2, h3, h4, h5, h6 { font-family: Georgia, serif; }
  text-justify: inter-word;
  text-align-last: auto;
 }
+
+/* Centered welcome line and rolling elapsed-time clock. */
+footer {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ gap: 8px;
+ font-family: "Times New Roman", Times, serif;
+ font-size: var(--appearance-footer-font-size, 18px);
+ text-align: center;
+}
+footer #footer-copy { order: 0; width: 100%; margin: 0; }
+footer #footer-copy, footer #footer-copy p {
+ font-family: inherit;
+ font-size: inherit;
+ line-height: 1.6;
+ text-align: center;
+ margin: 0;
+}
+footer .back-top { display: none; }
+.footer-counter {
+ display: flex;
+ justify-content: center;
+ flex-wrap: wrap;
+ align-items: center;
+ gap: 6px 16px;
+ font: inherit;
+ line-height: 1.6;
+ color: var(--muted);
+ font-variant-numeric: tabular-nums;
+}
+.footer-counter[hidden] { display: none; }
+.footer-counter-group { display: inline-flex; align-items: baseline; gap: 5px; white-space: nowrap; }
+.footer-counter-window { display: inline-block; overflow: hidden; vertical-align: bottom; }
+.footer-counter-number { display: inline-block; }
