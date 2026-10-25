@@ -95,75 +95,25 @@ content:
             type: object
             fields:
               - name: typography
-                label: "Typography / 通用文字与标题"
+                label: "Font sizes / 文字字号"
                 type: object
                 fields:
-                  - name: bodyFont
-                    label: "Body font family / 正文字体"
-                    type: string
-                  - name: headingFont
-                    label: "Heading font family / 标题字体"
-                    type: string
                   - name: bodySize
                     label: "Base body font size (px) / 正文基础字号 (px)"
-                    type: number
-                  - name: bodyLineHeight
-                    label: "Body line height (multiplier) / 正文行距（倍数）"
                     type: number
                   - name: headingSize
                     label: "Module heading size (px) / 模块标题字号 (px)"
                     type: number
-                  - name: headingWeight
-                    label: "Module heading weight / 模块标题字重"
-                    type: number
-                  - name: headingLineHeight
-                    label: "Module heading line height / 模块标题行距"
-                    type: number
-                  - name: paragraphGap
-                    label: "Paragraph spacing (px) / 段落间距 (px)"
-                    type: number
-                  - name: alignment
-                    label: "Body text alignment / 正文对齐"
-                    type: select
-                    options: {values: ["left","center","right","justify"]}
-                  - name: linkDecoration
-                    label: "Link decoration / 链接装饰"
-                    type: select
-                    options: {values: ["none","underline"]}
-                  - name: linkUnderlineOffset
-                    label: "Link underline offset (px) / 链接下划线偏移 (px)"
-                    type: number
-                  - name: bodyWeight
-                    label: "Body font weight / 正文字重"
-                    type: number
                   - name: itemSize
                     label: "Entry title size (px) / 条目标题字号 (px)"
                     type: number
-                  - name: itemWeight
-                    label: "Entry title weight / 条目标题字重"
-                    type: number
-                  - name: itemLineHeight
-                    label: "Entry title line height / 条目标题行距"
-                    type: number
                   - name: metadataSize
                     label: "Metadata font size (px) / 作者、期刊、日期与副标题字号 (px)"
-                    type: number
-                  - name: metadataWeight
-                    label: "Metadata weight / 信息文字字重"
                     type: number
               - name: colors
                 label: "Colors / 全站颜色"
                 type: object
                 fields:
-                  - name: text
-                    label: "Main text color (HEX) / 主文字（HEX，如 #26323d）"
-                    type: string
-                  - name: muted
-                    label: "Secondary text color (HEX) / 次要文字（HEX，如 #26323d）"
-                    type: string
-                  - name: accent
-                    label: "Accent and link color (HEX) / 强调色与链接（HEX，如 #26323d）"
-                    type: string
                   - name: border
                     label: "Border and divider color (HEX) / 边框与分隔线（HEX，如 #26323d）"
                     type: string
@@ -217,9 +167,6 @@ content:
                   - name: logoSize
                     label: "Header portrait logo size (px) / 左上角头像 Logo 尺寸 (px)"
                     type: number
-                  - name: activeWeight
-                    label: "Active navigation weight / 选中项目字重"
-                    type: number
                   - name: buttonSize
                     label: "Language button font size (px) / 语言按钮字号 (px)"
                     type: number
@@ -252,10 +199,6 @@ content:
                   - name: padding
                     label: "Footer vertical padding (px) / 页脚上下内边距 (px)"
                     type: number
-                  - name: alignment
-                    label: "Footer text alignment / 页脚文字对齐"
-                    type: select
-                    options: {values: ["left","center","right","justify"]}
               - name: mobile
                 label: "Mobile styles / 手机端样式"
                 type: object
@@ -299,9 +242,6 @@ content:
                 fields:
                   - name: otherImageHeight
                     label: "Other text module image maximum height (px) / 其他文字模块图片最大高度 (px)"
-                    type: number
-                  - name: lineLimit
-                    label: "Visible text lines (0 shows all) / 文字行数上限（0 为全部显示）"
                     type: number
           - name: mainPages
             label: "Main pages / 主页面"
@@ -428,9 +368,6 @@ content:
                     label: "School layout / 学校布局"
                     type: object
                     fields:
-                      - name: labelWeight
-                        label: "Field label weight / 分类名称字重"
-                        type: number
                       - name: logoSize
                         label: "School logo size (px) / 学校 Logo 区域尺寸 (px)"
                         type: number
