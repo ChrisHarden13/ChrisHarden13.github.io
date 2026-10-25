@@ -934,3 +934,16 @@ footer .back-top { display: none; }
 .footer-counter-group { display: inline-block; white-space: nowrap; }
 .footer-counter-window { display: inline-block; overflow: hidden; vertical-align: bottom; }
 .footer-counter-number { display: inline-block; }
+
+/* Each digit has its own clipped reel; unchanged places remain completely still. */
+.footer-counter-number { display: inline-flex; vertical-align: bottom; line-height: 1.6; }
+.footer-counter-digit {
+ display: inline-block;
+ position: relative;
+ width: 1ch;
+ height: 1.6em;
+ overflow: hidden;
+ vertical-align: bottom;
+}
+.footer-counter-cell { display: block; height: 1.6em; line-height: 1.6; text-align: center; }
+.footer-counter-reel { display: block; will-change: transform; }

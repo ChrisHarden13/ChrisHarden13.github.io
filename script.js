@@ -532,6 +532,65 @@ function footerElapsedParts(now, start) {
     Math.floor(seconds / 60) % 60, seconds % 60];
 }
 
+
+function makeClockDigit(character) {
+  const digit = document.createElement('span');
+  digit.className = 'footer-counter-digit';
+  digit.dataset.value = character;
+  const cell = document.createElement('span');
+  cell.className = 'footer-counter-cell';
+  cell.textContent = character;
+  digit.append(cell);
+  return digit;
+}
+
+function updateClockNumber(number, value, animate) {
+  if (number.dataset.value === value) return;
+  // Keep existing places aligned from the right when the day count gains a digit.
+  while (number.children.length < value.length) {
+    const index = value.length - number.children.length - 1;
+    number.prepend(makeClockDigit(value[index]));
+  }
+  while (number.children.length > value.length) number.firstElementChild.remove();
+  Array.from(number.children).forEach((digit, index) => {
+    const next = value[index];
+    if (digit.dataset.value === next) return;
+    const previous = digit.dataset.value;
+    if (digit.clockAnimation) {
+      digit.clockAnimation.cancel();
+      digit.clockAnimation = null;
+    }
+    digit.dataset.value = next;
+    const current = document.createElement('span');
+    current.className = 'footer-counter-cell';
+    current.textContent = next;
+    if (!animate || typeof digit.animate !== 'function') {
+      digit.replaceChildren(current);
+      return;
+    }
+    const outgoing = document.createElement('span');
+    outgoing.className = 'footer-counter-cell';
+    outgoing.textContent = previous;
+    outgoing.setAttribute('aria-hidden', 'true');
+    const reel = document.createElement('span');
+    reel.className = 'footer-counter-reel';
+    reel.append(outgoing, current);
+    digit.replaceChildren(reel);
+    const animation = reel.animate(
+      [{transform: 'translateY(0)'}, {transform: 'translateY(-50%)'}],
+      {duration: 600, easing: 'cubic-bezier(0.22, 1, 0.36, 1)', fill: 'forwards'}
+    );
+    digit.clockAnimation = animation;
+    animation.onfinish = () => {
+      if (digit.clockAnimation !== animation) return;
+      digit.replaceChildren(current);
+      digit.clockAnimation = null;
+      animation.cancel();
+    };
+  });
+  number.dataset.value = value;
+}
+
 function updateFooterClock() {
   const counter = document.querySelector('#footer-counter');
   if (!counter) return;
@@ -557,15 +616,11 @@ function updateFooterClock() {
     }
   }
   const parts = footerElapsedParts(Date.now(), start);
+  const animate = document.visibilityState !== 'hidden'
+    && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   counter.querySelectorAll('.footer-counter-number').forEach((number, index) => {
     const value = index === 0 ? String(parts[index]) : String(parts[index]).padStart(2, '0');
-    if (number.textContent === value) return;
-    const hasPrevious = number.textContent !== '';
-    number.textContent = value;
-    if (hasPrevious && number.animate && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      number.animate([{transform: 'translateY(-100%)', opacity: 0.25},
-        {transform: 'translateY(0)', opacity: 1}], {duration: 280, easing: 'ease-out'});
-    }
+    updateClockNumber(number, value, animate);
   });
 }
 
