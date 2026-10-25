@@ -33,6 +33,12 @@
           "icon": "scholar"
         },
         {
+          "labelEn": "ResearchGate",
+          "labelZh": "ResearchGate",
+          "url": "https://www.researchgate.net/profile/Kexin-Xiang-7?ev=hdr_xprf",
+          "icon": "researchgate"
+        },
+        {
           "labelEn": "ORCID",
           "labelZh": "ORCID",
           "url": "https://orcid.org/0009-0006-9623-7871",
@@ -49,12 +55,6 @@
           "labelZh": "GitHub",
           "url": "https://github.com/ChrisHarden13",
           "icon": "github"
-        },
-        {
-          "labelEn": "ResearchGate",
-          "labelZh": "ResearchGate",
-          "url": "https://www.researchgate.net/profile/Kexin-Xiang-7?ev=hdr_xprf",
-          "icon": "researchgate"
         },
         {
           "labelEn": "X (Twitter)",
