@@ -94,7 +94,25 @@ content:
             label: "Typography / 通用文字与标题"
             type: object
             fields:
-              - name: bodyFont
+                  - name: bodyWeight
+                label: "Body font weight / 正文字重"
+                type: number
+              - name: itemSize
+                label: "Entry title size (px) / 条目标题字号 (px)"
+                type: number
+              - name: itemWeight
+                label: "Entry title weight / 条目标题字重"
+                type: number
+              - name: itemLineHeight
+                label: "Entry title line height / 条目标题行距"
+                type: number
+              - name: metadataSize
+                label: "Metadata font size (px) / 作者、期刊、日期与副标题字号 (px)"
+                type: number
+              - name: metadataWeight
+                label: "Metadata weight / 信息文字字重"
+                type: number
+          - name: bodyFont
                 label: "Body font family / 正文字体"
                 type: string
               - name: headingFont
@@ -459,7 +477,16 @@ content:
             label: "Mobile styles (560px and below) / 手机端样式"
             type: object
             fields:
-              - name: gutter
+                  - name: bodySize
+                label: "Mobile body size (px) / 手机端正文字号 (px)"
+                type: number
+              - name: itemSize
+                label: "Mobile entry title size (px) / 手机端条目标题字号 (px)"
+                type: number
+              - name: metadataSize
+                label: "Mobile metadata size (px) / 手机端信息文字字号 (px)"
+                type: number
+          - name: gutter
                 label: "Page side padding (px) / 页面左右留白 (px)"
                 type: number
               - name: headingSize

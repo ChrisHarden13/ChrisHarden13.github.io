@@ -714,7 +714,7 @@ body { --ink: var(--appearance-colors-text, #26323d); --muted: var(--appearance-
 .profile-contacts { margin-top: var(--appearance-profile-contact-top, 18px); gap: var(--appearance-profile-contact-gap, 9px); }
 .profile-contact { font-size: var(--appearance-profile-contact-size, 15px); gap: var(--appearance-profile-icon-gap, 9px); align-items: center; }
 .profile-contact svg, #profile-email svg { width: var(--appearance-profile-icon-size, 18px); height: var(--appearance-profile-icon-size, 18px); flex-basis: var(--appearance-profile-icon-size, 18px); }
-.dynamic-text .module-body, .dynamic-text .module-body p, .dynamic-text .module-body li, .module-intro, .module-intro p { font-size: var(--appearance-text-font-size, var(--appearance-typography-body-size, 18px)); line-height: var(--appearance-text-line-height, 1.9); }
+.dynamic-text .module-body, .dynamic-text .module-body p, .dynamic-text .module-body li, .module-intro, .module-intro p { font-size: var(--appearance-typography-body-size, var(--appearance-typography-body-size, 18px)); line-height: var(--appearance-typography-body-line-height, 1.9); }
 .module-text-layout { gap: var(--appearance-layout-column-gap, 48px); }
 .module-text-main h2 { margin-bottom: var(--appearance-layout-heading-gap, 22px); }
 .module-image { max-height: var(--appearance-text-other-image-height, 340px); border-radius: var(--appearance-layout-radius, 4px); }
@@ -725,33 +725,33 @@ body { --ink: var(--appearance-colors-text, #26323d); --muted: var(--appearance-
 .school-icon { width: min(var(--appearance-education-logo-size, 300px), 32vw); height: min(var(--appearance-education-logo-size, 300px), 32vw); }
 .school-logo { object-fit: var(--appearance-education-logo-fit, contain); border-radius: var(--appearance-education-logo-radius, 0px); }
 .school-details { gap: var(--appearance-education-field-gap, 7px); }
-.school-field, .school-field p, .school-description { font-size: var(--appearance-education-font-size, 18px); line-height: var(--appearance-education-line-height, 1.75); }
+.school-field, .school-field p, .school-description { font-size: var(--appearance-typography-body-size, 18px); line-height: var(--appearance-typography-body-line-height, 1.75); }
 .school-field { grid-template-columns: var(--appearance-education-bullet-size, 6px) minmax(0, 1fr); gap: var(--appearance-education-bullet-gap, 12px); }
 .school-field-content > strong { font-weight: var(--appearance-education-label-weight, 650); }
 .school-field-dot { width: var(--appearance-education-bullet-size, 6px); height: var(--appearance-education-bullet-size, 6px); }
 .dynamic-publication .project-list { grid-template-columns: repeat(var(--appearance-publications-columns, 1), minmax(0, 1fr)); gap: 0 var(--appearance-layout-column-gap, 48px); }
 .publication-entry { grid-template-columns: var(--appearance-publications-number-width, 42px) minmax(0, 1fr); gap: var(--appearance-publications-number-gap, 22px); padding-block: var(--appearance-publications-entry-padding, 24px); }
-.publication-entry .project-main h3 { font-family: var(--appearance-typography-heading-font, var(--serif)); font-size: var(--appearance-publications-title-size, 24px); line-height: var(--appearance-publications-title-line-height, 1.45); margin-bottom: var(--appearance-publications-title-gap, 10px); }
-.publication-entry .project-authors, .publication-entry .project-authors p { font-size: var(--appearance-publications-authors-size, 18px); line-height: var(--appearance-publications-body-line-height, 1.8); }
-.publication-entry .project-venue, .publication-entry .project-venue p { font-size: var(--appearance-publications-venue-size, 18px); line-height: var(--appearance-publications-body-line-height, 1.8); }
-.publication-entry .rich-description, .publication-entry .rich-description p { font-size: var(--appearance-publications-details-size, 18px); }
+.publication-entry .project-main h3 { font-family: var(--appearance-typography-heading-font, var(--serif)); font-size: var(--appearance-typography-item-size, 24px); line-height: var(--appearance-typography-item-line-height, 1.45); margin-bottom: var(--appearance-publications-title-gap, 10px); }
+.publication-entry .project-authors, .publication-entry .project-authors p { font-size: var(--appearance-typography-metadata-size, 18px); line-height: var(--appearance-typography-body-line-height, 1.8); }
+.publication-entry .project-venue, .publication-entry .project-venue p { font-size: var(--appearance-typography-metadata-size, 18px); line-height: var(--appearance-typography-body-line-height, 1.8); }
+.publication-entry .rich-description, .publication-entry .rich-description p { font-size: var(--appearance-typography-body-size, 18px); }
 .publication-entry .project-number { font-size: var(--appearance-publications-number-size, 13px); }
 .latest-news-item { margin-bottom: var(--appearance-news-entry-gap, 52px); }
-.latest-news-date { font-family: var(--appearance-news-font, var(--serif)); font-size: var(--appearance-news-date-size, 18px); margin-bottom: var(--appearance-news-date-gap, 18px); }
+.latest-news-date { font-family: var(--appearance-typography-body-font, var(--serif)); font-size: var(--appearance-typography-metadata-size, 18px); margin-bottom: var(--appearance-news-date-gap, 18px); }
 .latest-news-date::before { width: var(--appearance-news-bullet-size, 7px); height: var(--appearance-news-bullet-size, 7px); }
-.latest-news-item h3 { font-family: var(--appearance-news-font, var(--serif)); font-size: var(--appearance-news-title-size, 18px); }
-.latest-news-content, .latest-news-content p, .latest-news-subtitle { font-family: var(--appearance-news-font, var(--serif)); font-size: var(--appearance-news-body-size, 17px); line-height: var(--appearance-news-line-height, 1.75); }
+.latest-news-item h3 { font-family: var(--appearance-typography-body-font, var(--serif)); font-size: var(--appearance-typography-item-size, 18px); }
+.latest-news-content, .latest-news-content p, .latest-news-subtitle { font-family: var(--appearance-typography-body-font, var(--serif)); font-size: var(--appearance-typography-body-size, 17px); line-height: var(--appearance-typography-body-line-height, 1.75); }
 .latest-news-image { max-width: min(100%, var(--appearance-news-image-width, 680px)); max-height: var(--appearance-news-image-height, 420px); border-radius: var(--appearance-news-image-radius, 2px); }
 .custom-card-grid { grid-template-columns: repeat(var(--appearance-cards-columns, 2), minmax(0, 1fr)); gap: var(--appearance-cards-gap, 48px); }
-.custom-card { padding: var(--appearance-cards-padding, 20px); border-radius: var(--appearance-cards-radius, 4px); }
-.custom-card h3 { font-size: var(--appearance-cards-title-size, 19px); }
-.custom-card .rich-description, .custom-card .rich-description p { font-size: var(--appearance-cards-body-size, 18px); line-height: var(--appearance-cards-line-height, 1.9); }
-.custom-card-subtitle { font-size: var(--appearance-cards-subtitle-size, 17px); }
+.custom-card { padding: var(--appearance-cards-padding, 20px); border-radius: var(--appearance-layout-radius, 4px); }
+.custom-card h3 { font-size: var(--appearance-typography-item-size, 19px); }
+.custom-card .rich-description, .custom-card .rich-description p { font-size: var(--appearance-typography-body-size, 18px); line-height: var(--appearance-typography-body-line-height, 1.9); }
+.custom-card-subtitle { font-size: var(--appearance-typography-metadata-size, 17px); }
 .custom-card .project-image { max-height: var(--appearance-cards-image-height, 340px); }
 .homepage-links { grid-template-columns: repeat(var(--appearance-links-columns, 2), minmax(0, 1fr)); gap: var(--appearance-links-gap, 12px); }
-.homepage-link { grid-template-columns: var(--appearance-links-icon-size, 40px) minmax(0, 1fr) 18px; padding: var(--appearance-links-padding, 15px); border-radius: var(--appearance-links-radius, 4px); }
-.homepage-link h3 { font-size: var(--appearance-links-title-size, 19px); }
-.homepage-link .module-link-description, .homepage-link .module-link-description p { font-size: var(--appearance-links-description-size, 17px); }
+.homepage-link { grid-template-columns: var(--appearance-links-icon-size, 40px) minmax(0, 1fr) 18px; padding: var(--appearance-links-padding, 15px); border-radius: var(--appearance-layout-radius, 4px); }
+.homepage-link h3 { font-size: var(--appearance-typography-item-size, 19px); }
+.homepage-link .module-link-description, .homepage-link .module-link-description p { font-size: var(--appearance-typography-body-size, 17px); }
 .homepage-icon { width: var(--appearance-links-icon-size, 40px); height: var(--appearance-links-icon-size, 40px); }
 .homepage-icon svg { width: var(--appearance-links-icon-glyph-size, 22px); height: var(--appearance-links-icon-glyph-size, 22px); }
 footer { padding-block: var(--appearance-footer-padding, 20px); }
@@ -765,10 +765,63 @@ footer p, footer .back-top { font-size: var(--appearance-footer-font-size, 10px)
  .dynamic-about-me .module-image { width: min(30vw, var(--appearance-mobile-about-image-size, 76px)); height: min(30vw, var(--appearance-mobile-about-image-size, 76px)); }
  .education-row { grid-template-columns: min(34vw, var(--appearance-mobile-education-logo-size, 132px)) minmax(0, 1fr); gap: 15px; width: 100%; }
  .school-icon { width: min(34vw, var(--appearance-mobile-education-logo-size, 132px)); height: min(34vw, var(--appearance-mobile-education-logo-size, 132px)); }
- .school-field, .school-field p, .school-description { font-size: var(--appearance-mobile-education-size, 16px); }
+ .school-field, .school-field p, .school-description { font-size: var(--appearance-mobile-body-size, 16px); }
  .publication-entry { grid-template-columns: 28px minmax(0, 1fr); gap: 12px; }
- .publication-entry .project-main h3 { font-size: var(--appearance-mobile-publication-title-size, 22px); }
- .publication-entry .project-authors, .publication-entry .project-authors p, .publication-entry .project-venue, .publication-entry .project-venue p { font-size: var(--appearance-mobile-publication-body-size, 18px); }
+ .publication-entry .project-main h3 { font-size: var(--appearance-mobile-item-size, 22px); }
+ .publication-entry .project-authors, .publication-entry .project-authors p, .publication-entry .project-venue, .publication-entry .project-venue p { font-size: var(--appearance-mobile-metadata-size, 18px); }
  .custom-card-grid { grid-template-columns: repeat(var(--appearance-mobile-card-columns, 1), minmax(0, 1fr)); }
  .homepage-links { grid-template-columns: repeat(var(--appearance-mobile-link-columns, 1), minmax(0, 1fr)); }
+}
+
+/* Shared semantic styles: every module consumes the same Appearance controls. */
+.dynamic-section {
+ --shared-body-size: var(--appearance-typography-body-size, 18px);
+ --shared-meta-size: var(--appearance-typography-metadata-size, 18px);
+ --shared-item-size: var(--appearance-typography-item-size, 24px);
+ --shared-leading: var(--appearance-typography-body-line-height, 1.75);
+}
+.dynamic-section p, .dynamic-section li, .dynamic-section blockquote,
+.dynamic-section .module-body, .dynamic-section .module-intro,
+.dynamic-section .rich-description, .dynamic-section .rich-description p,
+.dynamic-section .school-field, .dynamic-section .school-field p,
+.dynamic-section .school-description, .dynamic-section .school-description p,
+.dynamic-section .module-link-description, .dynamic-section .module-link-description p,
+.dynamic-section .latest-news-content, .dynamic-section .latest-news-content p {
+ font-family: var(--sans);
+ font-size: var(--shared-body-size);
+ font-weight: var(--appearance-typography-body-weight, 400);
+ line-height: var(--shared-leading);
+ color: var(--muted);
+ text-align: var(--appearance-typography-alignment, justify);
+}
+.dynamic-section h3, .publication-entry .project-main h3,
+.latest-news-item h3, .custom-card h3, .homepage-link h3 {
+ font-family: var(--serif);
+ font-size: var(--shared-item-size);
+ font-weight: var(--appearance-typography-item-weight, 400);
+ line-height: var(--appearance-typography-item-line-height, 1.45);
+ color: var(--ink);
+}
+.publication-entry .project-authors, .publication-entry .project-authors p,
+.publication-entry .project-venue, .publication-entry .project-venue p,
+.dynamic-section .custom-card-subtitle, .dynamic-section .latest-news-subtitle,
+.dynamic-section .latest-news-date, .dynamic-section .custom-card-date {
+ font-family: var(--sans);
+ font-size: var(--shared-meta-size);
+ font-weight: var(--appearance-typography-metadata-weight, 400);
+ line-height: var(--shared-leading);
+ color: var(--muted);
+}
+.dynamic-section .rich-description p:last-child { margin-bottom: 0; }
+.custom-card, .homepage-link { border-radius: var(--appearance-layout-radius, 4px); border-width: var(--appearance-layout-border-width, 1px); }
+.education-row, .publication-entry, .project-list, footer, .topbar { border-width: var(--appearance-layout-border-width, 1px); }
+.dynamic-section .rich-description a, .dynamic-section .school-field a,
+.latest-news-content a { color: var(--accent); text-decoration: var(--appearance-typography-link-decoration, none); text-underline-offset: var(--appearance-typography-link-underline-offset, 3px); }
+.dynamic-section .rich-description a:hover, .dynamic-section .school-field a:hover { text-decoration: underline; }
+@media (max-width: 560px) {
+ .dynamic-section {
+  --shared-body-size: var(--appearance-mobile-body-size, 18px);
+  --shared-meta-size: var(--appearance-mobile-metadata-size, 18px);
+  --shared-item-size: var(--appearance-mobile-item-size, 22px);
+ }
 }
