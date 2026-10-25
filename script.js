@@ -343,6 +343,7 @@ function makeSection(section, index) {
     const newsHeading = `${header.titleEn ?? ''} ${header.titleZh ?? ''} ${header.sectionLabelEn ?? ''} ${header.sectionLabelZh ?? ''}`;
     const isNewsSection = /latest\s*news|最新动态/i.test(newsHeading)
       || (section.items?.length > 0 && section.items.every((item) => (item.card ?? item).type === 'news'));
+    if (isNewsSection) root.classList.add('dynamic-news');
     list.className = isNewsSection ? 'latest-news-list' : 'custom-card-grid';
     (section.items ?? []).forEach((item) => {
       const data = item.card ?? item;
@@ -358,7 +359,7 @@ function makeSection(section, index) {
       }
       const h = document.createElement('h3');
       h.textContent = localized(data, 'title') || data.title || '';
-      if (!isNewsSection || h.textContent) card.append(h);
+      if (!isNewsSection) card.append(h);
       if (!isNewsSection && data.date) {
         const date = document.createElement('time');
         date.className = 'custom-card-date';

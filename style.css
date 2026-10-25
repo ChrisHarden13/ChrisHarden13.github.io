@@ -844,3 +844,31 @@ footer p, footer .back-top { font-size: var(--appearance-footer-font-size, 10px)
 :root { --serif: Georgia, serif; --sans: "Times New Roman", Times, serif; }
 body, button, input, select, textarea { font-family: "Times New Roman", Times, serif; }
 h1, h2, h3, h4, h5, h6 { font-family: Georgia, serif; }
+
+/* Latest News uses a bold entry-style date instead of an entry title. */
+.dynamic-news h2 { text-align: left; }
+.dynamic-section .latest-news-item .latest-news-date {
+ position: relative;
+ margin-left: 0;
+ font-family: Georgia, serif;
+ font-size: var(--shared-item-size, 24px);
+ font-weight: 700;
+ line-height: var(--appearance-typography-item-line-height, 1.45);
+ color: var(--ink);
+ text-align: left;
+}
+.dynamic-section .latest-news-date::before {
+ position: absolute;
+ left: calc(-1 * (var(--appearance-education-bullet-gap, 12px) + var(--appearance-education-bullet-size, 6px)));
+ top: .725em;
+ transform: translateY(-50%);
+ width: var(--appearance-education-bullet-size, 6px);
+ height: var(--appearance-education-bullet-size, 6px);
+ margin: 0;
+ border-radius: 50%;
+ background: var(--accent);
+}
+.dynamic-section .latest-news-content,
+.dynamic-section .latest-news-content p,
+.dynamic-section .latest-news-content li,
+.dynamic-section .latest-news-content blockquote { text-align: left; }
