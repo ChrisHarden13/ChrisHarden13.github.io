@@ -873,3 +873,31 @@ h1, h2, h3, h4, h5, h6 { font-family: Georgia, serif; }
 .dynamic-section .latest-news-content p,
 .dynamic-section .latest-news-content li,
 .dynamic-section .latest-news-content blockquote { text-align: left; }
+
+/* All body copy shares justified alignment, including news descriptions. */
+.dynamic-section p,
+.dynamic-section li,
+.dynamic-section blockquote,
+.dynamic-section .module-body,
+.dynamic-section .module-intro,
+.dynamic-section .rich-description,
+.dynamic-section .rich-description p,
+.dynamic-section .school-field-content,
+.dynamic-section .school-description,
+.dynamic-section .school-description p,
+.dynamic-section .module-link-description,
+.dynamic-section .module-link-description p,
+.dynamic-section .latest-news-content,
+.dynamic-section .latest-news-content p,
+.dynamic-section .latest-news-content li,
+.dynamic-section .latest-news-content blockquote,
+.dynamic-section .custom-card-subtitle,
+.dynamic-section .latest-news-subtitle,
+.publication-entry .project-authors,
+.publication-entry .project-authors p,
+.publication-entry .project-venue,
+.publication-entry .project-venue p {
+ text-align: justify;
+ text-justify: inter-word;
+ text-align-last: auto;
+}
