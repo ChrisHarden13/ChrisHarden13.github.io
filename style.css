@@ -850,6 +850,7 @@ h1, h2, h3, h4, h5, h6 { font-family: Georgia, serif; }
 .dynamic-section .latest-news-item .latest-news-date {
  position: relative;
  margin-left: 0;
+ padding-left: calc(var(--appearance-education-bullet-size, 6px) + var(--appearance-education-bullet-gap, 12px));
  font-family: Georgia, serif;
  font-size: var(--shared-item-size, 24px);
  font-weight: 700;
@@ -859,7 +860,7 @@ h1, h2, h3, h4, h5, h6 { font-family: Georgia, serif; }
 }
 .dynamic-section .latest-news-date::before {
  position: absolute;
- left: calc(-1 * (var(--appearance-education-bullet-gap, 12px) + var(--appearance-education-bullet-size, 6px)));
+ left: 0;
  top: .725em;
  transform: translateY(-50%);
  width: var(--appearance-education-bullet-size, 6px);
