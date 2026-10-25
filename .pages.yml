@@ -85,7 +85,7 @@ content:
               - {name: labelEn, label: Navigation name (English), type: string}
               - {name: labelZh, label: Navigation name (Chinese), type: string}
       - name: appearance
-        label: Appearance · 外观设置
+        label: Appearance
         type: file
         path: data/style.json
         format: json
