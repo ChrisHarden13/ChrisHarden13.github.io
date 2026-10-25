@@ -38,7 +38,9 @@ function setCircularFavicon(source) {
   image.src = source;
 }
 
-function appendInlineMarkdown(parent, text) {
+function appendInlineMarkdown(parent, text, depth = 0) {
+  text = String(text ?? '');
+  if (depth >= 32) { parent.append(document.createTextNode(text)); return; }
   const pattern = /!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)|\[([^\]]+)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)|\*\*([^*]+)\*\*|(?<!\w)\*([^*]+)\*(?!\w)|`([^`]+)`|~~([^~]+)~~/g;
   let cursor = 0;
   for (const match of String(text ?? '').matchAll(pattern)) {
@@ -61,16 +63,16 @@ function appendInlineMarkdown(parent, text) {
         const link = document.createElement('a');
         link.href = href;
         if (/^https?:/i.test(href)) { link.target = '_blank'; link.rel = 'noopener noreferrer'; }
-        link.textContent = match[4];
+        appendInlineMarkdown(link, match[4], depth + 1);
         parent.append(link);
       } else parent.append(document.createTextNode(match[0]));
     } else if (match[7] !== undefined) {
       const strong = document.createElement('strong');
-      strong.textContent = match[7];
+      appendInlineMarkdown(strong, match[7], depth + 1);
       parent.append(strong);
     } else if (match[8] !== undefined) {
       const emphasis = document.createElement('em');
-      emphasis.textContent = match[8];
+      appendInlineMarkdown(emphasis, match[8], depth + 1);
       parent.append(emphasis);
     } else if (match[9] !== undefined) {
       const code = document.createElement('code');
@@ -78,7 +80,7 @@ function appendInlineMarkdown(parent, text) {
       parent.append(code);
     } else {
       const deleted = document.createElement('del');
-      deleted.textContent = match[10];
+      appendInlineMarkdown(deleted, match[10], depth + 1);
       parent.append(deleted);
     }
     cursor = index + match[0].length;
