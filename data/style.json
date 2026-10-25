@@ -1,28 +1,12 @@
 {
   "general": {
     "typography": {
-      "bodyFont": "-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
-      "headingFont": "Georgia, Times New Roman, serif",
       "bodySize": 18,
-      "bodyLineHeight": 1.75,
       "headingSize": 33,
-      "headingWeight": 400,
-      "headingLineHeight": 1.2,
-      "paragraphGap": 12,
-      "alignment": "justify",
-      "linkDecoration": "none",
-      "linkUnderlineOffset": 3,
-      "bodyWeight": 400,
       "itemSize": 24,
-      "itemWeight": 400,
-      "itemLineHeight": 1.45,
-      "metadataSize": 18,
-      "metadataWeight": 400
+      "metadataSize": 18
     },
     "colors": {
-      "text": "#26323d",
-      "muted": "#65717b",
-      "accent": "#2f698a",
       "border": "#e3e7e8",
       "background": "#ffffff",
       "soft": "#f3f6f7"
@@ -42,7 +26,6 @@
       "height": 78,
       "gap": 27,
       "logoSize": 31,
-      "activeWeight": 650,
       "buttonSize": 12,
       "buttonRadius": 4
     },
@@ -54,8 +37,7 @@
     },
     "footer": {
       "fontSize": 10,
-      "padding": 20,
-      "alignment": "left"
+      "padding": 20
     },
     "mobile": {
       "gutter": 16,
@@ -63,7 +45,7 @@
       "navigationSize": 14,
       "avatarSize": 100,
       "aboutImageSize": 76,
-      "educationLogoSize": 132,
+      "educationLogoSize": 130,
       "cardColumns": 1,
       "linkColumns": 1,
       "bodySize": 18,
@@ -71,16 +53,11 @@
       "metadataSize": 18
     },
     "text": {
-      "otherImageHeight": 340,
-      "lineLimit": 0
+      "otherImageHeight": 340
     }
   },
   "mainPages": {
     "profile": {
-      "spacing": {
-        "top": null,
-        "bottom": null
-      },
       "portrait": {
         "avatarSize": 154,
         "avatarRadius": 50,
@@ -115,12 +92,7 @@
       }
     },
     "education": {
-      "spacing": {
-        "top": null,
-        "bottom": null
-      },
       "schools": {
-        "labelWeight": 650,
         "logoSize": 300,
         "logoFit": "contain",
         "logoRadius": 0,
@@ -132,36 +104,14 @@
         "bulletGap": 12
       }
     },
-    "research": {
-      "spacing": {
-        "top": null,
-        "bottom": null
-      }
-    },
     "publication": {
-      "spacing": {
-        "top": null,
-        "bottom": null
-      },
       "entries": {
         "titleGap": 10,
         "entryPadding": 24,
-        "numberSize": 13,
+        "numberSize": 15,
         "numberWidth": 42,
         "numberGap": 22,
         "columns": 1
-      }
-    },
-    "honor": {
-      "spacing": {
-        "top": null,
-        "bottom": null
-      }
-    },
-    "life": {
-      "spacing": {
-        "top": null,
-        "bottom": null
       }
     }
   }
