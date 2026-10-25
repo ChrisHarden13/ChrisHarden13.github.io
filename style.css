@@ -831,3 +831,11 @@ footer p, footer .back-top { font-size: var(--appearance-footer-font-size, 10px)
  padding-top: var(--appearance-page-top, var(--appearance-layout-section-top, 32px));
  padding-bottom: var(--appearance-page-bottom, var(--appearance-layout-section-bottom, 36px));
 }
+
+/* Align homepage icons and name blocks to the same vertical center. */
+.homepage-link { align-items: center; }
+.homepage-link > .homepage-icon, .homepage-link > .honor-arrow { align-self: center; }
+.homepage-icon svg { display: block; }
+.homepage-link-body { display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+.homepage-link-body > h3 { margin: 0; }
+.homepage-link-body > .module-link-description:empty { display: none; }

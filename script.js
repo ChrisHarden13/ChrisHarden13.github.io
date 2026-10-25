@@ -152,6 +152,7 @@ function addHeading(section, container) {
   return h;
 }
 function addImage(parent, src, alt, className) {
+  if (!String(src ?? '').trim()) return null;
   const url = safePublicUrl(src);
   if (!url) return null;
   const image = document.createElement('img');
@@ -323,6 +324,7 @@ function makeSection(section, index) {
       icon.className = `homepage-icon homepage-icon-${item.icon || 'website'}`;
       icon.append(svgIcon(item.icon || 'website'));
       const body = document.createElement('div');
+      body.className = 'homepage-link-body';
       const h = document.createElement('h3');
       h.textContent = localized(item, 'label') || item.label || '';
       body.append(h);
