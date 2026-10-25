@@ -84,7 +84,7 @@
         "imageRadius": 2
       },
       "links": {
-        "columns": 2,
+        "columns": 3,
         "iconSize": 40,
         "iconGlyphSize": 22,
         "padding": 15,

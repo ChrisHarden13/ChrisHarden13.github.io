@@ -628,7 +628,7 @@ content:
                         label: Icon
                         type: select
                         options:
-                          values: [scholar, orcid, linkedin, github, website]
+                          values: [scholar, orcid, linkedin, github, researchgate, x, website]
                       - {name: bodyEn, label: Description (English), type: rich-text, options: {format: markdown, switcher: false, media: site_images, path: content}}
                       - {name: bodyZh, label: Description (Chinese), type: rich-text, options: {format: markdown, switcher: false, media: site_images, path: content}}
                       - {name: image, label: Optional image, type: image, options: {media: site_images, path: links, extensions: [jpg, jpeg, png, webp, gif, svg]}}

@@ -168,6 +168,8 @@ function svgIcon(kind) {
     orcid: '<circle cx="12" cy="12" r="9"/><text x="12" y="15.5" text-anchor="middle" font-size="8" font-family="Arial" font-weight="700" fill="currentColor" stroke="none">iD</text>',
     linkedin: '<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.1M11 17v-7m0 3a3 3 0 0 1 6 0v4"/>',
     github: '<path d="M9 19c-4 1.3-4-2-5-2m10 4v-3.1c0-.9.1-1.5-.5-2 3.2-.4 6.5-1.6 6.5-7A5.5 5.5 0 0 0 18.5 5 5.1 5.1 0 0 0 18.4 1S17.2.6 14 2.8a13.5 13.5 0 0 0-7 0C3.8.6 2.6 1 2.6 1A5.1 5.1 0 0 0 2.5 5 5.5 5.5 0 0 0 1 8.9c0 5.4 3.3 6.6 6.5 7-.6.5-.6 1.2-.5 2V21"/>',
+    researchgate: '<text x="4" y="18" font-family="Georgia, serif" font-size="19" font-weight="700" fill="currentColor" stroke="none">R</text><text x="15" y="10" font-family="Arial, sans-serif" font-size="10" fill="currentColor" stroke="none">G</text>',
+    x: '<path d="M17.7 3H21l-7.2 8.2L22.3 21h-6.6l-5.1-6.7L4.7 21H1.3L9 12.2 1 3h6.8l4.6 6.1L17.7 3Zm-1.2 16h1.8L6.8 4.9H4.9L16.5 19Z" fill="currentColor" stroke="none"/>',
     website: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z"/>',
     school: '<path d="m2 9 10-5 10 5-10 5L2 9Z"/><path d="M6 11v5c3 2 9 2 12 0v-5M22 9v6"/>'
   };

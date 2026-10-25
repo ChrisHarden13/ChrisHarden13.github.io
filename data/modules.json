@@ -49,6 +49,18 @@
           "labelZh": "GitHub",
           "url": "https://github.com/ChrisHarden13",
           "icon": "github"
+        },
+        {
+          "labelEn": "ResearchGate",
+          "labelZh": "ResearchGate",
+          "url": "https://www.researchgate.net/profile/Kexin-Xiang-7?ev=hdr_xprf",
+          "icon": "researchgate"
+        },
+        {
+          "labelEn": "X",
+          "labelZh": "X",
+          "url": "https://x.com/chris_xiang13",
+          "icon": "x"
         }
       ]
     },
