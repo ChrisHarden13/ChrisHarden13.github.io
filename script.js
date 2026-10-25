@@ -577,8 +577,8 @@ function updateClockNumber(number, value, animate) {
     reel.append(outgoing, current);
     digit.replaceChildren(reel);
     const animation = reel.animate(
-      [{transform: 'translateY(0)'}, {transform: 'translateY(-50%)'}],
-      {duration: 600, easing: 'cubic-bezier(0.22, 1, 0.36, 1)', fill: 'forwards'}
+      [{transform: 'translate3d(0, 0, 0)'}, {transform: 'translate3d(0, -50%, 0)'}],
+      {duration: 850, easing: 'cubic-bezier(0.45, 0, 0.2, 1)', fill: 'forwards'}
     );
     digit.clockAnimation = animation;
     animation.onfinish = () => {
