@@ -923,17 +923,14 @@ footer #footer-copy, footer #footer-copy p {
 }
 footer .back-top { display: none; }
 .footer-counter {
- display: flex;
- justify-content: center;
- flex-wrap: wrap;
- align-items: center;
- gap: 6px 16px;
+ display: block;
+ text-align: center;
  font: inherit;
  line-height: 1.6;
  color: var(--muted);
  font-variant-numeric: tabular-nums;
 }
 .footer-counter[hidden] { display: none; }
-.footer-counter-group { display: inline-flex; align-items: baseline; gap: 0; white-space: nowrap; }
+.footer-counter-group { display: inline-block; white-space: nowrap; }
 .footer-counter-window { display: inline-block; overflow: hidden; vertical-align: bottom; }
 .footer-counter-number { display: inline-block; }

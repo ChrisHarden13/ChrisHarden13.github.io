@@ -551,7 +551,8 @@ function updateFooterClock() {
       const unit = document.createElement('span');
       unit.className = 'footer-counter-unit';
       unit.textContent = label;
-      group.append(slot, unit);
+      group.append(slot, document.createTextNode(' '), unit);
+      if (counter.childElementCount) counter.append(document.createTextNode(' '));
       counter.append(group);
     }
   }
