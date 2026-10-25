@@ -934,6 +934,6 @@ footer .back-top { display: none; }
  font-variant-numeric: tabular-nums;
 }
 .footer-counter[hidden] { display: none; }
-.footer-counter-group { display: inline-flex; align-items: baseline; gap: 5px; white-space: nowrap; }
+.footer-counter-group { display: inline-flex; align-items: baseline; gap: 0; white-space: nowrap; }
 .footer-counter-window { display: inline-block; overflow: hidden; vertical-align: bottom; }
 .footer-counter-number { display: inline-block; }
