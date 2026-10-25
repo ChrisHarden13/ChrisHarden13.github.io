@@ -496,10 +496,14 @@ function applyAppearance() {
       }
     }
   }
+  // Font families are fixed; Pages CMS exposes font sizes only.
+  root.style.setProperty('--sans', '"Times New Roman", Times, serif');
+  root.style.setProperty('--serif', 'Georgia, serif');
+  root.style.setProperty('--appearance-typography-body-font', '"Times New Roman", Times, serif');
+  root.style.setProperty('--appearance-typography-heading-font', 'Georgia, serif');
+  root.style.setProperty('--appearance-news-font', '"Times New Roman", Times, serif');
   if (theme.typography) {
-    root.style.setProperty('--sans', 'var(--appearance-typography-body-font)');
-    root.style.setProperty('--serif', 'var(--appearance-typography-heading-font)');
-    root.style.setProperty('--base-font-size', 'var(--appearance-typography-body-size)');
+    root.style.setProperty('--base-font-size', 'var(--appearance-typography-body-size, 18px)');
   }
   const limit = Number(theme.text?.lineLimit);
   root.classList.toggle('appearance-limit-text', Number.isFinite(limit) && limit > 0);

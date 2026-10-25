@@ -839,3 +839,8 @@ footer p, footer .back-top { font-size: var(--appearance-footer-font-size, 10px)
 .homepage-link-body { display: flex; flex-direction: column; justify-content: center; min-width: 0; }
 .homepage-link-body > h3 { margin: 0; }
 .homepage-link-body > .module-link-description:empty { display: none; }
+
+/* Fixed typography: Georgia headings and Times New Roman body text. */
+:root { --serif: Georgia, serif; --sans: "Times New Roman", Times, serif; }
+body, button, input, select, textarea { font-family: "Times New Roman", Times, serif; }
+h1, h2, h3, h4, h5, h6 { font-family: Georgia, serif; }
