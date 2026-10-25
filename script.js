@@ -385,6 +385,18 @@ function makeSection(section, index) {
   return root;
 }
 
+function pagePath(key) {
+  return key === 'profile' ? '/' : '/' + encodeURIComponent(key) + '/';
+}
+
+function resolvePage(pathname, search, allowed, fallback = 'profile') {
+  const legacy = new URLSearchParams(search).get('page');
+  if (allowed.has(legacy)) return legacy;
+  const segment = pathname.split('/').filter(Boolean)[0];
+  const key = !segment || segment === 'index.html' ? 'profile' : segment;
+  return allowed.has(key) ? key : fallback;
+}
+
 function renderNavigation() {
   const nav = document.querySelector('#module-nav');
   nav.replaceChildren();
@@ -392,7 +404,7 @@ function renderNavigation() {
     const label = language === 'zh' ? (item.labelZh || item.labelEn) : item.labelEn;
     if (!item.key || !label) return;
     const link = document.createElement('a');
-    link.href = `?page=${encodeURIComponent(item.key)}`;
+    link.href = pagePath(item.key);
     if (item.key === activePage) link.setAttribute('aria-current', 'page');
     link.textContent = label;
     nav.append(link);
@@ -574,9 +586,12 @@ Promise.all([
   theme.pageAppearance = appearance.mainPages || {};
   sections = Array.isArray(page.sections) ? page.sections : [];
   navigation = Array.isArray(nav.items) ? nav.items : [];
-  const requested = new URLSearchParams(window.location.search).get('page');
   const allowed = new Set(navigation.map((item) => item.key));
-  activePage = allowed.has(requested) ? requested : (navigation[0]?.key || 'profile');
+  activePage = resolvePage(window.location.pathname, window.location.search, allowed, navigation[0]?.key || 'profile');
+  const cleanUrl = new URL(window.location.href);
+  cleanUrl.pathname = pagePath(activePage);
+  cleanUrl.searchParams.delete('page');
+  if (cleanUrl.href !== window.location.href) history.replaceState(null, '', cleanUrl);
   render();
 }).catch((error) => console.error(error));
 
