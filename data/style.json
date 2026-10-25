@@ -109,7 +109,7 @@
         "titleGap": 10,
         "entryPadding": 24,
         "numberSize": 15,
-        "numberWidth": 42,
+        "numberWidth": 30,
         "numberGap": 22,
         "columns": 1
       }
